@@ -58,7 +58,7 @@ layout: post
 #标题配置
 title:  标题
 #时间配置
-date:   2016-08-27 01:08:00 +0800
+date:   2017-12-27 18:23:58 +0800
 #大类配置
 categories: document
 #小类配置
