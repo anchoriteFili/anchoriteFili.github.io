@@ -6,7 +6,7 @@ url: http://www.anchoritefili.com
 resume_site: https://anchoritefili.github.io
 github: https://github.com/anchoriteFili/
 baseurl: ""
-description: hahaha
+description: 学习，从不止步
 meta_description: 学而不思则罔;思而不学则殆;生命不止;折腾不休
 motto: It's our wits that make us men.
 banner: 学而不思则罔，思而不学则殆。
@@ -17,7 +17,7 @@ paginate: 10
 
 exclude: ['README.md', 'Gemfile.lock', 'Gemfile', 'Rakefile']
 
-github_username: luoyan35714
+github_username: anchoriteFili
 
 # Build settings
 markdown: kramdown
