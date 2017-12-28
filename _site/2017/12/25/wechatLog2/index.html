@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>微信登录简单封装 - 公会驻地</title>
+
+	<link rel="shortcut icon" href="/styles/images/favicon.jpg">
+	<link rel="icon" href="/styles/images/favicon.jpg">
+
+	<link rel="stylesheet" href="/styles/css/index.css">
+	<link rel="stylesheet" href="/styles/css/fontawesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="/styles/css/syntax.css">
+	<link rel="canonical" href="/2017/12/25/wechatLog2/">
+	<link rel="alternate" type="application/rss+xml" title="公会驻地" href="/feed.xml">
+	
+	<meta name="keywords" content="微信登录简单封装, 公会驻地, 学而不思则罔;思而不学则殆;生命不止;折腾不休">
+	<meta name="description" content="学而不思则罔;思而不学则殆;生命不止;折腾不休">
+
+	<script src="/styles/js/jquery.min.js"></script>
+	<!--[if lt IE 9]>
+    	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  	<![endif]-->
+  	<script>
+		var _hmt = _hmt || [];
+		(function() {
+		  var hm = document.createElement("script");
+		  hm.src = "//hm.baidu.com/hm.js?94be4b0f9fc5d94cc0d0415ea6761ae9";
+		  var s = document.getElementsByTagName("script")[0]; 
+		  s.parentNode.insertBefore(hm, s);
+		})();
+	</script>
+  	<style type="text/css">
+	  	.docs-content{
+	  		margin-bottom: 10px;
+	  	}
+  	</style>
+</head>
+
+  <body class="index">
+
+    <header class="navbar navbar-inverse navbar-fixed-top docs-nav" role="banner">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="/" class="navbar-brand">
+        <img src="/styles/images/logo.jpg">
+      </a>
+    </div>
+    <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+      <ul class="nav navbar-nav">    
+        <li>
+          <a href="/">Home</a>
+        </li>
+        <li>
+          <a href="/categories/">大类分解</a>
+        </li>
+        <li>
+          <a href="/tag">小类内聚</a>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+            <a><span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span></a>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">关于<b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a rel="nofollow" target="_blank" href="https://github.com/anchoriteFili/">Github</a></li>
+            <li><a rel="nofollow" target="_blank" href="https://anchoritefili.github.io">关于作者</a></li>
+            <li><a rel="nofollow" href="/books">我的书单</a></li>
+            <li><a rel="nofollow" href="/reference">推荐博客</a></li>
+<!--            <li><a href="/feed.xml">RSS订阅</a></li>-->
+            <li class="divider"></li>
+            <li><a rel="nofollow" target="_blank" href="http://www.gonghuizhudi.com">个人官网</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+    <div class="docs-header" id="content">
+  <div class="container">
+  	
+  		<!--
+		    <h1>微信登录简单封装</h1>
+		    <p>Post on Dec 25, 2017 by <a href="/about">anchoriteFili</a></p>
+		-->
+		    <h1>躬身以待方显气度，拧首抬杠略失品格。</h1>
+    
+  </div>
+</div>
+
+    
+      
+<div class="banner">
+  <div class="container">
+  	
+    	<a href="/categories/#document-ref">document</a>	/
+    	<a href="/tag/#swift-ref">swift</a>
+    
+  </div>
+</div>
+
+    
+
+    <div class="container docs-container">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="sidebar hidden-print" role="complementary">
+        <div id="navigation">
+  <h1>目录</h1>
+  <ul class="nav sidenav">
+  </ul>
+  <div style="height: 200px;width: 200px;">
+    <script type="text/javascript" src="//rf.revolvermaps.com/0/0/8.js?i=5ytn1ssq6za&amp;m=0&amp;c=ff0000&amp;cr1=ffffff&amp;f=arial&amp;l=33" async="async"> 
+    </script>
+  </div>
+</div>
+
+ 
+      </div>
+    </div>
+    <div class="col-md-9" role="main">
+      <div class="panel docs-content">
+        <div class="wrapper">
+            <header class="post-header">
+              <h1 class="post-title">微信登录简单封装</h1>
+              <!--
+                <p class="post-meta">Dec 25, 2017</p>
+              -->
+              <div class="meta">Posted on <span class="postdate">Dec 25, 2017</span> By <a target="_blank" href="http://localhost:4000">anchoriteFili</a></div>
+              <br />
+            </header>
+            <article class="post-content">
+              <ul id="markdown-toc">
+  <li><a href="#接入流程" id="markdown-toc-接入流程">接入流程</a></li>
+  <li><a href="#plist中环境的设置haha" id="markdown-toc-plist中环境的设置haha">plist中环境的设置haha</a></li>
+  <li><a href="#创建hyhttptoolswift" id="markdown-toc-创建hyhttptoolswift">创建HYHttpTool.swift</a></li>
+  <li><a href="#appdelegate中设置相关环境" id="markdown-toc-appdelegate中设置相关环境">Appdelegate中设置相关环境</a></li>
+</ul>
+
+<h3 id="接入流程">接入流程</h3>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>target 'WechatLogTest' do
+end
+platform :ios, '8.0'
+use_frameworks!
+pod 'WechatOpenSDK'
+</code></pre></div></div>
+<p>相关资料：<br />
+<a href="https://open.weixin.qq.com/cgi-bin/showdocument?action=dir_list&amp;t=resource/res_list&amp;verify=1&amp;id=1417694084&amp;token=&amp;lang=zh_CN">iOS接入指南</a><br />
+<a href="https://open.weixin.qq.com/cgi-bin/showdocument?action=dir_list&amp;t=resource/res_list&amp;verify=1&amp;id=open1419317851&amp;token=&amp;lang=zh_CN">移动应用微信登录开发指南</a><br />
+<a href="http://www.cnblogs.com/AnchoriteFiliGod/diary/2017/12/21/8080913.html">个人日记保存点</a></p>
+
+<h3 id="plist中环境的设置haha">plist中环境的设置haha</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;key&gt;LSApplicationQueriesSchemes&lt;/key&gt;
+	&lt;array&gt;
+		&lt;string&gt;wechat&lt;/string&gt;
+		&lt;string&gt;weixin&lt;/string&gt;
+	&lt;/array&gt;
+    &lt;key&gt;qq.com&lt;/key&gt;
+    &lt;dict&gt;
+    &lt;key&gt;NSExceptionAllowsInsecureHTTPLoads&lt;/key&gt;
+    &lt;true/&gt;
+    &lt;key&gt;NSExceptionRequiresForwardSecrecy&lt;/key&gt;
+    &lt;false/&gt;
+    &lt;key&gt;NSIncludesSubdomains&lt;/key&gt;
+    &lt;true/&gt;
+	&lt;/dict&gt;
+    &lt;key&gt;CFBundleURLTypes&lt;/key&gt;
+    &lt;array&gt;
+        &lt;dict&gt;
+            &lt;key&gt;CFBundleTypeRole&lt;/key&gt;
+            &lt;string&gt;Editor&lt;/string&gt;
+            &lt;key&gt;CFBundleURLName&lt;/key&gt;
+            &lt;string&gt;weixin&lt;/string&gt;
+            &lt;key&gt;CFBundleURLSchemes&lt;/key&gt;
+            &lt;array&gt;
+                &lt;string&gt;wx0cd8451d269de523&lt;/string&gt;
+            &lt;/array&gt;
+        &lt;/dict&gt;
+    &lt;/array&gt;
+    &lt;key&gt;NSAppTransportSecurity&lt;/key&gt;
+    &lt;dict&gt;
+        &lt;key&gt;NSAllowsArbitraryLoads&lt;/key&gt;
+        &lt;true/&gt;
+        &lt;key&gt;NSExceptionDomains&lt;/key&gt;
+        &lt;dict&gt;
+            &lt;key&gt;jpush.cn&lt;/key&gt;
+            &lt;dict&gt;
+                &lt;key&gt;NSExceptionAllowsInsecureHTTPLoads&lt;/key&gt;
+                &lt;true/&gt;
+                &lt;key&gt;NSIncludesSubdomains&lt;/key&gt;
+                &lt;true/&gt;
+            &lt;/dict&gt;
+        &lt;/dict&gt;
+    &lt;/dict&gt;
+</code></pre></div></div>
+
+<h3 id="创建hyhttptoolswift">创建HYHttpTool.swift</h3>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kd">import</span> <span class="kt">UIKit</span>
+
+<span class="k">let</span> <span class="nv">WXAPPID</span> <span class="o">=</span> <span class="s">"wx0cd8451d269de523"</span>
+<span class="k">let</span> <span class="nv">WXSECRET</span> <span class="o">=</span> <span class="s">""</span>
+<span class="k">let</span> <span class="nv">USER_DEFAULT</span> <span class="o">=</span> <span class="kt">UserDefaults</span><span class="o">.</span><span class="n">standard</span> <span class="c1">// 获取userDefault</span>
+<span class="k">let</span> <span class="nv">WXRefreshToken</span> <span class="o">=</span> <span class="s">"WXLogTool_refreshToken"</span>
+<span class="k">let</span> <span class="nv">WXAccessToken</span> <span class="o">=</span> <span class="s">"WXLogTool_accessToken"</span>
+<span class="k">let</span> <span class="nv">WXOpenID</span> <span class="o">=</span> <span class="s">"WXLogTool_openid"</span>
+<span class="k">let</span> <span class="nv">WXUnionid</span> <span class="o">=</span> <span class="s">"WXLogTool_unionid"</span>
+
+
+<span class="kd">class</span> <span class="kt">WXLogTool</span><span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">WXApiDelegate</span> <span class="p">{</span>
+
+    <span class="cm">/**
+    * 创建单例，使用实例：let ClassName = HYHttpTool.shared
+    */</span>
+    <span class="kd">static</span> <span class="k">let</span> <span class="nv">shared</span> <span class="o">=</span> <span class="kt">WXLogTool</span><span class="o">.</span><span class="nf">init</span><span class="p">()</span>
+    <span class="kd">private</span> <span class="k">override</span> <span class="nf">init</span><span class="p">()</span> <span class="p">{}</span>
+
+    <span class="c1">/// 注册appid</span>
+    <span class="kd">func</span> <span class="nf">registerApp</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kt">WXApi</span><span class="o">.</span><span class="nf">registerApp</span><span class="p">(</span><span class="kt">WXAPPID</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="c1">/// 收到一个来自微信的请求，第三方应用程序处理完后调用sendResp向微信发送结果</span>
+    <span class="c1">///</span>
+    <span class="c1">/// - Parameter req: 具体请求内容，是自动释放的</span>
+    <span class="kd">func</span> <span class="nf">onReq</span><span class="p">(</span><span class="n">_</span> <span class="nv">req</span><span class="p">:</span> <span class="kt">BaseReq</span><span class="o">!</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="k">if</span> <span class="n">req</span><span class="o">.</span><span class="nf">isKind</span><span class="p">(</span><span class="nv">of</span><span class="p">:</span> <span class="kt">GetMessageFromWXReq</span><span class="o">.</span><span class="k">self</span><span class="p">)</span> <span class="p">{</span>
+            <span class="c1">// 微信请求APP提供内容，需要app提供内容后使用senRsp返回</span>
+            <span class="nf">print</span><span class="p">(</span><span class="s">"微信请求App提供内容，App要调用sendResp:GetMessageFromWXResp返回给微信"</span><span class="p">)</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="n">req</span><span class="o">.</span><span class="nf">isKind</span><span class="p">(</span><span class="nv">of</span><span class="p">:</span> <span class="kt">ShowMessageFromWXReq</span><span class="o">.</span><span class="k">self</span><span class="p">)</span> <span class="p">{</span>
+
+            <span class="k">let</span> <span class="nv">tmp</span><span class="p">:</span> <span class="kt">ShowMessageFromWXReq</span> <span class="o">=</span> <span class="n">req</span> <span class="k">as!</span> <span class="kt">ShowMessageFromWXReq</span>
+
+            <span class="c1">// 显示微信传过来的内容</span>
+            <span class="k">let</span> <span class="nv">msg</span><span class="p">:</span> <span class="kt">WXMediaMessage</span> <span class="o">=</span> <span class="n">tmp</span><span class="o">.</span><span class="n">message</span>
+            <span class="k">let</span> <span class="nv">obj</span><span class="p">:</span> <span class="kt">WXAppExtendObject</span> <span class="o">=</span> <span class="n">msg</span><span class="o">.</span><span class="n">mediaObject</span> <span class="k">as!</span> <span class="kt">WXAppExtendObject</span>
+
+            <span class="nf">print</span><span class="p">(</span><span class="s">"标题：</span><span class="se">\(</span><span class="n">msg</span><span class="o">.</span><span class="n">title</span><span class="se">)</span><span class="s"> 内容：</span><span class="se">\(</span><span class="n">msg</span><span class="o">.</span><span class="n">description</span><span class="se">)</span><span class="s"> 附带信息：</span><span class="se">\(</span><span class="n">obj</span><span class="o">.</span><span class="n">extInfo</span><span class="se">)</span><span class="s"> 缩略图：</span><span class="se">\(</span><span class="n">msg</span><span class="o">.</span><span class="n">thumbData</span><span class="o">.</span><span class="n">count</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="n">req</span><span class="o">.</span><span class="nf">isKind</span><span class="p">(</span><span class="nv">of</span><span class="p">:</span> <span class="kt">LaunchFromWXReq</span><span class="o">.</span><span class="k">self</span><span class="p">)</span> <span class="p">{</span>
+            <span class="c1">// 从微信启动app</span>
+            <span class="nf">print</span><span class="p">(</span><span class="s">"从微信启动app"</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="c1">/// 发送一个sendReq后，收到微信的回应</span>
+    <span class="c1">///</span>
+    <span class="c1">/// - Parameter resp: 具体的回应内容，是自动释放的</span>
+    <span class="kd">func</span> <span class="nf">onResp</span><span class="p">(</span><span class="n">_</span> <span class="nv">resp</span><span class="p">:</span> <span class="kt">BaseResp</span><span class="o">!</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="k">switch</span> <span class="n">resp</span><span class="o">.</span><span class="n">errCode</span> <span class="p">{</span>
+        <span class="k">case</span> <span class="mi">0</span><span class="p">:</span> <span class="c1">// 用户同意</span>
+            <span class="c1">// 调用相关方法</span>
+            <span class="k">let</span> <span class="nv">aresp</span><span class="p">:</span> <span class="kt">SendAuthResp</span> <span class="o">=</span> <span class="n">resp</span> <span class="k">as!</span> <span class="kt">SendAuthResp</span>
+            <span class="nf">print</span><span class="p">(</span><span class="s">"code *********** </span><span class="se">\(</span><span class="n">aresp</span><span class="o">.</span><span class="n">code</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+            <span class="nf">weChatCallBackWithCode</span><span class="p">(</span><span class="nv">code</span><span class="p">:</span> <span class="n">aresp</span><span class="o">.</span><span class="n">code</span><span class="p">)</span>
+            <span class="k">break</span>
+        <span class="k">case</span> <span class="o">-</span><span class="mi">4</span><span class="p">:</span> <span class="c1">// 用户拒绝授权</span>
+            <span class="k">break</span>
+        <span class="k">case</span> <span class="o">-</span><span class="mi">2</span><span class="p">:</span> <span class="c1">// 用户取消</span>
+            <span class="k">break</span>
+        <span class="k">default</span><span class="p">:</span>
+            <span class="k">break</span>
+        <span class="p">}</span>
+
+    <span class="p">}</span>
+
+
+    <span class="cm">/** https://api.weixin.qq.com/sns/oauth2/access_token
+    *  链接返回数据
+    access_token : 接口调用凭证
+    *  expires_in : access_token接口调用凭证超时时间，单位（秒）
+    *  refresh_token : 用户刷新access_token
+    *  openid : 授权用户唯一标识
+    *  scope : 用户授权的作用域，使用逗号（,）分隔
+    *  unionid : 当且仅当该移动应用已获得该用户的userinfo授权时，才会出现该字段
+    */</span>
+    <span class="kd">func</span> <span class="nf">weChatCallBackWithCode</span><span class="p">(</span><span class="nv">code</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="k">let</span> <span class="nv">urlString</span> <span class="o">=</span> <span class="s">"https://api.weixin.qq.com/sns/oauth2/access_token"</span>
+        <span class="nf">print</span><span class="p">(</span><span class="s">"urlString ************** </span><span class="se">\(</span><span class="n">urlString</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+
+        <span class="kt">HYHttpTool</span><span class="o">.</span><span class="nf">post</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="n">urlString</span><span class="p">,</span> <span class="nv">param</span><span class="p">:</span> <span class="p">[</span><span class="s">"appid"</span><span class="p">:</span><span class="kt">WXAPPID</span><span class="p">,</span><span class="s">"secret"</span><span class="p">:</span><span class="kt">WXSECRET</span><span class="p">,</span><span class="s">"code"</span><span class="p">:</span><span class="n">code</span><span class="p">,</span><span class="s">"grant_type"</span><span class="p">:</span><span class="s">"authorization_code"</span><span class="p">,])</span> <span class="p">{</span> <span class="p">(</span><span class="n">response</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span> <span class="k">in</span>
+            <span class="nf">print</span><span class="p">(</span><span class="s">"code 获取 ************ </span><span class="se">\(</span><span class="kt">String</span><span class="p">(</span><span class="nv">describing</span><span class="p">:</span> <span class="n">result</span><span class="o">.</span><span class="n">value</span><span class="p">)</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+
+            <span class="k">let</span> <span class="nv">dic</span><span class="p">:</span> <span class="kt">NSDictionary</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">value</span> <span class="k">as!</span> <span class="kt">NSDictionary</span>
+            <span class="k">if</span> <span class="k">let</span> <span class="nv">errmsg</span> <span class="o">=</span> <span class="n">dic</span><span class="o">.</span><span class="nf">value</span><span class="p">(</span><span class="nv">forKey</span><span class="p">:</span> <span class="s">"errmsg"</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nf">print</span><span class="p">(</span><span class="s">"errmsg ************** </span><span class="se">\(</span><span class="n">errmsg</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+                <span class="k">return</span>
+            <span class="p">}</span>
+
+            <span class="kt">USER_DEFAULT</span><span class="o">.</span><span class="nf">set</span><span class="p">(</span><span class="n">dic</span><span class="o">.</span><span class="nf">value</span><span class="p">(</span><span class="nv">forKey</span><span class="p">:</span> <span class="s">"refresh_token"</span><span class="p">)</span> <span class="k">as!</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">forKey</span><span class="p">:</span> <span class="kt">WXRefreshToken</span><span class="p">)</span>
+            <span class="kt">USER_DEFAULT</span><span class="o">.</span><span class="nf">set</span><span class="p">(</span><span class="n">dic</span><span class="o">.</span><span class="nf">value</span><span class="p">(</span><span class="nv">forKey</span><span class="p">:</span> <span class="s">"access_token"</span><span class="p">)</span> <span class="k">as!</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">forKey</span><span class="p">:</span> <span class="kt">WXAccessToken</span><span class="p">)</span>
+            <span class="kt">USER_DEFAULT</span><span class="o">.</span><span class="nf">set</span><span class="p">(</span><span class="n">dic</span><span class="o">.</span><span class="nf">value</span><span class="p">(</span><span class="nv">forKey</span><span class="p">:</span> <span class="s">"openid"</span><span class="p">)</span> <span class="k">as!</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">forKey</span><span class="p">:</span> <span class="kt">WXOpenID</span><span class="p">)</span>
+
+
+            <span class="k">self</span><span class="o">.</span><span class="nf">getUserInfoWithAccessToken</span><span class="p">(</span><span class="nv">accessToken</span><span class="p">:</span>  <span class="n">dic</span><span class="o">.</span><span class="nf">value</span><span class="p">(</span><span class="nv">forKey</span><span class="p">:</span> <span class="s">"access_token"</span><span class="p">)</span> <span class="k">as!</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">openId</span><span class="p">:</span> <span class="n">dic</span><span class="o">.</span><span class="nf">value</span><span class="p">(</span><span class="nv">forKey</span><span class="p">:</span> <span class="s">"openid"</span><span class="p">)</span> <span class="k">as!</span> <span class="kt">String</span><span class="p">)</span>
+        <span class="p">}</span>
+
+    <span class="p">}</span>
+
+    <span class="c1">/// 获取微信用户信息方法</span>
+    <span class="c1">///</span>
+    <span class="c1">/// - Parameters:</span>
+    <span class="c1">///   - accessToken: 接口调用凭证</span>
+    <span class="c1">///   - openId: 授权用户唯一标识</span>
+    <span class="kd">func</span> <span class="nf">getUserInfoWithAccessToken</span><span class="p">(</span><span class="nv">accessToken</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">openId</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="k">let</span> <span class="nv">urlString</span> <span class="o">=</span> <span class="s">"https://api.weixin.qq.com/sns/userinfo"</span>
+
+        <span class="kt">HYHttpTool</span><span class="o">.</span><span class="nf">post</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="n">urlString</span><span class="p">,</span> <span class="nv">param</span><span class="p">:</span> <span class="p">[</span><span class="s">"access_token"</span><span class="p">:</span><span class="n">accessToken</span><span class="p">,</span><span class="s">"openid"</span><span class="p">:</span><span class="n">openId</span><span class="p">])</span> <span class="p">{</span> <span class="p">(</span><span class="n">response</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span> <span class="k">in</span>
+            <span class="nf">print</span><span class="p">(</span><span class="s">"获取微信用户信息方法 ************ </span><span class="se">\(</span><span class="kt">String</span><span class="p">(</span><span class="nv">describing</span><span class="p">:</span> <span class="n">result</span><span class="o">.</span><span class="n">value</span><span class="p">)</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+            <span class="k">let</span> <span class="nv">dic</span><span class="p">:</span> <span class="kt">NSDictionary</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">value</span> <span class="k">as!</span> <span class="kt">NSDictionary</span>
+
+            <span class="k">if</span> <span class="k">let</span> <span class="nv">errmsg</span> <span class="o">=</span> <span class="n">dic</span><span class="o">.</span><span class="nf">value</span><span class="p">(</span><span class="nv">forKey</span><span class="p">:</span> <span class="s">"errmsg"</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nf">print</span><span class="p">(</span><span class="s">"errmsg ************** </span><span class="se">\(</span><span class="n">errmsg</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+                <span class="k">return</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+
+    <span class="c1">/// 使用refresh_token刷新access_token</span>
+    <span class="c1">///</span>
+    <span class="c1">/// - Parameter refreshToken: 用户刷新access_token</span>
+    <span class="kd">func</span> <span class="nf">refreshAccessToken</span><span class="p">(</span><span class="nv">refreshToken</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="k">let</span> <span class="nv">urlString</span> <span class="o">=</span> <span class="s">"https://api.weixin.qq.com/sns/oauth2/refresh_token"</span>
+
+        <span class="kt">HYHttpTool</span><span class="o">.</span><span class="nf">post</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="n">urlString</span><span class="p">,</span> <span class="nv">param</span><span class="p">:</span> <span class="p">[</span><span class="s">"appid"</span><span class="p">:</span><span class="kt">WXAPPID</span><span class="p">,</span><span class="s">"grant_type"</span><span class="p">:</span><span class="s">"refresh_token"</span><span class="p">,</span><span class="s">"refresh_token"</span><span class="p">:</span><span class="n">refreshToken</span><span class="p">])</span> <span class="p">{</span> <span class="p">(</span><span class="n">response</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span> <span class="k">in</span>
+            <span class="nf">print</span><span class="p">(</span><span class="s">"使用refresh_token刷新access_token ************ </span><span class="se">\(</span><span class="kt">String</span><span class="p">(</span><span class="nv">describing</span><span class="p">:</span> <span class="n">result</span><span class="o">.</span><span class="n">value</span><span class="p">)</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+            <span class="k">let</span> <span class="nv">dic</span><span class="p">:</span> <span class="kt">NSDictionary</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">value</span> <span class="k">as!</span> <span class="kt">NSDictionary</span>
+
+            <span class="k">if</span> <span class="k">let</span> <span class="nv">errmsg</span> <span class="o">=</span> <span class="n">dic</span><span class="o">.</span><span class="nf">value</span><span class="p">(</span><span class="nv">forKey</span><span class="p">:</span> <span class="s">"errmsg"</span><span class="p">)</span> <span class="p">{</span>
+                <span class="c1">// 如果刷新失败，表示过期，可进行再次申请授权</span>
+                <span class="k">self</span><span class="o">.</span><span class="nf">sendAuthRequest</span><span class="p">()</span>
+                <span class="nf">print</span><span class="p">(</span><span class="s">"errmsg ************** </span><span class="se">\(</span><span class="n">errmsg</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="c1">// 如果刷新成功，则根据refreshToken获取获取相关信息</span>
+
+                <span class="kt">USER_DEFAULT</span><span class="o">.</span><span class="nf">set</span><span class="p">(</span><span class="n">dic</span><span class="o">.</span><span class="nf">value</span><span class="p">(</span><span class="nv">forKey</span><span class="p">:</span> <span class="s">"refresh_token"</span><span class="p">)</span> <span class="k">as!</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">forKey</span><span class="p">:</span> <span class="kt">WXRefreshToken</span><span class="p">)</span>
+                <span class="kt">USER_DEFAULT</span><span class="o">.</span><span class="nf">set</span><span class="p">(</span><span class="n">dic</span><span class="o">.</span><span class="nf">value</span><span class="p">(</span><span class="nv">forKey</span><span class="p">:</span> <span class="s">"access_token"</span><span class="p">)</span> <span class="k">as!</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">forKey</span><span class="p">:</span> <span class="kt">WXAccessToken</span><span class="p">)</span>
+                <span class="kt">USER_DEFAULT</span><span class="o">.</span><span class="nf">set</span><span class="p">(</span><span class="n">dic</span><span class="o">.</span><span class="nf">value</span><span class="p">(</span><span class="nv">forKey</span><span class="p">:</span> <span class="s">"openid"</span><span class="p">)</span> <span class="k">as!</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">forKey</span><span class="p">:</span> <span class="kt">WXOpenID</span><span class="p">)</span>
+
+                <span class="k">self</span><span class="o">.</span><span class="nf">getUserInfoWithAccessToken</span><span class="p">(</span><span class="nv">accessToken</span><span class="p">:</span>  <span class="n">dic</span><span class="o">.</span><span class="nf">value</span><span class="p">(</span><span class="nv">forKey</span><span class="p">:</span> <span class="s">"access_token"</span><span class="p">)</span>  <span class="k">as!</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">openId</span><span class="p">:</span> <span class="n">dic</span><span class="o">.</span><span class="nf">value</span><span class="p">(</span><span class="nv">forKey</span><span class="p">:</span> <span class="s">"openid"</span><span class="p">)</span> <span class="k">as!</span> <span class="kt">String</span><span class="p">)</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+
+    <span class="c1">/// 判断本地的 access_token 是否可用</span>
+    <span class="c1">///</span>
+    <span class="c1">/// - Parameters:</span>
+    <span class="c1">///   - access_token: 调用接口凭证</span>
+    <span class="c1">///   - openId: 普通用户标识，对该公众帐号唯一</span>
+    <span class="c1">///   - complete: 返回处理结果</span>
+    <span class="kd">func</span> <span class="nf">accessTokenUsable</span><span class="p">(</span><span class="nv">access_token</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">openId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">complete</span><span class="p">:</span> <span class="kd">@escaping(Bool)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="k">let</span> <span class="nv">urlString</span> <span class="o">=</span> <span class="s">"https://api.weixin.qq.com/sns/auth"</span>
+
+        <span class="kt">HYHttpTool</span><span class="o">.</span><span class="nf">post</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="n">urlString</span><span class="p">,</span> <span class="nv">param</span><span class="p">:</span> <span class="p">[</span><span class="s">"access_token"</span><span class="p">:</span><span class="n">access_token</span><span class="p">,</span><span class="s">"openid"</span><span class="p">:</span><span class="n">openId</span><span class="p">])</span> <span class="p">{</span> <span class="p">(</span><span class="n">response</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span> <span class="k">in</span>
+            <span class="nf">print</span><span class="p">(</span><span class="s">"判断本地的 access_token 是否可用 ************ </span><span class="se">\(</span><span class="kt">String</span><span class="p">(</span><span class="nv">describing</span><span class="p">:</span> <span class="n">result</span><span class="o">.</span><span class="n">value</span><span class="p">)</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+            <span class="k">let</span> <span class="nv">dic</span><span class="p">:</span> <span class="kt">NSDictionary</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">value</span> <span class="k">as!</span> <span class="kt">NSDictionary</span>
+
+            <span class="k">if</span> <span class="k">let</span> <span class="nv">errmsg</span> <span class="o">=</span> <span class="n">dic</span><span class="o">.</span><span class="nf">value</span><span class="p">(</span><span class="nv">forKey</span><span class="p">:</span> <span class="s">"errmsg"</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nf">print</span><span class="p">(</span><span class="s">"errmsg ************** </span><span class="se">\(</span><span class="n">errmsg</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+
+                <span class="k">if</span> <span class="n">errmsg</span> <span class="k">as!</span> <span class="kt">String</span> <span class="o">==</span> <span class="s">"ok"</span> <span class="p">{</span>
+                    <span class="nf">complete</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span>
+                <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                    <span class="nf">complete</span><span class="p">(</span><span class="kc">false</span><span class="p">)</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="c1">/// 登录点击方法</span>
+    <span class="kd">func</span> <span class="nf">weChatLogin</span><span class="p">()</span> <span class="p">{</span>
+
+        <span class="k">if</span> <span class="kt">WXApi</span><span class="o">.</span><span class="nf">isWXAppInstalled</span><span class="p">()</span> <span class="p">{</span>
+            <span class="nf">print</span><span class="p">(</span><span class="s">"****** 安装了微信APP *********"</span><span class="p">)</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="nf">print</span><span class="p">(</span><span class="s">"****** 未安装微信 *********"</span><span class="p">)</span>
+            <span class="k">return</span>
+        <span class="p">}</span>
+
+        <span class="nf">sendAuthRequest</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="kt">USER_DEFAULT</span><span class="o">.</span><span class="nf">object</span><span class="p">(</span><span class="nv">forKey</span><span class="p">:</span> <span class="kt">WXAccessToken</span><span class="p">)</span> <span class="o">!=</span> <span class="kc">nil</span><span class="p">)</span> <span class="p">{</span>
+
+            <span class="nf">accessTokenUsable</span><span class="p">(</span><span class="nv">access_token</span><span class="p">:</span> <span class="kt">USER_DEFAULT</span><span class="o">.</span><span class="nf">object</span><span class="p">(</span><span class="nv">forKey</span><span class="p">:</span> <span class="kt">WXAccessToken</span><span class="p">)</span> <span class="k">as!</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">openId</span><span class="p">:</span> <span class="kt">USER_DEFAULT</span><span class="o">.</span><span class="nf">object</span><span class="p">(</span><span class="nv">forKey</span><span class="p">:</span> <span class="kt">WXOpenID</span><span class="p">)</span> <span class="k">as!</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">complete</span><span class="p">:</span> <span class="p">{</span> <span class="p">(</span><span class="n">isOK</span><span class="p">)</span> <span class="k">in</span>
+
+                <span class="k">if</span> <span class="n">isOK</span> <span class="p">{</span>
+                    <span class="nf">print</span><span class="p">(</span><span class="s">"isOK === yes"</span><span class="p">)</span>
+                    <span class="c1">// 如果还可以用，则直接去申请用户信息</span>
+                    <span class="k">self</span><span class="o">.</span><span class="nf">getUserInfoWithAccessToken</span><span class="p">(</span><span class="nv">accessToken</span><span class="p">:</span>  <span class="kt">USER_DEFAULT</span><span class="o">.</span><span class="nf">object</span><span class="p">(</span><span class="nv">forKey</span><span class="p">:</span> <span class="kt">WXAccessToken</span><span class="p">)</span> <span class="k">as!</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">openId</span><span class="p">:</span> <span class="kt">USER_DEFAULT</span><span class="o">.</span><span class="nf">object</span><span class="p">(</span><span class="nv">forKey</span><span class="p">:</span> <span class="kt">WXOpenID</span><span class="p">)</span> <span class="k">as!</span> <span class="kt">String</span><span class="p">)</span>
+                <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                    <span class="nf">print</span><span class="p">(</span><span class="s">"isOK === no"</span><span class="p">)</span>
+                    <span class="c1">// 如果不可以用，则调取refreshAccessToken</span>
+                    <span class="c1">// 如果存在则使用refresh_token刷新access_token</span>
+                    <span class="k">self</span><span class="o">.</span><span class="nf">refreshAccessToken</span><span class="p">(</span><span class="nv">refreshToken</span><span class="p">:</span> <span class="kt">USER_DEFAULT</span><span class="o">.</span><span class="nf">object</span><span class="p">(</span><span class="nv">forKey</span><span class="p">:</span> <span class="kt">WXRefreshToken</span><span class="p">)</span> <span class="k">as!</span> <span class="kt">String</span><span class="p">)</span>
+                <span class="p">}</span>
+
+            <span class="p">})</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="c1">// 如果不存在则直接授权</span>
+            <span class="nf">sendAuthRequest</span><span class="p">()</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="c1">/// 授权方法，直接跳转到微信进行授权</span>
+    <span class="kd">func</span> <span class="nf">sendAuthRequest</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">req</span><span class="p">:</span> <span class="kt">SendAuthReq</span> <span class="o">=</span> <span class="kt">SendAuthReq</span><span class="p">()</span>
+        <span class="n">req</span><span class="o">.</span><span class="n">scope</span> <span class="o">=</span> <span class="s">"snsapi_userinfo"</span>
+        <span class="n">req</span><span class="o">.</span><span class="n">state</span> <span class="o">=</span> <span class="s">"WechatLogTest"</span>
+        <span class="kt">WXApi</span><span class="o">.</span><span class="nf">send</span><span class="p">(</span><span class="n">req</span><span class="p">)</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="appdelegate中设置相关环境">Appdelegate中设置相关环境</h3>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="kd">func</span> <span class="nf">application</span><span class="p">(</span><span class="n">_</span> <span class="nv">application</span><span class="p">:</span> <span class="kt">UIApplication</span><span class="p">,</span> <span class="n">didFinishLaunchingWithOptions</span> <span class="nv">launchOptions</span><span class="p">:</span> <span class="p">[</span><span class="kt">UIApplicationLaunchOptionsKey</span><span class="p">:</span> <span class="kt">Any</span><span class="p">]?)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="p">{</span>
+        <span class="c1">// Override point for customization after application launch.</span>
+
+        <span class="c1">// 注册信息</span>
+        <span class="kt">WXLogTool</span><span class="o">.</span><span class="n">shared</span><span class="o">.</span><span class="nf">registerApp</span><span class="p">()</span>
+        <span class="k">return</span> <span class="kc">true</span>
+    <span class="p">}</span>
+
+    <span class="kd">func</span> <span class="nf">application</span><span class="p">(</span><span class="n">_</span> <span class="nv">app</span><span class="p">:</span> <span class="kt">UIApplication</span><span class="p">,</span> <span class="kd">open</span> <span class="nv">url</span><span class="p">:</span> <span class="kt">URL</span><span class="p">,</span> <span class="nv">options</span><span class="p">:</span> <span class="p">[</span><span class="kt">UIApplicationOpenURLOptionsKey</span> <span class="p">:</span> <span class="kt">Any</span><span class="p">]</span> <span class="o">=</span> <span class="p">[:])</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="kt">WXApi</span><span class="o">.</span><span class="nf">handleOpen</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="nv">delegate</span><span class="p">:</span> <span class="kt">WXLogTool</span><span class="o">.</span><span class="n">shared</span><span class="p">)</span> <span class="c1">// 设置代理</span>
+    <span class="p">}</span>
+
+</code></pre></div></div>
+
+            </article>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+    <footer class="footer" role="contentinfo">
+	<div class="container">
+		<p class="copyright">Copyright &copy; 2014-2017 <a href="https://anchoritefili.github.io"><code>anchoriteFili</code></a>.</p>
+		<p>Powered by <a href="http://jekyllrb.com">Jekyll</a>, themed from <a href="http://lesscss.cn/">Less</a>, refactored by <a href="http://www.hifreud.com/">Freud Kang</a></p>
+	</div>
+</footer>
+
+<script src="/styles/js/jquery.min.js"></script>
+<script src="/styles/js/bootstrap.min.js"></script>
+<script src="/styles/js/holder.min.js"></script>
+<script src="/styles/js/lessismore.js"></script>
+<script src="/styles/js/application.js"></script>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  </body>
+</html>
