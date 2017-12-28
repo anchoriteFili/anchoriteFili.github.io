@@ -25,7 +25,4 @@ Axis 2.0的入门
 算法入门和分布式缓存入门
 [http://www.cnblogs.com/huangxincheng/archive/2011/11/14/2249046.html](http://www.cnblogs.com/huangxincheng/archive/2011/11/14/2249046.html)
 
-[雷霄骅]
-=====================
-视音频编解码技术学习方法
-[http://blog.csdn.net/leixiaohua1020/article/details/18893769](http://blog.csdn.net/leixiaohua1020/article/details/18893769)
+
