@@ -15,16 +15,16 @@ tag: swift
 
 
 ### 相关链接
-[http://wiki.mob.com/快速集成/](http://wiki.mob.com/快速集成/)<br>
-[http://wiki.mob.com/swift调用/](http://wiki.mob.com/swift调用/)<br>
-[http://wiki.mob.com/适配ios-9＋系统/](http://wiki.mob.com/适配ios-9＋系统/)<br>
-[微信支付接入那些坑1-----unrecognized selector sent to instance](http://blog.csdn.net/jiaxin_1105/article/details/71124371)<br>
-[Git仓库代码](https://github.com/anchoriteFili/ShareSDKTest)<br>
+- [http://wiki.mob.com/快速集成/](http://wiki.mob.com/快速集成/)<br>
+- [http://wiki.mob.com/swift调用/](http://wiki.mob.com/swift调用/)<br>
+- [http://wiki.mob.com/适配ios-9＋系统/](http://wiki.mob.com/适配ios-9＋系统/)<br>
+- [微信支付接入那些坑1-----unrecognized selector sent to instance](http://blog.csdn.net/jiaxin_1105/article/details/71124371)<br>
+- [Git仓库代码](https://github.com/anchoriteFili/ShareSDKTest)<br>
 
 <img src="/styles/images/2017-12-25-shareSDKUse/1.png" width = "80%" />
 
 ### 1. 下载相关SDK
-[SDK下载地址](http://www.mob.com/downloadDetail/ShareSDK/ios)
+- [SDK下载地址](http://www.mob.com/downloadDetail/ShareSDK/ios)
 
 
 ```
