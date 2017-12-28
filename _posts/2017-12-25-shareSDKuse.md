@@ -21,7 +21,7 @@ tag: swift
 [微信支付接入那些坑1-----unrecognized selector sent to instance](http://blog.csdn.net/jiaxin_1105/article/details/71124371)<br>
 [Git仓库代码](https://github.com/anchoriteFili/ShareSDKTest)<br>
 
-<img src="/styles/images/2017-12-25-shareSDKUse/1.png" width = "400px" />
+<img src="/styles/images/2017-12-25-shareSDKUse/1.png" width = "80%" />
 
 ### 1. 下载相关SDK
 [SDK下载地址](http://www.mob.com/downloadDetail/ShareSDK/ios)
@@ -47,11 +47,11 @@ SDK
                     | —– ShareSDKConfigFile.framework：用xml来初始化，构造分享参数，使用的分享的方法库。用代码来初始化，构造分享参数可直接移除，下载的时候也是可根据自己的要求勾选下载的）
 ```
 
-<img src="/styles/images/2017-12-25-shareSDKUse/3.png" width = "500px" />
+<img src="/styles/images/2017-12-25-shareSDKUse/3.png" width = "80%" />
 
 ### 2. 将SDK导入到项目
 将下载的SDK文件夹拷贝到项目中->通过addFiles方法将项目导入到项目中
-<img src="/styles/images/2017-12-25-shareSDKUse/2.png" width = "300px" />
+<img src="/styles/images/2017-12-25-shareSDKUse/2.png" width = "80%" />
 
 ### 3. 配置开发环境
 * [快速集成链接](http://wiki.mob.com/快速集成/)
@@ -134,7 +134,7 @@ AssetsLibrary.framework
 
 3> 设置Other Linker Flags 添加 -Objc -all_load
 
-<img src="/styles/images/2017-12-25-shareSDKUse/1.png" width = "500px" />
+<img src="/styles/images/2017-12-25-shareSDKUse/1.png" width = "80%" />
 
 4> 在Bridging_Header中添加头文件
 
