@@ -525,65 +525,67 @@ make.top.equalTo(superview.mas_top).with.offset(padding.top); //with is an optio
   <li><a href="https://www.jiguang.cn/dev/#/app/list#dev">极光应用管理</a><br /></li>
   <li><a href="https://docs.jiguang.cn/jpush/resources/#ios-sdk">极光SDK下载</a><br /></li>
   <li><a href="https://docs.jiguang.cn/jpush/client/iOS/ios_sdk/">极光SDK文档</a><br /></li>
-  <li><a href="http://blog.csdn.net/James_1_2_1_1/article/details/73287239">iOS开发-极光推送SDK使用笔记</a><br />
-简介：极光推送，用于远程消息推送<br />
-举例：
-    <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="kt">JPushSetupWithApplication</span><span class="p">(</span><span class="n">_</span> <span class="nv">application</span><span class="p">:</span> <span class="kt">UIApplication</span><span class="p">,</span> <span class="n">didFinishLaunchingWithOptions</span> <span class="nv">launchOptions</span><span class="p">:</span> <span class="p">[</span><span class="kt">UIApplicationLaunchOptionsKey</span><span class="p">:</span> <span class="kt">Any</span><span class="p">]?)</span> <span class="p">{</span>
-
-  <span class="nf">print</span><span class="p">(</span><span class="s">"设置极光推送"</span><span class="p">)</span>
-  <span class="c1">//极光推送部署</span>
-  <span class="k">let</span> <span class="nv">entity</span> <span class="o">=</span> <span class="kt">JPUSHRegisterEntity</span><span class="o">.</span><span class="nf">init</span><span class="p">()</span>
-  <span class="kt">JPUSHService</span><span class="o">.</span><span class="nf">setBadge</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-  <span class="n">entity</span><span class="o">.</span><span class="n">types</span> <span class="o">=</span> <span class="kt">Int</span><span class="p">(</span><span class="kt">JPAuthorizationOptions</span><span class="o">.</span><span class="n">alert</span><span class="o">.</span><span class="n">rawValue</span> <span class="o">|</span> <span class="kt">JPAuthorizationOptions</span><span class="o">.</span><span class="n">sound</span><span class="o">.</span><span class="n">rawValue</span> <span class="o">|</span> <span class="kt">JPAuthorizationOptions</span><span class="o">.</span><span class="n">badge</span><span class="o">.</span><span class="n">rawValue</span><span class="p">)</span>
-  <span class="kt">JPUSHService</span><span class="o">.</span><span class="nf">register</span><span class="p">(</span><span class="nv">forRemoteNotificationConfig</span><span class="p">:</span> <span class="n">entity</span><span class="p">,</span> <span class="nv">delegate</span><span class="p">:</span> <span class="k">self</span><span class="p">)</span>
-  <span class="kt">JPUSHService</span><span class="o">.</span><span class="nf">setup</span><span class="p">(</span><span class="nv">withOption</span><span class="p">:</span> <span class="n">launchOptions</span><span class="p">,</span> <span class="nv">appKey</span><span class="p">:</span> <span class="s">"42727d5f4e9b75940b5c81e6"</span><span class="p">,</span> <span class="nv">channel</span><span class="p">:</span> <span class="s">"App Store"</span><span class="p">,</span> <span class="nv">apsForProduction</span><span class="p">:</span><span class="kc">true</span><span class="p">)</span>
-  <span class="cp">#if DEBUG</span>
-      <span class="c1">// 自己测试打tag值，方便自己测试</span>
-      <span class="k">let</span> <span class="nv">ingredients</span><span class="p">:</span> <span class="kt">Set</span> <span class="o">=</span> <span class="p">[</span><span class="s">"myself"</span><span class="p">]</span>
-      <span class="kt">JPUSHService</span><span class="o">.</span><span class="nf">setTags</span><span class="p">(</span><span class="n">ingredients</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="p">{</span> <span class="p">(</span><span class="n">iResCode</span><span class="p">,</span> <span class="n">iTags</span><span class="p">,</span> <span class="n">seq</span><span class="p">)</span> <span class="k">in</span>
-          <span class="nf">print</span><span class="p">(</span><span class="s">"tags ================ </span><span class="se">\(</span><span class="kt">String</span><span class="p">(</span><span class="nv">describing</span><span class="p">:</span> <span class="n">iTags</span><span class="p">)</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
-      <span class="p">},</span> <span class="nv">seq</span><span class="p">:</span> <span class="mi">1</span><span class="p">)</span>
-  <span class="cp">#else</span>
-      <span class="nf">print</span><span class="p">(</span><span class="s">" ************** release环境"</span><span class="p">)</span>
-  <span class="cp">#endif</span>
-
-  <span class="kt">JPUSHService</span><span class="o">.</span><span class="n">registrationIDCompletionHandler</span> <span class="p">{</span> <span class="p">(</span><span class="n">resCode</span><span class="p">,</span> <span class="n">registrationID</span><span class="p">)</span> <span class="k">in</span>
-  <span class="p">}</span>
-  <span class="kt">JPUSHService</span><span class="o">.</span><span class="nf">setLogOFF</span><span class="p">()</span>
-  <span class="nf">registerPushNotifications</span><span class="p">()</span>
-<span class="p">}</span>
-</code></pre></div>    </div>
-    <p>```swift
-@available(iOS 10.0, *) // 在点击推送过来的小框的时候点击会调取此方法
-func jpushNotificationCenter(_ center: UNUserNotificationCenter!, didReceive response: UNNotificationResponse!, withCompletionHandler completionHandler: (() -&gt; Void)!) {
-  let userInfo = response.notification.request.content.userInfo
-  if (response.notification.request.trigger?.isKind(of: UNPushNotificationTrigger.self))!{
-      JPUSHService.handleRemoteNotification(userInfo)
-      JPushManageUserInfo(userinfo: userInfo as NSDictionary)
-  }
-  completionHandler()
-}</p>
-  </li>
+  <li><a href="http://blog.csdn.net/James_1_2_1_1/article/details/73287239">iOS开发-极光推送SDK使用笔记</a></li>
 </ul>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>```swift
+<p>简介：极光推送，用于远程消息推送<br />
+举例：<br /></p>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="kt">JPushSetupWithApplication</span><span class="p">(</span><span class="n">_</span> <span class="nv">application</span><span class="p">:</span> <span class="kt">UIApplication</span><span class="p">,</span> <span class="n">didFinishLaunchingWithOptions</span> <span class="nv">launchOptions</span><span class="p">:</span> <span class="p">[</span><span class="kt">UIApplicationLaunchOptionsKey</span><span class="p">:</span> <span class="kt">Any</span><span class="p">]?)</span> <span class="p">{</span>
 
-@available(iOS 10.0, *) // 在推送提示小框将要显示的时候会调这个方法
-func jpushNotificationCenter(_ center: UNUserNotificationCenter!, willPresent notification: UNNotification!, withCompletionHandler completionHandler: ((Int) -&gt; Void)!) {
+    <span class="nf">print</span><span class="p">(</span><span class="s">"设置极光推送"</span><span class="p">)</span>
+    <span class="c1">//极光推送部署</span>
+    <span class="k">let</span> <span class="nv">entity</span> <span class="o">=</span> <span class="kt">JPUSHRegisterEntity</span><span class="o">.</span><span class="nf">init</span><span class="p">()</span>
+    <span class="kt">JPUSHService</span><span class="o">.</span><span class="nf">setBadge</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">entity</span><span class="o">.</span><span class="n">types</span> <span class="o">=</span> <span class="kt">Int</span><span class="p">(</span><span class="kt">JPAuthorizationOptions</span><span class="o">.</span><span class="n">alert</span><span class="o">.</span><span class="n">rawValue</span> <span class="o">|</span> <span class="kt">JPAuthorizationOptions</span><span class="o">.</span><span class="n">sound</span><span class="o">.</span><span class="n">rawValue</span> <span class="o">|</span> <span class="kt">JPAuthorizationOptions</span><span class="o">.</span><span class="n">badge</span><span class="o">.</span><span class="n">rawValue</span><span class="p">)</span>
+    <span class="kt">JPUSHService</span><span class="o">.</span><span class="nf">register</span><span class="p">(</span><span class="nv">forRemoteNotificationConfig</span><span class="p">:</span> <span class="n">entity</span><span class="p">,</span> <span class="nv">delegate</span><span class="p">:</span> <span class="k">self</span><span class="p">)</span>
+    <span class="kt">JPUSHService</span><span class="o">.</span><span class="nf">setup</span><span class="p">(</span><span class="nv">withOption</span><span class="p">:</span> <span class="n">launchOptions</span><span class="p">,</span> <span class="nv">appKey</span><span class="p">:</span> <span class="s">"42727d5f4e9b75940b5c81e6"</span><span class="p">,</span> <span class="nv">channel</span><span class="p">:</span> <span class="s">"App Store"</span><span class="p">,</span> <span class="nv">apsForProduction</span><span class="p">:</span><span class="kc">true</span><span class="p">)</span>
+    <span class="cp">#if DEBUG</span>
+        <span class="c1">// 自己测试打tag值，方便自己测试</span>
+        <span class="k">let</span> <span class="nv">ingredients</span><span class="p">:</span> <span class="kt">Set</span> <span class="o">=</span> <span class="p">[</span><span class="s">"myself"</span><span class="p">]</span>
+        <span class="kt">JPUSHService</span><span class="o">.</span><span class="nf">setTags</span><span class="p">(</span><span class="n">ingredients</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="p">{</span> <span class="p">(</span><span class="n">iResCode</span><span class="p">,</span> <span class="n">iTags</span><span class="p">,</span> <span class="n">seq</span><span class="p">)</span> <span class="k">in</span>
+            <span class="nf">print</span><span class="p">(</span><span class="s">"tags ================ </span><span class="se">\(</span><span class="kt">String</span><span class="p">(</span><span class="nv">describing</span><span class="p">:</span> <span class="n">iTags</span><span class="p">)</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+        <span class="p">},</span> <span class="nv">seq</span><span class="p">:</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="cp">#else</span>
+        <span class="nf">print</span><span class="p">(</span><span class="s">" ************** release环境"</span><span class="p">)</span>
+    <span class="cp">#endif</span>
 
-    let userInfo = notification.request.content.userInfo
-
-    if (notification.request.trigger?.isKind(of: UNPushNotificationTrigger.self))!{
-    //            PrintLog("iOS10 前台收到远程通知:\(userInfo)")
-        JPUSHService.handleRemoteNotification(userInfo)
-    }else {
-    // 判断为本地通知
-    //            PrintLog("iOS10 前台收到本地通知:\(userInfo)")
-    }
-    completionHandler(Int(UNAuthorizationOptions.alert.rawValue | UNAuthorizationOptions.sound.rawValue | UNAuthorizationOptions.badge.rawValue))// 需要执行这个方法，选择是否提醒用户，有badge、sound、alert三种类型可以选择设置
-
-}
+    <span class="kt">JPUSHService</span><span class="o">.</span><span class="n">registrationIDCompletionHandler</span> <span class="p">{</span> <span class="p">(</span><span class="n">resCode</span><span class="p">,</span> <span class="n">registrationID</span><span class="p">)</span> <span class="k">in</span>
+    <span class="p">}</span>
+    <span class="kt">JPUSHService</span><span class="o">.</span><span class="nf">setLogOFF</span><span class="p">()</span>
+    <span class="nf">registerPushNotifications</span><span class="p">()</span>
+<span class="p">}</span>
 </code></pre></div></div>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">@available(iOS 10.0, *)</span> <span class="c1">// 在点击推送过来的小框的时候点击会调取此方法</span>
+<span class="kd">func</span> <span class="nf">jpushNotificationCenter</span><span class="p">(</span><span class="n">_</span> <span class="nv">center</span><span class="p">:</span> <span class="kt">UNUserNotificationCenter</span><span class="o">!</span><span class="p">,</span> <span class="n">didReceive</span> <span class="nv">response</span><span class="p">:</span> <span class="kt">UNNotificationResponse</span><span class="o">!</span><span class="p">,</span> <span class="n">withCompletionHandler</span> <span class="nv">completionHandler</span><span class="p">:</span> <span class="p">(()</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span><span class="o">!</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">userInfo</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">notification</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">content</span><span class="o">.</span><span class="n">userInfo</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">notification</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">trigger</span><span class="p">?</span><span class="o">.</span><span class="nf">isKind</span><span class="p">(</span><span class="nv">of</span><span class="p">:</span> <span class="kt">UNPushNotificationTrigger</span><span class="o">.</span><span class="k">self</span><span class="p">))</span><span class="o">!</span><span class="p">{</span>
+        <span class="kt">JPUSHService</span><span class="o">.</span><span class="nf">handleRemoteNotification</span><span class="p">(</span><span class="n">userInfo</span><span class="p">)</span>
+        <span class="kt">JPushManageUserInfo</span><span class="p">(</span><span class="nv">userinfo</span><span class="p">:</span> <span class="n">userInfo</span> <span class="k">as</span> <span class="kt">NSDictionary</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="nf">completionHandler</span><span class="p">()</span>
+<span class="p">}</span>
+
+</code></pre></div></div>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kd">@available(iOS 10.0, *)</span> <span class="c1">// 在推送提示小框将要显示的时候会调这个方法</span>
+<span class="kd">func</span> <span class="nf">jpushNotificationCenter</span><span class="p">(</span><span class="n">_</span> <span class="nv">center</span><span class="p">:</span> <span class="kt">UNUserNotificationCenter</span><span class="o">!</span><span class="p">,</span> <span class="n">willPresent</span> <span class="nv">notification</span><span class="p">:</span> <span class="kt">UNNotification</span><span class="o">!</span><span class="p">,</span> <span class="n">withCompletionHandler</span> <span class="nv">completionHandler</span><span class="p">:</span> <span class="p">((</span><span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span><span class="o">!</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="k">let</span> <span class="nv">userInfo</span> <span class="o">=</span> <span class="n">notification</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">content</span><span class="o">.</span><span class="n">userInfo</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">notification</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">trigger</span><span class="p">?</span><span class="o">.</span><span class="nf">isKind</span><span class="p">(</span><span class="nv">of</span><span class="p">:</span> <span class="kt">UNPushNotificationTrigger</span><span class="o">.</span><span class="k">self</span><span class="p">))</span><span class="o">!</span><span class="p">{</span>
+    <span class="c1">//            PrintLog("iOS10 前台收到远程通知:\(userInfo)")</span>
+        <span class="kt">JPUSHService</span><span class="o">.</span><span class="nf">handleRemoteNotification</span><span class="p">(</span><span class="n">userInfo</span><span class="p">)</span>
+    <span class="p">}</span><span class="k">else</span> <span class="p">{</span>
+    <span class="c1">// 判断为本地通知</span>
+    <span class="c1">//            PrintLog("iOS10 前台收到本地通知:\(userInfo)")</span>
+    <span class="p">}</span>
+    <span class="nf">completionHandler</span><span class="p">(</span><span class="kt">Int</span><span class="p">(</span><span class="kt">UNAuthorizationOptions</span><span class="o">.</span><span class="n">alert</span><span class="o">.</span><span class="n">rawValue</span> <span class="o">|</span> <span class="kt">UNAuthorizationOptions</span><span class="o">.</span><span class="n">sound</span><span class="o">.</span><span class="n">rawValue</span> <span class="o">|</span> <span class="kt">UNAuthorizationOptions</span><span class="o">.</span><span class="n">badge</span><span class="o">.</span><span class="n">rawValue</span><span class="p">))</span><span class="c1">// 需要执行这个方法，选择是否提醒用户，有badge、sound、alert三种类型可以选择设置</span>
+
+<span class="p">}</span>
+</code></pre></div></div>
+
 <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 <span class="kd">func</span> <span class="nf">application</span><span class="p">(</span><span class="n">_</span> <span class="nv">application</span><span class="p">:</span> <span class="kt">UIApplication</span><span class="p">,</span> <span class="n">didReceiveRemoteNotification</span> <span class="nv">userInfo</span><span class="p">:</span> <span class="p">[</span><span class="kt">AnyHashable</span> <span class="p">:</span> <span class="kt">Any</span><span class="p">])</span> <span class="p">{</span>
     <span class="kt">JPUSHService</span><span class="o">.</span><span class="nf">handleRemoteNotification</span><span class="p">(</span><span class="n">userInfo</span><span class="p">)</span>
