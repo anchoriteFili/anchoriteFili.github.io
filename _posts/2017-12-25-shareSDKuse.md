@@ -3,7 +3,7 @@ layout: post
 #shareSDK用于微信登录
 title: shareSDK用于微信登录
 #时间配置
-date:   2017-12-25 10:42:21 +0800
+date:   2017-12-25 15:42:21 +0800
 #大类配置
 categories: 三方应用
 #小类配置
@@ -15,12 +15,13 @@ tag: swift
 
 
 ### 相关链接
-[http://wiki.mob.com/快速集成/](http://wiki.mob.com/快速集成/)
-[http://wiki.mob.com/swift调用/](http://wiki.mob.com/swift调用/)
-[http://wiki.mob.com/适配ios-9＋系统/](http://wiki.mob.com/适配ios-9＋系统/)
-[微信支付接入那些坑1-----unrecognized selector sent to instance](http://blog.csdn.net/jiaxin_1105/article/details/71124371)
+[http://wiki.mob.com/快速集成/](http://wiki.mob.com/快速集成/)<br>
+[http://wiki.mob.com/swift调用/](http://wiki.mob.com/swift调用/)<br>
+[http://wiki.mob.com/适配ios-9＋系统/](http://wiki.mob.com/适配ios-9＋系统/)<br>
+[微信支付接入那些坑1-----unrecognized selector sent to instance](http://blog.csdn.net/jiaxin_1105/article/details/71124371)<br>
+[Git仓库代码](https://github.com/anchoriteFili/ShareSDKTest)<br>
 
-<img src="https://images2017.cnblogs.com/blog/752372/201712/752372-20171226093315212-635272271.png" width = "400px" />
+<img src="/styles/images/2017-12-25-shareSDKUse/1.png" width = "400px" />
 
 ### 1. 下载相关SDK
 [SDK下载地址](http://www.mob.com/downloadDetail/ShareSDK/ios)
@@ -46,11 +47,11 @@ SDK
                     | —– ShareSDKConfigFile.framework：用xml来初始化，构造分享参数，使用的分享的方法库。用代码来初始化，构造分享参数可直接移除，下载的时候也是可根据自己的要求勾选下载的）
 ```
 
-<img src="https://images2017.cnblogs.com/blog/752372/201712/752372-20171226094200634-1699316681.png" width = "500px" />
+<img src="/styles/images/2017-12-25-shareSDKUse/3.png" width = "500px" />
 
 ### 2. 将SDK导入到项目
 将下载的SDK文件夹拷贝到项目中->通过addFiles方法将项目导入到项目中
-<img src="https://images2017.cnblogs.com/blog/752372/201712/752372-20171226093958915-840031191.png" width = "300px" />
+<img src="/styles/images/2017-12-25-shareSDKUse/2.png" width = "300px" />
 
 ### 3. 配置开发环境
 * [快速集成链接](http://wiki.mob.com/快速集成/)
@@ -133,11 +134,11 @@ AssetsLibrary.framework
 
 3> 设置Other Linker Flags 添加 -Objc -all_load
 
-<img src="/Users/zetafin/Pictures/Snip20171226_8.png" width = "500px" />
+<img src="/styles/images/2017-12-25-shareSDKUse/1.png" width = "500px" />
 
 4> 在Bridging_Header中添加头文件
 
-```swift
+```objc
 #import <ShareSDK/ShareSDK.h>
 #import <ShareSDKUI/ShareSDK+SSUI.h>
 #import <ShareSDKConnector/ShareSDKConnector.h>
@@ -194,10 +195,12 @@ AssetsLibrary.framework
 6> 调取获取信息方法
 
 ```swift
+
 ShareSDK.getUserInfo(.typeWechat) { (state: SSDKResponseState, user: SSDKUser?, error: Error?) in
 　　if let u = user {
 　　　　// 如果有相关信息
 　　　　print("user ************* \(u)")
  　　}
 }
+
 ```
