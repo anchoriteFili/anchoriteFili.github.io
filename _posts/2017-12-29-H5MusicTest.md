@@ -38,7 +38,6 @@ UIWebView设置
 <!-- 音乐 start-->
 <div class="musicinfo" id="musicinfo">
     <audio id="musicid" src="/styles/audio/message.mp3" preload="preload" autoplay="autoplay"  loop="loop">您的浏览器不支持 audio标签。</audio>
-    <img class="music on roate" 
 </div>
 <!-- 音乐 end-->
 <script type="text/javascript">
