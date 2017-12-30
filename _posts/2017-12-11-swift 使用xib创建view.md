@@ -16,7 +16,7 @@ tag: swift
 [swift用xib 自定义View](http://blog.csdn.net/yeshennet/article/details/51577213)<br>
 1> 创建一个view以及同名的xib
 
-![1.png](/resources/7BAE6377C5C1AA02132BC3CC0594F910.png =197x41)
+![1.png](/resources/7BAE6377C5C1AA02132BC3CC0594F910.png)
 
 2> 在view中添加下边相关代码，完成与xib的链接
 
