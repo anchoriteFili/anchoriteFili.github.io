@@ -76,18 +76,18 @@ Do you confirm generation [yes]?
 #### 查找三方库方法
 1> 终端模糊查询sdk
 ```composer search leancloud/leancloud-sdk```
-![3.png](resources/9789C56C64690B3AF84C1015E720B511.png =1134x142)
+![3.png](resources/9789C56C64690B3AF84C1015E720B511.png)
 
 2> 查询sdk版本
 ```composer show -all leancloud/leancloud-sdk```
-![4.png](resources/2AB6B7E41E26EEFB765D9A464F1F0D84.png =1132x234)
+![4.png](/styles/images/resources/2AB6B7E41E26EEFB765D9A464F1F0D84.png)
 
 3> 生成了composer.json文件
-![5.png](resources/32D3E0F287F753B20E859D2740DBDA7D.png =1330x650)
+![5.png](/styles/images/resources/32D3E0F287F753B20E859D2740DBDA7D.png)
 
 4> 运行 ```composer install``` 命令下载sdk,加载完毕
-![6.png](resources/98D9CB72BA149F552F2B5B5E649207B7.png =972x232)
-![7.png](resources/5BCCC0219A70B8A21C2A56D5066D801F.png =740x1048)
+![6.png](/styles/images/resources/98D9CB72BA149F552F2B5B5E649207B7.png)
+![7.png](/styles/images/resources/5BCCC0219A70B8A21C2A56D5066D801F.png)
 
 5> 引入头即可使用
 ```php
@@ -95,4 +95,4 @@ namespace LeanCloud;
 require "vendor/autoload.php";
 use LeanCloud\Client; 
 ```
-![8.png](resources/C94E9DC23855410E14D0718775C44AA1.png =1124x566)
+![8.png](/styles/images/resources/C94E9DC23855410E14D0718775C44AA1.png)
