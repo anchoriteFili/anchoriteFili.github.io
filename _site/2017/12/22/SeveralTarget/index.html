@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>相关博客 - 公会驻地</title>
+	<title>一个项目多个target的创建 - 公会驻地</title>
 
 	<link rel="shortcut icon" href="/styles/images/favicon.jpg">
 	<link rel="icon" href="/styles/images/favicon.jpg">
@@ -13,10 +13,10 @@
 	<link rel="stylesheet" href="/styles/css/index.css">
 	<link rel="stylesheet" href="/styles/css/fontawesome/css/font-awesome.min.css">
 	<link rel="stylesheet" href="/styles/css/syntax.css">
-	<link rel="canonical" href="/reference/">
+	<link rel="canonical" href="/2017/12/22/SeveralTarget/">
 	<link rel="alternate" type="application/rss+xml" title="公会驻地" href="/feed.xml">
 	
-	<meta name="keywords" content="相关博客, 公会驻地, 学而不思则罔;思而不学则殆;生命不止;折腾不休">
+	<meta name="keywords" content="一个项目多个target的创建, 公会驻地, 学而不思则罔;思而不学则殆;生命不止;折腾不休">
 	<meta name="description" content="学而不思则罔;思而不学则殆;生命不止;折腾不休">
 
 	<script src="/styles/js/jquery.min.js"></script>
@@ -90,8 +90,8 @@
   <div class="container">
   	
   		<!--
-		    <h1>相关博客</h1>
-		    <p>Post on  by <a href="/about">anchoriteFili</a></p>
+		    <h1>一个项目多个target的创建</h1>
+		    <p>Post on Dec 22, 2017 by <a href="/about">anchoriteFili</a></p>
 		-->
 		    <h1>躬身以待方显气度，拧首抬杠略失品格。</h1>
     
@@ -103,7 +103,8 @@
 <div class="banner">
   <div class="container">
   	
-    	学而不思则罔，思而不学则殆。
+    	<a href="/categories/#xcode功能-ref">xcode功能</a>	/
+    	<a href="/tag/#xcode-ref">xcode</a>
     
   </div>
 </div>
@@ -131,34 +132,63 @@
       <div class="panel docs-content">
         <div class="wrapper">
             <header class="post-header">
-              <h1 class="post-title">相关博客</h1>
+              <h1 class="post-title">一个项目多个target的创建</h1>
               <!--
-                <p class="post-meta"></p>
+                <p class="post-meta">Dec 22, 2017</p>
               -->
-              <div class="meta">Posted on <span class="postdate"></span> By <a target="_blank" href="http://localhost:4000">anchoriteFili</a></div>
+              <div class="meta">Posted on <span class="postdate">Dec 22, 2017</span> By <a target="_blank" href="http://localhost:4000">anchoriteFili</a></div>
               <br />
             </header>
             <article class="post-content">
               <ul id="markdown-toc">
-  <li><a href="#走向架构师之路" id="markdown-toc-走向架构师之路">走向架构师之路</a></li>
-  <li><a href="#http协议详解" id="markdown-toc-http协议详解">HTTP协议详解</a></li>
-  <li><a href="#axis-20的入门" id="markdown-toc-axis-20的入门">Axis 2.0的入门</a></li>
-  <li><a href="#一线码农" id="markdown-toc-一线码农">[一线码农]</a></li>
+  <li><a href="#引用链接" id="markdown-toc-引用链接">引用链接</a></li>
+  <li><a href="#场景一-一个项目配置多个环境" id="markdown-toc-场景一-一个项目配置多个环境">场景一： 一个项目配置多个环境</a></li>
+  <li><a href="#场景二-项目中直接创建一个整体项目target相当于另外一个项目" id="markdown-toc-场景二-项目中直接创建一个整体项目target相当于另外一个项目">场景二： 项目中直接创建一个整体项目target(相当于另外一个项目)</a></li>
 </ul>
 
-<h1 id="走向架构师之路">走向架构师之路</h1>
-<p><a href="http://blog.csdn.net/cutesource/article/details/4901506">走向架构师之路</a></p>
+<h3 id="引用链接">引用链接</h3>
+<ul>
+  <li><a href="http://www.cnblogs.com/yajunLi/p/6001132.html">iOS同一项目多个Target的快速实现方法 - 两种使用场景详解</a><br /></li>
+</ul>
 
-<h1 id="http协议详解">HTTP协议详解</h1>
-<p><a href="http://www.jmarshall.com/easy/http/">HTTP协议详解</a></p>
+<h2 id="场景一-一个项目配置多个环境">场景一： 一个项目配置多个环境</h2>
+<hr />
+<p>1&gt; 在tagets中直接添加Duplicate</p>
 
-<h1 id="axis-20的入门">Axis 2.0的入门</h1>
-<p>[曹胜欢]<a href="http://blog.csdn.net/csh624366188/article/details/8362696">http://blog.csdn.net/csh624366188/article/details/8362696</a></p>
+<p><img src="/styles/images/2017-12-22-SeveralTarget/1.png" width="80%" /></p>
 
-<h1 id="一线码农">[一线码农]</h1>
-<p>算法入门和分布式缓存入门
-<a href="http://www.cnblogs.com/huangxincheng/archive/2011/11/14/2249046.html">http://www.cnblogs.com/huangxincheng/archive/2011/11/14/2249046.html</a></p>
+<p>2&gt; 添加target并重新命名为runtimeOC</p>
 
+<p><img src="/styles/images/2017-12-22-SeveralTarget/2.png" width="80%" /></p>
+
+<p>3&gt; 修改Schemes中的名字</p>
+
+<p><img src="/styles/images/2017-12-22-SeveralTarget/3.png" width="80%" />
+<img src="/styles/images/2017-12-22-SeveralTarget/4.png" width="80%" /></p>
+
+<p>4&gt; 将自动生成的plist重新命名 -&gt; 删除 -&gt; 重新加载进入标记</p>
+
+<p><img src="/styles/images/2017-12-22-SeveralTarget/5.png" width="80%" />
+<img src="/styles/images/2017-12-22-SeveralTarget/6.png" width="80%" />
+<img src="/styles/images/2017-12-22-SeveralTarget/7.png" width="80%" />
+<img src="/styles/images/2017-12-22-SeveralTarget/8.png" width="80%" />
+<img src="/styles/images/2017-12-22-SeveralTarget/9.png" width="80%" />
+<img src="/styles/images/2017-12-22-SeveralTarget/10.png" width="80%" /></p>
+
+<p>5&gt; 在项目中定义特定的宏作为区分（OC用macros，swift用swift_flag）</p>
+
+<p><img src="/styles/images/2017-12-22-SeveralTarget/11.png" width="80%" />
+<img src="/styles/images/2017-12-22-SeveralTarget/12.png" width="80%" /></p>
+
+<p>swift在swift_flag中添加宏，并且宏必须是字符串，每个宏都要用”-D”隔开，否则失效</p>
+
+<p><img src="/styles/images/2017-12-22-SeveralTarget/13.png" width="80%" />
+<img src="/styles/images/2017-12-22-SeveralTarget/14.png" width="80%" /></p>
+
+<h2 id="场景二-项目中直接创建一个整体项目target相当于另外一个项目">场景二： 项目中直接创建一个整体项目target(相当于另外一个项目)</h2>
+<hr />
+<p><img src="/styles/images/2017-12-22-SeveralTarget/15.png" width="80%" />
+<img src="/styles/images/2017-12-22-SeveralTarget/16.png" width="80%" /></p>
 
             </article>
         </div>

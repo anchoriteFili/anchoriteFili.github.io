@@ -29,9 +29,10 @@ tag: PHP
 
 #### Composer使用
 ---
-1. 终端进入要添加三方库的项目中
-![2.png](resources/704AF286BFDA7BFD223666B3D981444A.png =1124x52)
-2. 使用命令 ```composer init``` 配置 ```composer.json``` 文件
+1. 终端进入要添加三方库的项目中<br>
+    ![2.png](/styles/images/resources/704AF286BFDA7BFD223666B3D981444A.png)<br><br>
+2. 使用命令 ```composer init``` 配置 ```composer.json``` 文件<br>
+
 ```
 macbookdeMacBook-Pro:test macbook$ composer init
   Welcome to the Composer config generator  
@@ -71,12 +72,13 @@ Search for a package:
 
 Do you confirm generation [yes]?
 ```
-也可以直接手动创建composer.json文件直接里边写数据
+也可以直接手动创建composer.json文件直接里边写数据<br><br>
 
 #### 查找三方库方法
+---
 1> 终端模糊查询sdk
 ```composer search leancloud/leancloud-sdk```
-![3.png](resources/9789C56C64690B3AF84C1015E720B511.png)
+![3.png](/styles/images/resources/9789C56C64690B3AF84C1015E720B511.png)
 
 2> 查询sdk版本
 ```composer show -all leancloud/leancloud-sdk```

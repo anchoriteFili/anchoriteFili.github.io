@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>相关博客 - 公会驻地</title>
+	<title>swift代理快速创建 - 公会驻地</title>
 
 	<link rel="shortcut icon" href="/styles/images/favicon.jpg">
 	<link rel="icon" href="/styles/images/favicon.jpg">
@@ -13,10 +13,10 @@
 	<link rel="stylesheet" href="/styles/css/index.css">
 	<link rel="stylesheet" href="/styles/css/fontawesome/css/font-awesome.min.css">
 	<link rel="stylesheet" href="/styles/css/syntax.css">
-	<link rel="canonical" href="/reference/">
+	<link rel="canonical" href="/2017/12/11/swift%E4%BB%A3%E7%90%86%E5%BF%AB%E9%80%9F%E5%88%9B%E5%BB%BA/">
 	<link rel="alternate" type="application/rss+xml" title="公会驻地" href="/feed.xml">
 	
-	<meta name="keywords" content="相关博客, 公会驻地, 学而不思则罔;思而不学则殆;生命不止;折腾不休">
+	<meta name="keywords" content="swift代理快速创建, 公会驻地, 学而不思则罔;思而不学则殆;生命不止;折腾不休">
 	<meta name="description" content="学而不思则罔;思而不学则殆;生命不止;折腾不休">
 
 	<script src="/styles/js/jquery.min.js"></script>
@@ -90,8 +90,8 @@
   <div class="container">
   	
   		<!--
-		    <h1>相关博客</h1>
-		    <p>Post on  by <a href="/about">anchoriteFili</a></p>
+		    <h1>swift代理快速创建</h1>
+		    <p>Post on Dec 11, 2017 by <a href="/about">anchoriteFili</a></p>
 		-->
 		    <h1>躬身以待方显气度，拧首抬杠略失品格。</h1>
     
@@ -103,7 +103,8 @@
 <div class="banner">
   <div class="container">
   	
-    	学而不思则罔，思而不学则殆。
+    	<a href="/categories/#快速创建-ref">快速创建</a>	/
+    	<a href="/tag/#swift-ref">swift</a>
     
   </div>
 </div>
@@ -131,34 +132,26 @@
       <div class="panel docs-content">
         <div class="wrapper">
             <header class="post-header">
-              <h1 class="post-title">相关博客</h1>
+              <h1 class="post-title">swift代理快速创建</h1>
               <!--
-                <p class="post-meta"></p>
+                <p class="post-meta">Dec 11, 2017</p>
               -->
-              <div class="meta">Posted on <span class="postdate"></span> By <a target="_blank" href="http://localhost:4000">anchoriteFili</a></div>
+              <div class="meta">Posted on <span class="postdate">Dec 11, 2017</span> By <a target="_blank" href="http://localhost:4000">anchoriteFili</a></div>
               <br />
             </header>
             <article class="post-content">
-              <ul id="markdown-toc">
-  <li><a href="#走向架构师之路" id="markdown-toc-走向架构师之路">走向架构师之路</a></li>
-  <li><a href="#http协议详解" id="markdown-toc-http协议详解">HTTP协议详解</a></li>
-  <li><a href="#axis-20的入门" id="markdown-toc-axis-20的入门">Axis 2.0的入门</a></li>
-  <li><a href="#一线码农" id="markdown-toc-一线码农">[一线码农]</a></li>
-</ul>
+              
+<p>代理快速创建<br /></p>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//  创建代理</span>
+<span class="kd">protocol</span> <span class="o">&lt;</span><span class="err">#</span><span class="kt">Class</span><span class="err">#</span><span class="o">&gt;</span><span class="kt">Delegate</span><span class="p">:</span> <span class="kt">NSObjectProtocol</span> <span class="p">{</span>
+    <span class="o">&lt;</span><span class="err">#</span><span class="n">方法</span><span class="err">#</span><span class="o">&gt;</span>
+<span class="p">}</span>
 
-<h1 id="走向架构师之路">走向架构师之路</h1>
-<p><a href="http://blog.csdn.net/cutesource/article/details/4901506">走向架构师之路</a></p>
+<span class="k">weak</span> <span class="k">var</span> <span class="nv">navDelegate</span><span class="p">:</span> <span class="o">&lt;</span><span class="err">#</span><span class="kt">Class</span><span class="err">#</span><span class="o">&gt;</span><span class="kt">Delegate</span><span class="p">?</span> <span class="c1">// 创建代理部分</span>
 
-<h1 id="http协议详解">HTTP协议详解</h1>
-<p><a href="http://www.jmarshall.com/easy/http/">HTTP协议详解</a></p>
-
-<h1 id="axis-20的入门">Axis 2.0的入门</h1>
-<p>[曹胜欢]<a href="http://blog.csdn.net/csh624366188/article/details/8362696">http://blog.csdn.net/csh624366188/article/details/8362696</a></p>
-
-<h1 id="一线码农">[一线码农]</h1>
-<p>算法入门和分布式缓存入门
-<a href="http://www.cnblogs.com/huangxincheng/archive/2011/11/14/2249046.html">http://www.cnblogs.com/huangxincheng/archive/2011/11/14/2249046.html</a></p>
-
+<span class="c1">// 代理方法的执行</span>
+<span class="n">navDelegate</span><span class="p">?</span><span class="o">.</span><span class="nf">navigationBack</span><span class="p">()</span>
+</code></pre></div></div>
 
             </article>
         </div>
