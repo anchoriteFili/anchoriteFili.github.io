@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>指纹验证 - 公会驻地</title>
+
+	<link rel="shortcut icon" href="/styles/images/favicon.jpg">
+	<link rel="icon" href="/styles/images/favicon.jpg">
+
+	<link rel="stylesheet" href="/styles/css/index.css">
+	<link rel="stylesheet" href="/styles/css/fontawesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="/styles/css/syntax.css">
+	<link rel="canonical" href="/2016/11/28/%E6%8C%87%E7%BA%B9%E9%AA%8C%E8%AF%81/">
+	<link rel="alternate" type="application/rss+xml" title="公会驻地" href="/feed.xml">
+	
+	<meta name="keywords" content="指纹验证, 公会驻地, 学而不思则罔;思而不学则殆;生命不止;折腾不休">
+	<meta name="description" content="学而不思则罔;思而不学则殆;生命不止;折腾不休">
+
+	<script src="/styles/js/jquery.min.js"></script>
+	<!--[if lt IE 9]>
+    	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  	<![endif]-->
+  	<script>
+		var _hmt = _hmt || [];
+		(function() {
+		  var hm = document.createElement("script");
+		  hm.src = "//hm.baidu.com/hm.js?94be4b0f9fc5d94cc0d0415ea6761ae9";
+		  var s = document.getElementsByTagName("script")[0]; 
+		  s.parentNode.insertBefore(hm, s);
+		})();
+	</script>
+  	<style type="text/css">
+	  	.docs-content{
+	  		margin-bottom: 10px;
+	  	}
+  	</style>
+</head>
+
+  <body class="index">
+
+    <header class="navbar navbar-inverse navbar-fixed-top docs-nav" role="banner">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="/" class="navbar-brand">
+        <img src="/styles/images/logo.jpg">
+      </a>
+    </div>
+    <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+      <ul class="nav navbar-nav">    
+        <li>
+          <a href="/">Home</a>
+        </li>
+        <li>
+          <a href="/categories/">大类分解</a>
+        </li>
+        <li>
+          <a href="/tag">小类内聚</a>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+            <a><span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span></a>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">关于<b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a rel="nofollow" target="_blank" href="https://github.com/anchoriteFili/">Github</a></li>
+            <li><a rel="nofollow" target="_blank" href="https://anchoritefili.github.io">关于作者</a></li>
+            <li><a rel="nofollow" href="/books">我的书单</a></li>
+            <li><a rel="nofollow" href="/reference">推荐博客</a></li>
+<!--            <li><a href="/feed.xml">RSS订阅</a></li>-->
+            <li class="divider"></li>
+            <li><a rel="nofollow" target="_blank" href="http://www.gonghuizhudi.com">个人官网</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+    <div class="docs-header" id="content">
+  <div class="container">
+  	
+  		<!--
+		    <h1>指纹验证</h1>
+		    <p>Post on Nov 28, 2016 by <a href="/about">anchoriteFili</a></p>
+		-->
+		    <h1>躬身以待方显气度，拧首抬杠略失品格。</h1>
+    
+  </div>
+</div>
+
+    
+      
+<div class="banner">
+  <div class="container">
+  	
+    	<a href="/categories/#知识-ref">知识</a>	/
+    	<a href="/tag/#object-c-ref">object-c</a>
+    
+  </div>
+</div>
+
+    
+
+    <div class="container docs-container">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="sidebar hidden-print" role="complementary">
+        <div id="navigation">
+  <h1>目录</h1>
+  <ul class="nav sidenav">
+  </ul>
+  <div style="height: 200px;width: 200px;">
+    <script type="text/javascript" src="//rf.revolvermaps.com/0/0/8.js?i=5ytn1ssq6za&amp;m=0&amp;c=ff0000&amp;cr1=ffffff&amp;f=arial&amp;l=33" async="async"> 
+    </script>
+  </div>
+</div>
+
+ 
+      </div>
+    </div>
+    <div class="col-md-9" role="main">
+      <div class="panel docs-content">
+        <div class="wrapper">
+            <header class="post-header">
+              <h1 class="post-title">指纹验证</h1>
+              <!--
+                <p class="post-meta">Nov 28, 2016</p>
+              -->
+              <div class="meta">Posted on <span class="postdate">Nov 28, 2016</span> By <a target="_blank" href="http://localhost:4000">anchoriteFili</a></div>
+              <br />
+            </header>
+            <article class="post-content">
+              
+<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/*
+ 操作系统最低为iOS8.0
+ 
+ 做iOS8.0下版本适配时，务必进行API验证，避免调用相关API引起崩溃。
+ 
+ 引入依赖框架：#import &lt;LocalAuthentication/LocalAuthentication.h&gt;
+ 
+ */</span>
+<span class="cp">#import "ViewController.h"
+#import &lt;Masonry.h&gt;
+#import &lt;LocalAuthentication/LocalAuthentication.h&gt;
+</span>
+
+
+<span class="k">@interface</span> <span class="nc">ViewController</span> <span class="p">()</span>
+
+<span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span> <span class="p">,</span><span class="n">strong</span><span class="p">)</span> <span class="n">UIButton</span> <span class="o">*</span><span class="n">touchBtn</span><span class="p">;</span>
+
+<span class="k">@end</span>
+
+<span class="k">@implementation</span> <span class="nc">ViewController</span>
+
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">viewDidLoad</span> <span class="p">{</span>
+    <span class="p">[</span><span class="n">super</span> <span class="nf">viewDidLoad</span><span class="p">];</span>
+    <span class="c1">// Do any additional setup after loading the view, typically from a nib.
+</span>    <span class="n">self</span><span class="p">.</span><span class="n">view</span><span class="p">.</span><span class="n">backgroundColor</span> <span class="o">=</span> <span class="p">[</span><span class="n">UIColor</span> <span class="nf">greenColor</span><span class="p">];</span>
+    
+    <span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">view</span> <span class="nf">addSubview</span><span class="p">:</span><span class="n">self</span><span class="p">.</span><span class="n">touchBtn</span><span class="p">];</span>
+    
+    <span class="n">__weak</span> <span class="n">typeof</span> <span class="p">(</span><span class="n">self</span><span class="p">)</span> <span class="n">weakSelf</span> <span class="o">=</span> <span class="n">self</span><span class="p">;</span>
+
+    <span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">touchBtn</span> <span class="nf">mas_makeConstraints</span><span class="p">:</span><span class="o">^</span><span class="p">(</span><span class="n">MASConstraintMaker</span> <span class="o">*</span><span class="n">make</span><span class="p">)</span> <span class="p">{</span>
+        
+        <span class="n">make</span><span class="p">.</span><span class="n">center</span><span class="p">.</span><span class="n">equalTo</span><span class="p">(</span><span class="n">weakSelf</span><span class="p">.</span><span class="n">view</span><span class="p">);</span>
+        <span class="n">make</span><span class="p">.</span><span class="n">size</span><span class="p">.</span><span class="n">mas_equalTo</span><span class="p">(</span><span class="n">CGSizeMake</span><span class="p">(</span><span class="mi">80</span><span class="p">,</span> <span class="mi">80</span><span class="p">));</span>
+        
+    <span class="p">}];</span>
+<span class="p">}</span>
+
+<span class="o">-</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">setLocalAuthentication</span>
+<span class="p">{</span>
+    <span class="n">LAContext</span> <span class="o">*</span> <span class="n">context</span> <span class="o">=</span> <span class="p">[[</span><span class="n">LAContext</span> <span class="nf">alloc</span><span class="p">]</span> <span class="nf">init</span><span class="p">];</span>
+    <span class="n">NSError</span> <span class="o">*</span> <span class="n">error</span> <span class="o">=</span> <span class="nb">nil</span><span class="p">;</span>
+    <span class="n">NSString</span> <span class="o">*</span> <span class="n">result</span> <span class="o">=</span> <span class="s">@"通过home键验证已有手机指纹"</span><span class="p">;</span>
+    
+    <span class="c1">//首先使用canEvaluatePolicy 判断设备支持状态
+</span>    <span class="k">if</span> <span class="p">([</span><span class="n">context</span> <span class="nf">canEvaluatePolicy</span><span class="p">:</span><span class="n">LAPolicyDeviceOwnerAuthenticationWithBiometrics</span> <span class="nf">error</span><span class="p">:</span><span class="o">&amp;</span><span class="n">error</span><span class="p">])</span>
+    <span class="p">{</span>
+        <span class="c1">//支持指纹验证
+</span>        <span class="p">[</span><span class="n">context</span> <span class="nf">evaluatePolicy</span><span class="p">:</span><span class="n">LAPolicyDeviceOwnerAuthenticationWithBiometrics</span> <span class="nf">localizedReason</span><span class="p">:</span><span class="n">result</span> <span class="n">reply</span><span class="o">:^</span><span class="p">(</span><span class="n">BOOL</span> <span class="n">success</span><span class="p">,</span> <span class="n">NSError</span> <span class="o">*</span><span class="n">error</span><span class="p">)</span> <span class="p">{</span>
+            
+            <span class="k">if</span> <span class="p">(</span><span class="n">success</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="c1">//验证成功
+</span>                
+                <span class="n">NSLog</span><span class="p">(</span><span class="s">@"-----------验证成功"</span><span class="p">);</span>
+                <span class="p">[</span><span class="n">self</span> <span class="nf">setAlertViewWithTitle</span><span class="p">:</span><span class="s">@"验证成功"</span><span class="p">];</span>
+            <span class="p">}</span>
+            <span class="k">else</span>
+            <span class="p">{</span>
+                <span class="n">NSLog</span><span class="p">(</span><span class="s">@"%@"</span><span class="p">,</span><span class="n">error</span><span class="p">.</span><span class="n">localizedDescription</span><span class="p">);</span>
+                
+                <span class="k">switch</span> <span class="p">(</span><span class="n">error</span><span class="p">.</span><span class="n">code</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="k">case</span> <span class="n">LAErrorSystemCancel</span><span class="p">:</span>
+                    <span class="p">{</span>
+                        <span class="n">NSLog</span><span class="p">(</span><span class="s">@"切换到其他APP，系统取消验证Touch ID"</span><span class="p">);</span>
+                        <span class="p">[</span><span class="n">self</span> <span class="nf">setAlertViewWithTitle</span><span class="p">:</span><span class="s">@"系统取消"</span><span class="p">];</span>
+                        <span class="k">break</span><span class="p">;</span>
+                    <span class="p">}</span>
+                    <span class="k">case</span> <span class="n">LAErrorUserCancel</span><span class="p">:</span>
+                    <span class="p">{</span>
+                        <span class="n">NSLog</span><span class="p">(</span><span class="s">@"用户取消验证Touch ID"</span><span class="p">);</span>
+                        <span class="p">[</span><span class="n">self</span> <span class="nf">setAlertViewWithTitle</span><span class="p">:</span><span class="s">@"用户取消验证"</span><span class="p">];</span>
+                        <span class="k">break</span><span class="p">;</span>
+                    <span class="p">}</span>
+                    <span class="k">case</span> <span class="n">LAErrorUserFallback</span><span class="p">:</span>
+                    <span class="p">{</span>
+                        <span class="n">NSLog</span><span class="p">(</span><span class="s">@"用户选择其他验证方式，切换主线程处理"</span><span class="p">);</span>
+                        <span class="p">[</span><span class="n">self</span> <span class="nf">setAlertViewWithTitle</span><span class="p">:</span><span class="s">@"用户选择其他验证方式"</span><span class="p">];</span>
+                        <span class="p">[[</span><span class="n">NSOperationQueue</span> <span class="nf">mainQueue</span><span class="p">]</span> <span class="nf">addOperationWithBlock</span><span class="p">:</span><span class="o">^</span><span class="p">{</span>
+
+                        <span class="p">}];</span>
+                        <span class="k">break</span><span class="p">;</span>
+                    <span class="p">}</span>
+                    <span class="k">default</span><span class="o">:</span>
+                    <span class="p">{</span>
+                        <span class="n">NSLog</span><span class="p">(</span><span class="s">@"其他情况，切换主线程处理"</span><span class="p">);</span>
+                        <span class="p">[</span><span class="n">self</span> <span class="nf">setAlertViewWithTitle</span><span class="p">:</span><span class="s">@"其他情况"</span><span class="p">];</span>
+                        <span class="p">[[</span><span class="n">NSOperationQueue</span> <span class="nf">mainQueue</span><span class="p">]</span> <span class="nf">addOperationWithBlock</span><span class="p">:</span><span class="o">^</span><span class="p">{</span>
+                            
+                        <span class="p">}];</span>
+                        <span class="k">break</span><span class="p">;</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}];</span>
+    <span class="p">}</span>
+    <span class="k">else</span>
+    <span class="p">{</span>
+        <span class="c1">//不支持指纹识别，LOG出错误详情
+</span>        
+        <span class="k">switch</span> <span class="p">(</span><span class="n">error</span><span class="p">.</span><span class="n">code</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">case</span> <span class="n">LAErrorTouchIDNotEnrolled</span><span class="p">:</span>
+            <span class="p">{</span>
+                <span class="n">NSLog</span><span class="p">(</span><span class="s">@"TouchID is not enrolled"</span><span class="p">);</span>
+                <span class="k">break</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="k">case</span> <span class="n">LAErrorPasscodeNotSet</span><span class="p">:</span>
+            <span class="p">{</span>
+                <span class="n">NSLog</span><span class="p">(</span><span class="s">@"A passcode has not been set"</span><span class="p">);</span>
+                <span class="k">break</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="k">default</span><span class="o">:</span>
+            <span class="p">{</span>
+                <span class="n">NSLog</span><span class="p">(</span><span class="s">@"TouchID not available"</span><span class="p">);</span>
+                <span class="k">break</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        
+        <span class="n">NSLog</span><span class="p">(</span><span class="s">@"不支持指纹识别"</span><span class="p">);</span>
+        <span class="p">[</span><span class="n">self</span> <span class="nf">setAlertViewWithTitle</span><span class="p">:</span><span class="s">@"不支持指纹识别"</span><span class="p">];</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+<span class="o">-</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">setAlertViewWithTitle</span><span class="o">:</span><span class="p">(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="n">title</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">([[</span><span class="n">UIDevice</span> <span class="nf">currentDevice</span><span class="p">].</span><span class="n">systemVersion</span> <span class="nf">floatValue</span><span class="p">]</span> <span class="o">&gt;=</span><span class="mi">9</span><span class="p">.</span><span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">UIAlertController</span> <span class="o">*</span><span class="n">alert</span> <span class="o">=</span> <span class="p">[</span><span class="n">UIAlertController</span> <span class="nf">alertControllerWithTitle</span><span class="p">:</span><span class="s">@"提示"</span> <span class="nf">message</span><span class="p">:</span><span class="n">title</span> <span class="n">preferredStyle</span><span class="o">:</span>  <span class="n">UIAlertControllerStyleAlert</span><span class="p">];</span>
+        <span class="p">[</span><span class="n">alert</span> <span class="nf">addAction</span><span class="p">:[</span><span class="n">UIAlertAction</span> <span class="nf">actionWithTitle</span><span class="p">:</span><span class="s">@"确定"</span> <span class="nf">style</span><span class="p">:</span><span class="n">UIAlertActionStyleDefault</span> <span class="nf">handler</span><span class="p">:</span><span class="o">^</span><span class="p">(</span><span class="n">UIAlertAction</span> <span class="o">*</span> <span class="n">_Nonnull</span> <span class="n">action</span><span class="p">)</span> <span class="p">{</span>
+        <span class="p">}]];</span>
+        <span class="p">[</span><span class="n">self</span> <span class="nf">presentViewController</span><span class="p">:</span><span class="n">alert</span> <span class="nf">animated</span><span class="p">:</span><span class="nb">true</span> <span class="n">completion</span><span class="o">:</span><span class="nb">nil</span><span class="p">];</span>
+        
+    <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+        <span class="n">UIAlertView</span> <span class="o">*</span><span class="n">alt</span> <span class="o">=</span> <span class="p">[[</span><span class="n">UIAlertView</span> <span class="nf">alloc</span><span class="p">]</span> <span class="nf">initWithTitle</span><span class="p">:</span><span class="s">@"提示"</span> <span class="nf">message</span><span class="p">:</span><span class="n">title</span> <span class="n">delegate</span><span class="o">:</span><span class="n">self</span> <span class="n">cancelButtonTitle</span><span class="o">:</span><span class="nb">nil</span> <span class="n">otherButtonTitles</span><span class="o">:</span><span class="s">@"确定"</span><span class="p">,</span> <span class="nb">nil</span><span class="p">];</span>
+        <span class="p">[</span><span class="n">alt</span> <span class="nf">show</span><span class="p">];</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="o">-</span><span class="p">(</span><span class="n">UIButton</span> <span class="o">*</span><span class="p">)</span><span class="n">touchBtn</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">_touchBtn</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">_touchBtn</span> <span class="o">=</span> <span class="p">[</span><span class="n">UIButton</span> <span class="nf">buttonWithType</span><span class="p">:</span><span class="n">UIButtonTypeCustom</span><span class="p">];</span>
+        <span class="p">[</span><span class="n">_touchBtn</span> <span class="nf">setTitle</span><span class="p">:</span><span class="s">@"指纹验证"</span> <span class="nf">forState</span><span class="p">:</span><span class="n">UIControlStateNormal</span><span class="p">];</span>
+        <span class="p">[</span><span class="n">_touchBtn</span> <span class="nf">setTitleColor</span><span class="p">:[</span><span class="n">UIColor</span> <span class="nf">redColor</span><span class="p">]</span> <span class="nf">forState</span><span class="p">:</span><span class="n">UIControlStateNormal</span><span class="p">];</span>
+        <span class="p">[</span><span class="n">_touchBtn</span> <span class="nf">setBackgroundColor</span><span class="p">:[</span><span class="n">UIColor</span> <span class="nf">yellowColor</span><span class="p">]];</span>
+        <span class="p">[</span><span class="n">_touchBtn</span> <span class="nf">addTarget</span><span class="p">:</span><span class="n">self</span> <span class="nf">action</span><span class="p">:</span><span class="k">@selector</span><span class="p">(</span><span class="n">setLocalAuthentication</span><span class="p">)</span> <span class="n">forControlEvents</span><span class="o">:</span><span class="n">UIControlEventTouchUpInside</span><span class="p">];</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">_touchBtn</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="o">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">didReceiveMemoryWarning</span> <span class="p">{</span>
+    <span class="p">[</span><span class="n">super</span> <span class="nf">didReceiveMemoryWarning</span><span class="p">];</span>
+    <span class="c1">// Dispose of any resources that can be recreated.
+</span><span class="p">}</span>
+
+
+<span class="k">@end</span>
+</code></pre></div></div>
+
+            </article>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+    <footer class="footer" role="contentinfo">
+	<div class="container">
+		<p class="copyright">Copyright &copy; 2014-2018 <a href="https://anchoritefili.github.io"><code>anchoriteFili</code></a>.</p>
+		<p>Powered by <a href="http://jekyllrb.com">Jekyll</a>, themed from <a href="http://lesscss.cn/">Less</a>, refactored by <a href="http://www.hifreud.com/">Freud Kang</a></p>
+	</div>
+</footer>
+
+<script src="/styles/js/jquery.min.js"></script>
+<script src="/styles/js/bootstrap.min.js"></script>
+<script src="/styles/js/holder.min.js"></script>
+<script src="/styles/js/lessismore.js"></script>
+<script src="/styles/js/application.js"></script>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  </body>
+</html>
