@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>腾讯Bugly的接入 - 公会驻地</title>
+
+	<link rel="shortcut icon" href="/styles/images/favicon.jpg">
+	<link rel="icon" href="/styles/images/favicon.jpg">
+
+	<link rel="stylesheet" href="/styles/css/index.css">
+	<link rel="stylesheet" href="/styles/css/fontawesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="/styles/css/syntax.css">
+	<link rel="canonical" href="/2018/01/03/%E8%85%BE%E8%AE%AFBugly%E7%9A%84%E6%8E%A5%E5%85%A5/">
+	<link rel="alternate" type="application/rss+xml" title="公会驻地" href="/feed.xml">
+	
+	<meta name="keywords" content="腾讯Bugly的接入, 公会驻地, 学而不思则罔;思而不学则殆;生命不止;折腾不休">
+	<meta name="description" content="学而不思则罔;思而不学则殆;生命不止;折腾不休">
+
+	<script src="/styles/js/jquery.min.js"></script>
+	<!--[if lt IE 9]>
+    	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  	<![endif]-->
+  	<script>
+		var _hmt = _hmt || [];
+		(function() {
+		  var hm = document.createElement("script");
+		  hm.src = "//hm.baidu.com/hm.js?94be4b0f9fc5d94cc0d0415ea6761ae9";
+		  var s = document.getElementsByTagName("script")[0]; 
+		  s.parentNode.insertBefore(hm, s);
+		})();
+	</script>
+  	<style type="text/css">
+	  	.docs-content{
+	  		margin-bottom: 10px;
+	  	}
+  	</style>
+</head>
+
+  <body class="index">
+
+    <header class="navbar navbar-inverse navbar-fixed-top docs-nav" role="banner">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="/" class="navbar-brand">
+        <img src="/styles/images/logo.jpg">
+      </a>
+    </div>
+    <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+      <ul class="nav navbar-nav">    
+        <li>
+          <a href="/">Home</a>
+        </li>
+        <li>
+          <a href="/categories/">大类分解</a>
+        </li>
+        <li>
+          <a href="/tag">小类内聚</a>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+            <a><span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span></a>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">关于<b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a rel="nofollow" target="_blank" href="https://github.com/anchoriteFili/">Github</a></li>
+            <li><a rel="nofollow" target="_blank" href="https://anchoritefili.github.io">关于作者</a></li>
+            <li><a rel="nofollow" href="/books">我的书单</a></li>
+            <li><a rel="nofollow" href="/reference">推荐博客</a></li>
+<!--            <li><a href="/feed.xml">RSS订阅</a></li>-->
+            <li class="divider"></li>
+            <li><a rel="nofollow" target="_blank" href="http://www.gonghuizhudi.com">个人官网</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+    <div class="docs-header" id="content">
+  <div class="container">
+  	
+  		<!--
+		    <h1>腾讯Bugly的接入</h1>
+		    <p>Post on Jan 03, 2018 by <a href="/about">anchoriteFili</a></p>
+		-->
+		    <h1>躬身以待方显气度，拧首抬杠略失品格。</h1>
+    
+  </div>
+</div>
+
+    
+      
+<div class="banner">
+  <div class="container">
+  	
+    	<a href="/categories/#知识-ref">知识</a>	/
+    	<a href="/tag/#swift-ref">swift</a>
+    
+  </div>
+</div>
+
+    
+
+    <div class="container docs-container">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="sidebar hidden-print" role="complementary">
+        <div id="navigation">
+  <h1>目录</h1>
+  <ul class="nav sidenav">
+  </ul>
+  <div style="height: 200px;width: 200px;">
+    <script type="text/javascript" src="//rf.revolvermaps.com/0/0/8.js?i=5ytn1ssq6za&amp;m=0&amp;c=ff0000&amp;cr1=ffffff&amp;f=arial&amp;l=33" async="async"> 
+    </script>
+  </div>
+</div>
+
+ 
+      </div>
+    </div>
+    <div class="col-md-9" role="main">
+      <div class="panel docs-content">
+        <div class="wrapper">
+            <header class="post-header">
+              <h1 class="post-title">腾讯Bugly的接入</h1>
+              <!--
+                <p class="post-meta">Jan 3, 2018</p>
+              -->
+              <div class="meta">Posted on <span class="postdate">Jan 03, 2018</span> By <a target="_blank" href="http://localhost:4000">anchoriteFili</a></div>
+              <br />
+            </header>
+            <article class="post-content">
+              <ul id="markdown-toc">
+  <li><a href="#相关引用" id="markdown-toc-相关引用">相关引用</a></li>
+  <li><a href="#导入过程" id="markdown-toc-导入过程">导入过程</a>    <ul>
+      <li><a href="#1-使用pod导入" id="markdown-toc-1-使用pod导入">1. 使用pod导入</a></li>
+      <li><a href="#2-手动接入" id="markdown-toc-2-手动接入">2. 手动接入</a></li>
+      <li><a href="#3-初始化sdk" id="markdown-toc-3-初始化sdk">3. 初始化SDK</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="相关引用">相关引用</h3>
+<hr />
+
+<ul>
+  <li><a href="https://bugly.qq.com/v2/index" target="_blank">Bugly首页</a><br /></li>
+  <li><a href="https://bugly.qq.com/v2/sdkDownload" target="_blank">SDK下载</a><br /></li>
+  <li><a href="https://bugly.qq.com/docs/user-guide/instruction-manual-ios/?v=20170912151050" target="_blank">Bugly iOS SDK 使用指南</a><br /></li>
+  <li><a href="https://bugly.qq.com/docs/user-guide/instruction-manual-ios/?v=20170912151050" target="_blank">git测试库</a><br /></li>
+</ul>
+
+<h3 id="导入过程">导入过程</h3>
+<hr />
+
+<h4 id="1-使用pod导入">1. 使用pod导入</h4>
+
+<p><code class="highlighter-rouge">pod 'Bugly'</code></p>
+
+<h4 id="2-手动接入">2. 手动接入</h4>
+<ul>
+  <li>下载<a href="https://bugly.qq.com/docs/release-notes/release-ios-bugly/" target="_blank">Bugly iOS SDK</a></li>
+  <li>拖拽<code class="highlighter-rouge">Bugly.framework</code>文件到Xcode工程内(请勾选<code class="highlighter-rouge">Copy items if needed</code>选项)</li>
+  <li>添加依赖库
+    <ul>
+      <li><code class="highlighter-rouge">SystemConfiguration.framework</code></li>
+      <li><code class="highlighter-rouge">Security.framework</code></li>
+      <li><code class="highlighter-rouge">libz.dylib</code> 或 <code class="highlighter-rouge">libz.tbd</code></li>
+      <li><code class="highlighter-rouge">libc++.dylib</code> 或 <code class="highlighter-rouge">libc++.tbd</code></li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="3-初始化sdk">3. 初始化SDK</h4>
+
+<p>在工程的 <code class="highlighter-rouge">AppDelegate.m</code> 文件导入头文件</p>
+<blockquote>
+  <p><code class="highlighter-rouge">#import &lt;Bugly/Bugly.h&gt;</code>
+如果是Swift工程，请在对应<code class="highlighter-rouge">bridging-header.h</code>中导入</p>
+</blockquote>
+
+<p>初始化Bugly</p>
+
+<ul>
+  <li>Object-C</li>
+</ul>
+
+<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="n">BOOL</span><span class="p">)</span><span class="nf">application</span><span class="p">:(</span><span class="n">UIApplication</span> <span class="o">*</span><span class="p">)</span><span class="nv">application</span> <span class="nf">didFinishLaunchingWithOptions</span><span class="p">:(</span><span class="n">NSDictionary</span> <span class="o">*</span><span class="p">)</span><span class="nv">launchOptions</span> <span class="p">{</span>
+    <span class="p">[</span><span class="n">Bugly</span> <span class="nf">startWithAppId</span><span class="p">:</span><span class="s">@"此处替换为你的AppId"</span><span class="p">];</span>
+    <span class="k">return</span> <span class="nb">YES</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li>Swift</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">application</span><span class="p">(</span><span class="nv">application</span><span class="p">:</span> <span class="kt">UIApplication</span><span class="p">,</span> <span class="n">didFinishLaunchingWithOptions</span> <span class="nv">launchOptions</span><span class="p">:</span> <span class="p">[</span><span class="kt">NSObject</span><span class="p">:</span> <span class="kt">AnyObject</span><span class="p">]?)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="p">{</span>
+    <span class="kt">Bugly</span><span class="o">.</span><span class="nf">startWithAppId</span><span class="p">(</span><span class="s">"此处替换为你的AppId"</span><span class="p">)</span>
+    <span class="k">return</span> <span class="kc">true</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li>正常的使用</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="nv">TENCENT_BUGLY_APPID</span> <span class="o">=</span> <span class="s">"900001055"</span>
+<span class="k">let</span>  <span class="nv">CHANNEL_CODE</span> <span class="o">=</span> <span class="s">"iOS"</span>
+
+
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">setupBugly</span><span class="p">()</span> <span class="p">{</span>
+        
+    <span class="k">let</span> <span class="nv">bugConfig</span> <span class="o">=</span> <span class="kt">BuglyConfig</span><span class="p">()</span>
+    <span class="n">bugConfig</span><span class="o">.</span><span class="n">channel</span> <span class="o">=</span> <span class="kt">CHANNEL_CODE</span>
+    <span class="n">bugConfig</span><span class="o">.</span><span class="n">version</span> <span class="o">=</span> <span class="kt">Bundle</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="n">infoDictionary</span><span class="o">!</span><span class="p">[</span><span class="s">"CFBundleShortVersionString"</span><span class="p">]</span> <span class="k">as!</span> <span class="kt">String</span>
+    <span class="kt">Bugly</span><span class="o">.</span><span class="nf">start</span><span class="p">(</span><span class="nv">withAppId</span><span class="p">:</span> <span class="kt">TENCENT_BUGLY_APPID</span><span class="p">,</span> <span class="nv">config</span><span class="p">:</span> <span class="n">bugConfig</span><span class="p">)</span>
+    
+<span class="p">}</span>
+
+</code></pre></div></div>
+
+            </article>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+    <footer class="footer" role="contentinfo">
+	<div class="container">
+		<p class="copyright">Copyright &copy; 2014-2018 <a href="https://anchoritefili.github.io"><code>anchoriteFili</code></a>.</p>
+		<p>Powered by <a href="http://jekyllrb.com">Jekyll</a>, themed from <a href="http://lesscss.cn/">Less</a>, refactored by <a href="http://www.hifreud.com/">Freud Kang</a></p>
+	</div>
+</footer>
+
+<script src="/styles/js/jquery.min.js"></script>
+<script src="/styles/js/bootstrap.min.js"></script>
+<script src="/styles/js/holder.min.js"></script>
+<script src="/styles/js/lessismore.js"></script>
+<script src="/styles/js/application.js"></script>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  </body>
+</html>

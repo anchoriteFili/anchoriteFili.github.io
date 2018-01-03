@@ -5,9 +5,112 @@
     <description>学习，从不止步。</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 02 Jan 2018 21:28:48 +0800</pubDate>
-    <lastBuildDate>Tue, 02 Jan 2018 21:28:48 +0800</lastBuildDate>
+    <pubDate>Wed, 03 Jan 2018 14:30:43 +0800</pubDate>
+    <lastBuildDate>Wed, 03 Jan 2018 14:30:43 +0800</lastBuildDate>
     <generator>Jekyll v3.6.2</generator>
+    
+      <item>
+        <title>腾讯Bugly的接入</title>
+        <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#相关引用&quot; id=&quot;markdown-toc-相关引用&quot;&gt;相关引用&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#导入过程&quot; id=&quot;markdown-toc-导入过程&quot;&gt;导入过程&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#1-使用pod导入&quot; id=&quot;markdown-toc-1-使用pod导入&quot;&gt;1. 使用pod导入&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#2-手动接入&quot; id=&quot;markdown-toc-2-手动接入&quot;&gt;2. 手动接入&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#3-初始化sdk&quot; id=&quot;markdown-toc-3-初始化sdk&quot;&gt;3. 初始化SDK&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;相关引用&quot;&gt;相关引用&lt;/h3&gt;
+&lt;hr /&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://bugly.qq.com/v2/index&quot; target=&quot;_blank&quot;&gt;Bugly首页&lt;/a&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://bugly.qq.com/v2/sdkDownload&quot; target=&quot;_blank&quot;&gt;SDK下载&lt;/a&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://bugly.qq.com/docs/user-guide/instruction-manual-ios/?v=20170912151050&quot; target=&quot;_blank&quot;&gt;Bugly iOS SDK 使用指南&lt;/a&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://bugly.qq.com/docs/user-guide/instruction-manual-ios/?v=20170912151050&quot; target=&quot;_blank&quot;&gt;git测试库&lt;/a&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;导入过程&quot;&gt;导入过程&lt;/h3&gt;
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;1-使用pod导入&quot;&gt;1. 使用pod导入&lt;/h4&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;pod 'Bugly'&lt;/code&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;2-手动接入&quot;&gt;2. 手动接入&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;下载&lt;a href=&quot;https://bugly.qq.com/docs/release-notes/release-ios-bugly/&quot; target=&quot;_blank&quot;&gt;Bugly iOS SDK&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;拖拽&lt;code class=&quot;highlighter-rouge&quot;&gt;Bugly.framework&lt;/code&gt;文件到Xcode工程内(请勾选&lt;code class=&quot;highlighter-rouge&quot;&gt;Copy items if needed&lt;/code&gt;选项)&lt;/li&gt;
+  &lt;li&gt;添加依赖库
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;SystemConfiguration.framework&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Security.framework&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;libz.dylib&lt;/code&gt; 或 &lt;code class=&quot;highlighter-rouge&quot;&gt;libz.tbd&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;libc++.dylib&lt;/code&gt; 或 &lt;code class=&quot;highlighter-rouge&quot;&gt;libc++.tbd&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;3-初始化sdk&quot;&gt;3. 初始化SDK&lt;/h4&gt;
+
+&lt;p&gt;在工程的 &lt;code class=&quot;highlighter-rouge&quot;&gt;AppDelegate.m&lt;/code&gt; 文件导入头文件&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#import &amp;lt;Bugly/Bugly.h&amp;gt;&lt;/code&gt;
+如果是Swift工程，请在对应&lt;code class=&quot;highlighter-rouge&quot;&gt;bridging-header.h&lt;/code&gt;中导入&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;初始化Bugly&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Object-C&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-objc highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;BOOL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;application&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UIApplication&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;application&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;didFinishLaunchingWithOptions&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSDictionary&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;launchOptions&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Bugly&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;startWithAppId&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&quot;此处替换为你的AppId&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;YES&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Swift&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;application&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;application&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UIApplication&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;didFinishLaunchingWithOptions&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;launchOptions&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;NSObject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;AnyObject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]?)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Bool&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;Bugly&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;startWithAppId&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;此处替换为你的AppId&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;正常的使用&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;TENCENT_BUGLY_APPID&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;900001055&quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt;  &lt;span class=&quot;nv&quot;&gt;CHANNEL_CODE&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;iOS&quot;&lt;/span&gt;
+
+
+&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;setupBugly&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        
+    &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;bugConfig&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;BuglyConfig&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;bugConfig&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;channel&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;CHANNEL_CODE&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;bugConfig&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;version&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Bundle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;infoDictionary&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;CFBundleShortVersionString&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as!&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;Bugly&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;start&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;withAppId&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;TENCENT_BUGLY_APPID&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bugConfig&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+</description>
+        <pubDate>Wed, 03 Jan 2018 09:50:01 +0800</pubDate>
+        <link>http://localhost:4000/2018/01/03/%E8%85%BE%E8%AE%AFBugly%E7%9A%84%E6%8E%A5%E5%85%A5/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/01/03/%E8%85%BE%E8%AE%AFBugly%E7%9A%84%E6%8E%A5%E5%85%A5/</guid>
+        
+        <category>swift</category>
+        
+        
+        <category>知识</category>
+        
+      </item>
     
       <item>
         <title>h5添加背景音乐</title>
@@ -1765,32 +1868,6 @@ AssetsLibrary.framework
         <pubDate>Mon, 11 Dec 2017 18:24:16 +0800</pubDate>
         <link>http://localhost:4000/2017/12/11/swift-%E4%BD%BF%E7%94%A8xib%E5%88%9B%E5%BB%BAview/</link>
         <guid isPermaLink="true">http://localhost:4000/2017/12/11/swift-%E4%BD%BF%E7%94%A8xib%E5%88%9B%E5%BB%BAview/</guid>
-        
-        <category>swift</category>
-        
-        
-        <category>快速创建</category>
-        
-      </item>
-    
-      <item>
-        <title>swift代理快速创建</title>
-        <description>
-&lt;p&gt;代理快速创建&lt;br /&gt;&lt;/p&gt;
-&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;//  创建代理&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;protocol&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Class&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Delegate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;NSObjectProtocol&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;方法&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;weak&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;navDelegate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Class&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Delegate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 创建代理部分&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;// 代理方法的执行&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;navDelegate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;navigationBack&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-</description>
-        <pubDate>Mon, 11 Dec 2017 17:49:16 +0800</pubDate>
-        <link>http://localhost:4000/2017/12/11/swift%E4%BB%A3%E7%90%86%E5%BF%AB%E9%80%9F%E5%88%9B%E5%BB%BA/</link>
-        <guid isPermaLink="true">http://localhost:4000/2017/12/11/swift%E4%BB%A3%E7%90%86%E5%BF%AB%E9%80%9F%E5%88%9B%E5%BB%BA/</guid>
         
         <category>swift</category>
         
