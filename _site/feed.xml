@@ -5,8 +5,8 @@
     <description>学习，从不止步。</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 04 Jan 2018 11:10:36 +0800</pubDate>
-    <lastBuildDate>Thu, 04 Jan 2018 11:10:36 +0800</lastBuildDate>
+    <pubDate>Thu, 04 Jan 2018 13:34:07 +0800</pubDate>
+    <lastBuildDate>Thu, 04 Jan 2018 13:34:07 +0800</lastBuildDate>
     <generator>Jekyll v3.6.2</generator>
     
       <item>
@@ -1301,10 +1301,19 @@ https://github.com/anchoriteFili/WechatLogTest &lt;br /&gt;
   &lt;li&gt;&lt;a href=&quot;#相关链接&quot; id=&quot;markdown-toc-相关链接&quot;&gt;相关链接&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#1-下载相关sdk&quot; id=&quot;markdown-toc-1-下载相关sdk&quot;&gt;1. 下载相关SDK&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#2-将sdk导入到项目&quot; id=&quot;markdown-toc-2-将sdk导入到项目&quot;&gt;2. 将SDK导入到项目&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#3-配置开发环境&quot; id=&quot;markdown-toc-3-配置开发环境&quot;&gt;3. 配置开发环境&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#3-配置开发环境&quot; id=&quot;markdown-toc-3-配置开发环境&quot;&gt;3. 配置开发环境&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#1-添加依赖库&quot; id=&quot;markdown-toc-1-添加依赖库&quot;&gt;1&amp;gt; 添加依赖库&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#2-在plist中配置环境只包括微信&quot; id=&quot;markdown-toc-2-在plist中配置环境只包括微信&quot;&gt;2&amp;gt; 在plist中配置环境(只包括微信)&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#3-设置other-linker-flags-添加--objc--all_load&quot; id=&quot;markdown-toc-3-设置other-linker-flags-添加--objc--all_load&quot;&gt;3&amp;gt; 设置Other Linker Flags 添加 -Objc -all_load&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#4-在bridging_header中添加头文件&quot; id=&quot;markdown-toc-4-在bridging_header中添加头文件&quot;&gt;4&amp;gt; 在Bridging_Header中添加头文件&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#5-在appdelegate中配置相关环境&quot; id=&quot;markdown-toc-5-在appdelegate中配置相关环境&quot;&gt;5&amp;gt; 在AppDelegate中配置相关环境&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#6-调取获取信息方法&quot; id=&quot;markdown-toc-6-调取获取信息方法&quot;&gt;6&amp;gt; 调取获取信息方法&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h3 id=&quot;相关链接&quot;&gt;相关链接&lt;/h3&gt;
+&lt;hr /&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;http://wiki.mob.com/快速集成/&quot; target=&quot;_blank&quot;&gt;http://wiki.mob.com/快速集成/&lt;/a&gt;&lt;br /&gt;&lt;/li&gt;
@@ -1317,6 +1326,7 @@ https://github.com/anchoriteFili/WechatLogTest &lt;br /&gt;
 &lt;p&gt;&lt;img src=&quot;/styles/images/2017-12-25-shareSDKUse/1.png&quot; width=&quot;80%&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;1-下载相关sdk&quot;&gt;1. 下载相关SDK&lt;/h3&gt;
+&lt;hr /&gt;
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;http://www.mob.com/downloadDetail/ShareSDK/ios&quot;&gt;SDK下载地址&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -1343,15 +1353,17 @@ https://github.com/anchoriteFili/WechatLogTest &lt;br /&gt;
 &lt;p&gt;&lt;img src=&quot;/styles/images/2017-12-25-shareSDKUse/3.png&quot; width=&quot;80%&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;2-将sdk导入到项目&quot;&gt;2. 将SDK导入到项目&lt;/h3&gt;
+&lt;hr /&gt;
 &lt;p&gt;将下载的SDK文件夹拷贝到项目中-&amp;gt;通过addFiles方法将项目导入到项目中
 &lt;img src=&quot;/styles/images/2017-12-25-shareSDKUse/2.png&quot; width=&quot;80%&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;3-配置开发环境&quot;&gt;3. 配置开发环境&lt;/h3&gt;
+&lt;hr /&gt;
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;http://wiki.mob.com/快速集成/&quot;&gt;快速集成链接&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;1&amp;gt; 添加依赖库&lt;/p&gt;
+&lt;h5 id=&quot;1-添加依赖库&quot;&gt;1&amp;gt; 添加依赖库&lt;/h5&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;libicucore.dylib
 libz.dylib
@@ -1377,7 +1389,7 @@ AssetsLibrary.framework
 
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;2&amp;gt; 在plist中配置环境(只包括微信)&lt;/p&gt;
+&lt;h5 id=&quot;2-在plist中配置环境只包括微信&quot;&gt;2&amp;gt; 在plist中配置环境(只包括微信)&lt;/h5&gt;
 
 &lt;div class=&quot;language-xml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;key&amp;gt;&lt;/span&gt;LSApplicationQueriesSchemes&lt;span class=&quot;nt&quot;&gt;&amp;lt;/key&amp;gt;&lt;/span&gt;
     &lt;span class=&quot;nt&quot;&gt;&amp;lt;array&amp;gt;&lt;/span&gt;
@@ -1425,18 +1437,19 @@ AssetsLibrary.framework
     &lt;span class=&quot;nt&quot;&gt;&amp;lt;string&amp;gt;&lt;/span&gt;60dbc04e6b16d2983056ae5be9b942f5&lt;span class=&quot;nt&quot;&gt;&amp;lt;/string&amp;gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;3&amp;gt; 设置Other Linker Flags 添加 -Objc -all_load&lt;/p&gt;
+&lt;h5 id=&quot;3-设置other-linker-flags-添加--objc--all_load&quot;&gt;3&amp;gt; 设置Other Linker Flags 添加 -Objc -all_load&lt;/h5&gt;
 
 &lt;p&gt;&lt;img src=&quot;/styles/images/2017-12-25-shareSDKUse/1.png&quot; width=&quot;80%&quot; /&gt;&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;－ObjC：加了这个参数后，链接器就会把静态库中所有的Objective-C类和分类都加载到最后的可执行文件中
+&lt;blockquote&gt;
+  &lt;p&gt;－ObjC：加了这个参数后，链接器就会把静态库中所有的Objective-C类和分类都加载到最后的可执行文件中&lt;/p&gt;
 
-－all_load：会让链接器把所有找到的目标文件都加载到可执行文件中，但是千万不要随便使用这个参数！假如你使用了不止一个静态库文件，然后又使用了这个参数，那么你很有可能会遇到ld: duplicate symbol错误，因为不同的库文件里面可能会有相同的目标文件，所以建议在遇到-ObjC失效的情况下使用-force_load参数。
+  &lt;p&gt;－all_load：会让链接器把所有找到的目标文件都加载到可执行文件中，但是千万不要随便使用这个参数！假如你使用了不止一个静态库文件，然后又使用了这个参数，那么你很有可能会遇到ld: duplicate symbol错误，因为不同的库文件里面可能会有相同的目标文件，所以建议在遇到-ObjC失效的情况下使用-force_load参数。&lt;/p&gt;
 
--force_load：所做的事情跟-all_load其实是一样的，但是-force_load需要指定要进行全部加载的库文件的路径，这样的话，你就只是完全加载了一个库文件，不影响其余库文件的按需加载
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+  &lt;p&gt;-force_load：所做的事情跟-all_load其实是一样的，但是-force_load需要指定要进行全部加载的库文件的路径，这样的话，你就只是完全加载了一个库文件，不影响其余库文件的按需加载&lt;/p&gt;
+&lt;/blockquote&gt;
 
-&lt;p&gt;4&amp;gt; 在Bridging_Header中添加头文件&lt;/p&gt;
+&lt;h5 id=&quot;4-在bridging_header中添加头文件&quot;&gt;4&amp;gt; 在Bridging_Header中添加头文件&lt;/h5&gt;
 
 &lt;div class=&quot;language-objc highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;#import &amp;lt;ShareSDK/ShareSDK.h&amp;gt;
 #import &amp;lt;ShareSDKUI/ShareSDK+SSUI.h&amp;gt;
@@ -1452,7 +1465,7 @@ AssetsLibrary.framework
 &lt;/span&gt;&lt;span class=&quot;cp&quot;&gt;#import &amp;lt;ShareSDKExtension/SSEThirdPartyLoginHelper.h&amp;gt;
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;5&amp;gt; 在AppDelegate中配置相关环境&lt;/p&gt;
+&lt;h5 id=&quot;5-在appdelegate中配置相关环境&quot;&gt;5&amp;gt; 在AppDelegate中配置相关环境&lt;/h5&gt;
 
 &lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cm&quot;&gt;/************************ shareSDK begin******************************/&lt;/span&gt;
     &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;setUpShareSDK&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
@@ -1490,7 +1503,7 @@ AssetsLibrary.framework
     &lt;span class=&quot;cm&quot;&gt;/************************ shareSDK end******************************/&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;6&amp;gt; 调取获取信息方法&lt;/p&gt;
+&lt;h5 id=&quot;6-调取获取信息方法&quot;&gt;6&amp;gt; 调取获取信息方法&lt;/h5&gt;
 
 &lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kt&quot;&gt;ShareSDK&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;getUserInfo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;typeWechat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;state&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;SSDKResponseState&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;user&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;SSDKUser&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;u&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;user&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;

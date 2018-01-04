@@ -144,10 +144,19 @@
   <li><a href="#相关链接" id="markdown-toc-相关链接">相关链接</a></li>
   <li><a href="#1-下载相关sdk" id="markdown-toc-1-下载相关sdk">1. 下载相关SDK</a></li>
   <li><a href="#2-将sdk导入到项目" id="markdown-toc-2-将sdk导入到项目">2. 将SDK导入到项目</a></li>
-  <li><a href="#3-配置开发环境" id="markdown-toc-3-配置开发环境">3. 配置开发环境</a></li>
+  <li><a href="#3-配置开发环境" id="markdown-toc-3-配置开发环境">3. 配置开发环境</a>    <ul>
+      <li><a href="#1-添加依赖库" id="markdown-toc-1-添加依赖库">1&gt; 添加依赖库</a></li>
+      <li><a href="#2-在plist中配置环境只包括微信" id="markdown-toc-2-在plist中配置环境只包括微信">2&gt; 在plist中配置环境(只包括微信)</a></li>
+      <li><a href="#3-设置other-linker-flags-添加--objc--all_load" id="markdown-toc-3-设置other-linker-flags-添加--objc--all_load">3&gt; 设置Other Linker Flags 添加 -Objc -all_load</a></li>
+      <li><a href="#4-在bridging_header中添加头文件" id="markdown-toc-4-在bridging_header中添加头文件">4&gt; 在Bridging_Header中添加头文件</a></li>
+      <li><a href="#5-在appdelegate中配置相关环境" id="markdown-toc-5-在appdelegate中配置相关环境">5&gt; 在AppDelegate中配置相关环境</a></li>
+      <li><a href="#6-调取获取信息方法" id="markdown-toc-6-调取获取信息方法">6&gt; 调取获取信息方法</a></li>
+    </ul>
+  </li>
 </ul>
 
 <h3 id="相关链接">相关链接</h3>
+<hr />
 
 <ul>
   <li><a href="http://wiki.mob.com/快速集成/" target="_blank">http://wiki.mob.com/快速集成/</a><br /></li>
@@ -160,6 +169,7 @@
 <p><img src="/styles/images/2017-12-25-shareSDKUse/1.png" width="80%" /></p>
 
 <h3 id="1-下载相关sdk">1. 下载相关SDK</h3>
+<hr />
 <ul>
   <li><a href="http://www.mob.com/downloadDetail/ShareSDK/ios">SDK下载地址</a></li>
 </ul>
@@ -186,15 +196,17 @@
 <p><img src="/styles/images/2017-12-25-shareSDKUse/3.png" width="80%" /></p>
 
 <h3 id="2-将sdk导入到项目">2. 将SDK导入到项目</h3>
+<hr />
 <p>将下载的SDK文件夹拷贝到项目中-&gt;通过addFiles方法将项目导入到项目中
 <img src="/styles/images/2017-12-25-shareSDKUse/2.png" width="80%" /></p>
 
 <h3 id="3-配置开发环境">3. 配置开发环境</h3>
+<hr />
 <ul>
   <li><a href="http://wiki.mob.com/快速集成/">快速集成链接</a></li>
 </ul>
 
-<p>1&gt; 添加依赖库</p>
+<h5 id="1-添加依赖库">1&gt; 添加依赖库</h5>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>libicucore.dylib
 libz.dylib
@@ -220,7 +232,7 @@ AssetsLibrary.framework
 
 </code></pre></div></div>
 
-<p>2&gt; 在plist中配置环境(只包括微信)</p>
+<h5 id="2-在plist中配置环境只包括微信">2&gt; 在plist中配置环境(只包括微信)</h5>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;key&gt;</span>LSApplicationQueriesSchemes<span class="nt">&lt;/key&gt;</span>
     <span class="nt">&lt;array&gt;</span>
@@ -268,18 +280,19 @@ AssetsLibrary.framework
     <span class="nt">&lt;string&gt;</span>60dbc04e6b16d2983056ae5be9b942f5<span class="nt">&lt;/string&gt;</span>
 </code></pre></div></div>
 
-<p>3&gt; 设置Other Linker Flags 添加 -Objc -all_load</p>
+<h5 id="3-设置other-linker-flags-添加--objc--all_load">3&gt; 设置Other Linker Flags 添加 -Objc -all_load</h5>
 
 <p><img src="/styles/images/2017-12-25-shareSDKUse/1.png" width="80%" /></p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>－ObjC：加了这个参数后，链接器就会把静态库中所有的Objective-C类和分类都加载到最后的可执行文件中
+<blockquote>
+  <p>－ObjC：加了这个参数后，链接器就会把静态库中所有的Objective-C类和分类都加载到最后的可执行文件中</p>
 
-－all_load：会让链接器把所有找到的目标文件都加载到可执行文件中，但是千万不要随便使用这个参数！假如你使用了不止一个静态库文件，然后又使用了这个参数，那么你很有可能会遇到ld: duplicate symbol错误，因为不同的库文件里面可能会有相同的目标文件，所以建议在遇到-ObjC失效的情况下使用-force_load参数。
+  <p>－all_load：会让链接器把所有找到的目标文件都加载到可执行文件中，但是千万不要随便使用这个参数！假如你使用了不止一个静态库文件，然后又使用了这个参数，那么你很有可能会遇到ld: duplicate symbol错误，因为不同的库文件里面可能会有相同的目标文件，所以建议在遇到-ObjC失效的情况下使用-force_load参数。</p>
 
--force_load：所做的事情跟-all_load其实是一样的，但是-force_load需要指定要进行全部加载的库文件的路径，这样的话，你就只是完全加载了一个库文件，不影响其余库文件的按需加载
-</code></pre></div></div>
+  <p>-force_load：所做的事情跟-all_load其实是一样的，但是-force_load需要指定要进行全部加载的库文件的路径，这样的话，你就只是完全加载了一个库文件，不影响其余库文件的按需加载</p>
+</blockquote>
 
-<p>4&gt; 在Bridging_Header中添加头文件</p>
+<h5 id="4-在bridging_header中添加头文件">4&gt; 在Bridging_Header中添加头文件</h5>
 
 <div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#import &lt;ShareSDK/ShareSDK.h&gt;
 #import &lt;ShareSDKUI/ShareSDK+SSUI.h&gt;
@@ -295,7 +308,7 @@ AssetsLibrary.framework
 </span><span class="cp">#import &lt;ShareSDKExtension/SSEThirdPartyLoginHelper.h&gt;
 </span></code></pre></div></div>
 
-<p>5&gt; 在AppDelegate中配置相关环境</p>
+<h5 id="5-在appdelegate中配置相关环境">5&gt; 在AppDelegate中配置相关环境</h5>
 
 <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/************************ shareSDK begin******************************/</span>
     <span class="kd">func</span> <span class="nf">setUpShareSDK</span><span class="p">()</span> <span class="p">{</span>
@@ -333,7 +346,7 @@ AssetsLibrary.framework
     <span class="cm">/************************ shareSDK end******************************/</span>
 </code></pre></div></div>
 
-<p>6&gt; 调取获取信息方法</p>
+<h5 id="6-调取获取信息方法">6&gt; 调取获取信息方法</h5>
 
 <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">ShareSDK</span><span class="o">.</span><span class="nf">getUserInfo</span><span class="p">(</span><span class="o">.</span><span class="n">typeWechat</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="nv">state</span><span class="p">:</span> <span class="kt">SSDKResponseState</span><span class="p">,</span> <span class="nv">user</span><span class="p">:</span> <span class="kt">SSDKUser</span><span class="p">?,</span> <span class="nv">error</span><span class="p">:</span> <span class="kt">Error</span><span class="p">?)</span> <span class="k">in</span>
     <span class="k">if</span> <span class="k">let</span> <span class="nv">u</span> <span class="o">=</span> <span class="n">user</span> <span class="p">{</span>

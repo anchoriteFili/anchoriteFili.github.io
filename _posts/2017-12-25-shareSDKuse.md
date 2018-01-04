@@ -15,6 +15,7 @@ tag: swift
 
 
 ### 相关链接
+---
 
 - <a href="http://wiki.mob.com/快速集成/" target="_blank">http://wiki.mob.com/快速集成/</a><br>
 - <a href="http://wiki.mob.com/swift调用/" target="_blank">http://wiki.mob.com/swift调用/</a><br>
@@ -27,6 +28,7 @@ tag: swift
 <img src="/styles/images/2017-12-25-shareSDKUse/1.png" width = "80%" />
 
 ### 1. 下载相关SDK
+---
 - [SDK下载地址](http://www.mob.com/downloadDetail/ShareSDK/ios)
 
 
@@ -53,13 +55,15 @@ SDK
 <img src="/styles/images/2017-12-25-shareSDKUse/3.png" width = "80%" />
 
 ### 2. 将SDK导入到项目
+---
 将下载的SDK文件夹拷贝到项目中->通过addFiles方法将项目导入到项目中
 <img src="/styles/images/2017-12-25-shareSDKUse/2.png" width = "80%" />
 
 ### 3. 配置开发环境
+---
 * [快速集成链接](http://wiki.mob.com/快速集成/)
 
-1> 添加依赖库
+##### 1> 添加依赖库
 
 ```
 libicucore.dylib
@@ -86,7 +90,7 @@ AssetsLibrary.framework
 
 ```
 
-2> 在plist中配置环境(只包括微信)
+##### 2> 在plist中配置环境(只包括微信)
 
 ```xml
 <key>LSApplicationQueriesSchemes</key>
@@ -135,19 +139,19 @@ AssetsLibrary.framework
     <string>60dbc04e6b16d2983056ae5be9b942f5</string>
 ```
 
-3> 设置Other Linker Flags 添加 -Objc -all_load
+##### 3> 设置Other Linker Flags 添加 -Objc -all_load
 
 <img src="/styles/images/2017-12-25-shareSDKUse/1.png" width = "80%" />
 
-```
-－ObjC：加了这个参数后，链接器就会把静态库中所有的Objective-C类和分类都加载到最后的可执行文件中
 
-－all_load：会让链接器把所有找到的目标文件都加载到可执行文件中，但是千万不要随便使用这个参数！假如你使用了不止一个静态库文件，然后又使用了这个参数，那么你很有可能会遇到ld: duplicate symbol错误，因为不同的库文件里面可能会有相同的目标文件，所以建议在遇到-ObjC失效的情况下使用-force_load参数。
+> －ObjC：加了这个参数后，链接器就会把静态库中所有的Objective-C类和分类都加载到最后的可执行文件中
+>
+> －all_load：会让链接器把所有找到的目标文件都加载到可执行文件中，但是千万不要随便使用这个参数！假如你使用了不止一个静态库文件，然后又使用了这个参数，那么你很有可能会遇到ld: duplicate symbol错误，因为不同的库文件里面可能会有相同的目标文件，所以建议在遇到-ObjC失效的情况下使用-force_load参数。
+>
+> -force_load：所做的事情跟-all_load其实是一样的，但是-force_load需要指定要进行全部加载的库文件的路径，这样的话，你就只是完全加载了一个库文件，不影响其余库文件的按需加载
 
--force_load：所做的事情跟-all_load其实是一样的，但是-force_load需要指定要进行全部加载的库文件的路径，这样的话，你就只是完全加载了一个库文件，不影响其余库文件的按需加载
-```
 
-4> 在Bridging_Header中添加头文件
+##### 4> 在Bridging_Header中添加头文件
 
 ```objc
 #import <ShareSDK/ShareSDK.h>
@@ -164,7 +168,7 @@ AssetsLibrary.framework
 #import <ShareSDKExtension/SSEThirdPartyLoginHelper.h>
 ```
 
-5> 在AppDelegate中配置相关环境
+##### 5> 在AppDelegate中配置相关环境
 
 ```swift
 /************************ shareSDK begin******************************/
@@ -203,7 +207,7 @@ AssetsLibrary.framework
     /************************ shareSDK end******************************/
 ```
 
-6> 调取获取信息方法
+##### 6> 调取获取信息方法
 
 ```swift
 ShareSDK.getUserInfo(.typeWechat) { (state: SSDKResponseState, user: SSDKUser?, error: Error?) in

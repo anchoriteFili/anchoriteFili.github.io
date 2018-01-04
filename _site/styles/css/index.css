@@ -54,6 +54,7 @@ abbr[title] {
 b,
 strong {
   font-weight: bold;
+  color: #051ada
 }
 dfn {
   font-style: italic;
@@ -306,16 +307,23 @@ cite {
 h1,
 h2,
 h3,
-h4,
 .h1,
 .h2,
-.h3,
+.h3 {
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, 'Microsoft YaHei', sans-serif, "Open Sans", "Helvetica Neue", Helvetica, Arial, 'Microsoft YaHei', sans-serif;
+  font-weight: 500;
+  line-height: 1.5;
+  color: inherit;
+}
+
+h4,
 .h4 {
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, 'Microsoft YaHei', sans-serif, "Open Sans", "Helvetica Neue", Helvetica, Arial, 'Microsoft YaHei', sans-serif;
   font-weight: 500;
-  line-height: 1.1;
-  color: inherit;
+  line-height: 1.5;
+  color: #051ada;
 }
+
 
 
 
@@ -325,7 +333,7 @@ h6,
 .h6 {
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, 'Microsoft YaHei', sans-serif, "Open Sans", "Helvetica Neue", Helvetica, Arial, 'Microsoft YaHei', sans-serif;
   font-weight: 500;
-  line-height: 1.1;
+  line-height: 1.5;
   color: #f31010;
 }
 
@@ -499,6 +507,8 @@ blockquote {
   padding: 10px 20px;
   margin: 0 0 20px;
   border-left: 4px solid #eeeeee;
+  border-right: 4px solid #eeeeee;
+  background-color: #f0fefe
 }
 blockquote p {
   color: #7a7a7a;
