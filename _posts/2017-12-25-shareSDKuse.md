@@ -15,11 +15,14 @@ tag: swift
 
 
 ### 相关链接
-- [http://wiki.mob.com/快速集成/](http://wiki.mob.com/快速集成/)<br>
-- [http://wiki.mob.com/swift调用/](http://wiki.mob.com/swift调用/)<br>
-- [http://wiki.mob.com/适配ios-9＋系统/](http://wiki.mob.com/适配ios-9＋系统/)<br>
-- [微信支付接入那些坑1-----unrecognized selector sent to instance](http://blog.csdn.net/jiaxin_1105/article/details/71124371)<br>
-- [Git仓库代码](https://github.com/anchoriteFili/ShareSDKTest)<br>
+
+- <a href="http://wiki.mob.com/快速集成/" target="_blank">http://wiki.mob.com/快速集成/</a><br>
+- <a href="http://wiki.mob.com/swift调用/" target="_blank">http://wiki.mob.com/swift调用/</a><br>
+- <a href="http://wiki.mob.com/适配ios-9＋系统/" target="_blank">http://wiki.mob.com/适配ios-9＋系统/</a><br>
+- <a href="http://blog.csdn.net/jiaxin_1105/article/details/71124371" target="_blank">微信支付接入那些坑1-----unrecognized selector sent to instance</a><br>
+- <a href="https://github.com/anchoriteFili/ShareSDKTest" target="_blank">Git仓库代码</a><br>
+
+
 
 <img src="/styles/images/2017-12-25-shareSDKUse/1.png" width = "80%" />
 
@@ -136,6 +139,14 @@ AssetsLibrary.framework
 
 <img src="/styles/images/2017-12-25-shareSDKUse/1.png" width = "80%" />
 
+```
+－ObjC：加了这个参数后，链接器就会把静态库中所有的Objective-C类和分类都加载到最后的可执行文件中
+
+－all_load：会让链接器把所有找到的目标文件都加载到可执行文件中，但是千万不要随便使用这个参数！假如你使用了不止一个静态库文件，然后又使用了这个参数，那么你很有可能会遇到ld: duplicate symbol错误，因为不同的库文件里面可能会有相同的目标文件，所以建议在遇到-ObjC失效的情况下使用-force_load参数。
+
+-force_load：所做的事情跟-all_load其实是一样的，但是-force_load需要指定要进行全部加载的库文件的路径，这样的话，你就只是完全加载了一个库文件，不影响其余库文件的按需加载
+```
+
 4> 在Bridging_Header中添加头文件
 
 ```objc
@@ -195,12 +206,15 @@ AssetsLibrary.framework
 6> 调取获取信息方法
 
 ```swift
-
 ShareSDK.getUserInfo(.typeWechat) { (state: SSDKResponseState, user: SSDKUser?, error: Error?) in
-　　if let u = user {
-　　　　// 如果有相关信息
-　　　　print("user ************* \(u)")
- 　　}
+    if let u = user {
+       // 如果有相关信息
+       print("user ************* \(u)")
+    }
 }
-
 ```
+
+
+
+
+
