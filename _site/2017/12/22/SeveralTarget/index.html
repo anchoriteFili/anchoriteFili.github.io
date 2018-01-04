@@ -142,31 +142,41 @@
             <article class="post-content">
               <ul id="markdown-toc">
   <li><a href="#引用链接" id="markdown-toc-引用链接">引用链接</a></li>
-  <li><a href="#场景一-一个项目配置多个环境" id="markdown-toc-场景一-一个项目配置多个环境">场景一： 一个项目配置多个环境</a></li>
+  <li><a href="#场景一-一个项目配置多个环境" id="markdown-toc-场景一-一个项目配置多个环境">场景一： 一个项目配置多个环境</a>    <ul>
+      <li><a href="#1-在tagets中直接添加duplicate" id="markdown-toc-1-在tagets中直接添加duplicate">1&gt; 在tagets中直接添加Duplicate</a></li>
+      <li><a href="#2-添加target并重新命名为runtimeoc" id="markdown-toc-2-添加target并重新命名为runtimeoc">2&gt; 添加target并重新命名为runtimeOC</a></li>
+      <li><a href="#3-修改schemes中的名字" id="markdown-toc-3-修改schemes中的名字">3&gt; 修改Schemes中的名字</a></li>
+      <li><a href="#4-将自动生成的plist重新命名---删除---重新加载进入标记" id="markdown-toc-4-将自动生成的plist重新命名---删除---重新加载进入标记">4&gt; 将自动生成的plist重新命名 -&gt; 删除 -&gt; 重新加载进入标记</a></li>
+      <li><a href="#5-在项目中定义特定的宏作为区分oc用macrosswift用swift_flag" id="markdown-toc-5-在项目中定义特定的宏作为区分oc用macrosswift用swift_flag">5&gt; 在项目中定义特定的宏作为区分（OC用macros，swift用swift_flag）</a></li>
+    </ul>
+  </li>
   <li><a href="#场景二-项目中直接创建一个整体项目target相当于另外一个项目" id="markdown-toc-场景二-项目中直接创建一个整体项目target相当于另外一个项目">场景二： 项目中直接创建一个整体项目target(相当于另外一个项目)</a></li>
 </ul>
 
 <h3 id="引用链接">引用链接</h3>
+<hr />
+
 <ul>
-  <li><a href="http://www.cnblogs.com/yajunLi/p/6001132.html">iOS同一项目多个Target的快速实现方法 - 两种使用场景详解</a><br /></li>
+  <li><a href="http://www.cnblogs.com/yajunLi/p/6001132.html">iOS同一项目多个Target的快速实现方法 - 两种使用场景详解</a></li>
 </ul>
 
-<h2 id="场景一-一个项目配置多个环境">场景一： 一个项目配置多个环境</h2>
+<h3 id="场景一-一个项目配置多个环境">场景一： 一个项目配置多个环境</h3>
 <hr />
-<p>1&gt; 在tagets中直接添加Duplicate</p>
+
+<h5 id="1-在tagets中直接添加duplicate">1&gt; 在tagets中直接添加Duplicate</h5>
 
 <p><img src="/styles/images/2017-12-22-SeveralTarget/1.png" width="80%" /></p>
 
-<p>2&gt; 添加target并重新命名为runtimeOC</p>
+<h5 id="2-添加target并重新命名为runtimeoc">2&gt; 添加target并重新命名为runtimeOC</h5>
 
 <p><img src="/styles/images/2017-12-22-SeveralTarget/2.png" width="80%" /></p>
 
-<p>3&gt; 修改Schemes中的名字</p>
+<h5 id="3-修改schemes中的名字">3&gt; 修改Schemes中的名字</h5>
 
 <p><img src="/styles/images/2017-12-22-SeveralTarget/3.png" width="80%" />
 <img src="/styles/images/2017-12-22-SeveralTarget/4.png" width="80%" /></p>
 
-<p>4&gt; 将自动生成的plist重新命名 -&gt; 删除 -&gt; 重新加载进入标记</p>
+<h5 id="4-将自动生成的plist重新命名---删除---重新加载进入标记">4&gt; 将自动生成的plist重新命名 -&gt; 删除 -&gt; 重新加载进入标记</h5>
 
 <p><img src="/styles/images/2017-12-22-SeveralTarget/5.png" width="80%" />
 <img src="/styles/images/2017-12-22-SeveralTarget/6.png" width="80%" />
@@ -175,17 +185,19 @@
 <img src="/styles/images/2017-12-22-SeveralTarget/9.png" width="80%" />
 <img src="/styles/images/2017-12-22-SeveralTarget/10.png" width="80%" /></p>
 
-<p>5&gt; 在项目中定义特定的宏作为区分（OC用macros，swift用swift_flag）</p>
+<h5 id="5-在项目中定义特定的宏作为区分oc用macrosswift用swift_flag">5&gt; 在项目中定义特定的宏作为区分（OC用macros，swift用swift_flag）</h5>
 
 <p><img src="/styles/images/2017-12-22-SeveralTarget/11.png" width="80%" />
 <img src="/styles/images/2017-12-22-SeveralTarget/12.png" width="80%" /></p>
 
-<p>swift在swift_flag中添加宏，并且宏必须是字符串，每个宏都要用”-D”隔开，否则失效</p>
+<blockquote>
+  <p>swift在swift_flag中添加宏，并且宏必须是字符串，每个宏都要用”-D”隔开，否则失效</p>
+</blockquote>
 
 <p><img src="/styles/images/2017-12-22-SeveralTarget/13.png" width="80%" />
 <img src="/styles/images/2017-12-22-SeveralTarget/14.png" width="80%" /></p>
 
-<h2 id="场景二-项目中直接创建一个整体项目target相当于另外一个项目">场景二： 项目中直接创建一个整体项目target(相当于另外一个项目)</h2>
+<h3 id="场景二-项目中直接创建一个整体项目target相当于另外一个项目">场景二： 项目中直接创建一个整体项目target(相当于另外一个项目)</h3>
 <hr />
 <p><img src="/styles/images/2017-12-22-SeveralTarget/15.png" width="80%" />
 <img src="/styles/images/2017-12-22-SeveralTarget/16.png" width="80%" /></p>

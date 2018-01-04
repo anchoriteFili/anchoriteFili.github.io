@@ -144,9 +144,11 @@
   <li><a href="#app中环境配置" id="markdown-toc-app中环境配置">app中环境配置</a></li>
 </ul>
 
-<h4 id="app中环境配置">app中环境配置</h4>
-<p><a href="http://blog.csdn.net/yinyakun/article/details/53992474">ios WKWebView 和UIWebView 播放没有声音的方案</a><br />
-WKWebView设置</p>
+<h3 id="app中环境配置">app中环境配置</h3>
+<hr />
+<p><a href="http://blog.csdn.net/yinyakun/article/details/53992474">ios WKWebView 和UIWebView 播放没有声音的方案</a></p>
+
+<p><strong>WKWebView设置</strong></p>
 <div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">WKWebViewConfiguration</span> <span class="o">*</span><span class="n">config</span> <span class="o">=</span> <span class="p">[[</span><span class="n">WKWebViewConfiguration</span> <span class="nf">alloc</span><span class="p">]</span> <span class="nf">init</span><span class="p">];</span>  
     <span class="n">config</span><span class="p">.</span><span class="n">allowsInlineMediaPlayback</span> <span class="o">=</span> <span class="nb">YES</span><span class="p">;</span>  
     <span class="n">config</span><span class="p">.</span><span class="n">mediaPlaybackRequiresUserAction</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>  
@@ -157,7 +159,8 @@ WKWebView设置</p>
 
 </code></pre></div></div>
 
-<p>UIWebView设置</p>
+<p><strong>UIWebView设置</strong></p>
+
 <div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">webView</span> <span class="nf">setMediaPlaybackRequiresUserAction</span><span class="p">:</span><span class="nb">NO</span><span class="p">];</span>
 </code></pre></div></div>
 

@@ -148,29 +148,29 @@
 
 <h5 id="相关命令">相关命令</h5>
 <hr />
-<p>你可以按如下命令来生成 sshkey:</p>
+<p><code class="highlighter-rouge">你可以按如下命令来生成 sshkey:</code></p>
 
 <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh-keygen <span class="nt">-t</span> rsa <span class="nt">-C</span> <span class="s2">"xxxxx@xxxxx.com"</span>  
 <span class="c"># Generating public/private rsa key pair...</span>
 <span class="c"># 三次回车即可生成 ssh key</span>
 </code></pre></div></div>
 
-<p>查看你的 public key</p>
+<p><code class="highlighter-rouge">查看你的 public key</code></p>
 
 <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cat</span> ~/.ssh/id_rsa.pub
 <span class="c"># ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC6eNtGpNGwstc....</span>
 </code></pre></div></div>
 
-<p>添加后，在终端（Terminal）中输入</p>
+<p><code class="highlighter-rouge">添加后，在终端（Terminal）中输入</code></p>
 
 <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh <span class="nt">-T</span> git@gitee.com
 </code></pre></div></div>
 
-<p>若返回</p>
+<p><code class="highlighter-rouge">若返回</code></p>
 
 <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Welcome to Gitee.com, yourname!
 </code></pre></div></div>
-<p>表示公钥添加成功</p>
+<p><code class="highlighter-rouge">表示公钥添加成功</code></p>
 
             </article>
         </div>

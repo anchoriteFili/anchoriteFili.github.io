@@ -427,6 +427,7 @@ ol {
   margin-top: 0;
   margin-bottom: 10px;
   padding-left: 20px;
+  color: #051ada;
 }
 ul ul,
 ol ul,
@@ -511,9 +512,9 @@ blockquote {
   background-color: #f0fefe
 }
 blockquote p {
-  color: #7a7a7a;
+  color: #7a00ff;
   font-weight: 300;
-  line-height: 1.25;
+  line-height: 1.6;
 }
 blockquote p:last-child {
   margin-bottom: 0;
@@ -6126,6 +6127,7 @@ body {
   color: #333333;
   background-color: #f7f7f7;
 }
+
 input,
 button,
 select,

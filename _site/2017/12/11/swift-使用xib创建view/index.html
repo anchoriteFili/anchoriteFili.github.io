@@ -140,13 +140,19 @@
               <br />
             </header>
             <article class="post-content">
-              
-<p><a href="http://blog.csdn.net/yeshennet/article/details/51577213">swift用xib 自定义View</a><br />
-1&gt; 创建一个view以及同名的xib</p>
+              <ul id="markdown-toc">
+  <li><a href="#1-创建一个view以及同名的xib" id="markdown-toc-1-创建一个view以及同名的xib">1&gt; 创建一个view以及同名的xib</a></li>
+  <li><a href="#2-在view中添加下边相关代码完成与xib的链接" id="markdown-toc-2-在view中添加下边相关代码完成与xib的链接">2&gt; 在view中添加下边相关代码，完成与xib的链接</a></li>
+  <li><a href="#3-使用初始化方法创建view" id="markdown-toc-3-使用初始化方法创建view">3&gt; 使用初始化方法创建view</a></li>
+</ul>
+
+<p><strong>参考链接：</strong><a href="http://blog.csdn.net/yeshennet/article/details/51577213">swift用xib 自定义View</a></p>
+
+<h5 id="1-创建一个view以及同名的xib">1&gt; 创建一个view以及同名的xib</h5>
 
 <p><img src="/styles/images/resources/7BAE6377C5C1AA02132BC3CC0594F910.png" alt="" /></p>
 
-<p>2&gt; 在view中添加下边相关代码，完成与xib的链接</p>
+<h5 id="2-在view中添加下边相关代码完成与xib的链接">2&gt; 在view中添加下边相关代码，完成与xib的链接</h5>
 
 <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 初始化方法</span>
 <span class="kd">static</span> <span class="kd">func</span> <span class="nf">newInstance</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">NetStateView</span><span class="p">?{</span>
@@ -166,7 +172,7 @@
     <span class="p">}</span>
 </code></pre></div></div>
 
-<p>3&gt; 使用初始化方法创建view</p>
+<h5 id="3-使用初始化方法创建view">3&gt; 使用初始化方法创建view</h5>
 
 <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">lazy</span> <span class="k">var</span> <span class="nv">netStateView</span><span class="p">:</span> <span class="kt">NetStateView</span> <span class="o">=</span> <span class="p">{</span>
         <span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">NetStateView</span> <span class="k">in</span>

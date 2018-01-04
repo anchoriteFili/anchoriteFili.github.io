@@ -5,8 +5,8 @@
     <description>学习，从不止步。</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 04 Jan 2018 13:34:07 +0800</pubDate>
-    <lastBuildDate>Thu, 04 Jan 2018 13:34:07 +0800</lastBuildDate>
+    <pubDate>Thu, 04 Jan 2018 20:07:23 +0800</pubDate>
+    <lastBuildDate>Thu, 04 Jan 2018 20:07:23 +0800</lastBuildDate>
     <generator>Jekyll v3.6.2</generator>
     
       <item>
@@ -54,13 +54,14 @@
 
 &lt;h4 id=&quot;3-初始化sdk&quot;&gt;3. 初始化SDK&lt;/h4&gt;
 
-&lt;p&gt;在工程的 &lt;code class=&quot;highlighter-rouge&quot;&gt;AppDelegate.m&lt;/code&gt; 文件导入头文件&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;在工程的 &lt;code class=&quot;highlighter-rouge&quot;&gt;AppDelegate.m&lt;/code&gt; 文件导入头文件&lt;/strong&gt;&lt;/p&gt;
+
 &lt;blockquote&gt;
   &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;#import &amp;lt;Bugly/Bugly.h&amp;gt;&lt;/code&gt;
 如果是Swift工程，请在对应&lt;code class=&quot;highlighter-rouge&quot;&gt;bridging-header.h&lt;/code&gt;中导入&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;初始化Bugly&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;初始化Bugly&lt;/strong&gt;&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;Object-C&lt;/li&gt;
@@ -118,9 +119,11 @@
   &lt;li&gt;&lt;a href=&quot;#app中环境配置&quot; id=&quot;markdown-toc-app中环境配置&quot;&gt;app中环境配置&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&quot;app中环境配置&quot;&gt;app中环境配置&lt;/h4&gt;
-&lt;p&gt;&lt;a href=&quot;http://blog.csdn.net/yinyakun/article/details/53992474&quot;&gt;ios WKWebView 和UIWebView 播放没有声音的方案&lt;/a&gt;&lt;br /&gt;
-WKWebView设置&lt;/p&gt;
+&lt;h3 id=&quot;app中环境配置&quot;&gt;app中环境配置&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;a href=&quot;http://blog.csdn.net/yinyakun/article/details/53992474&quot;&gt;ios WKWebView 和UIWebView 播放没有声音的方案&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;WKWebView设置&lt;/strong&gt;&lt;/p&gt;
 &lt;div class=&quot;language-objc highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;WKWebViewConfiguration&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;config&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;WKWebViewConfiguration&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;alloc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;  
     &lt;span class=&quot;n&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;allowsInlineMediaPlayback&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;YES&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
     &lt;span class=&quot;n&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mediaPlaybackRequiresUserAction&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
@@ -131,7 +134,8 @@ WKWebView设置&lt;/p&gt;
 
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;UIWebView设置&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;UIWebView设置&lt;/strong&gt;&lt;/p&gt;
+
 &lt;div class=&quot;language-objc highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;webView&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;setMediaPlaybackRequiresUserAction&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;NO&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
@@ -189,25 +193,36 @@ WKWebView设置&lt;/p&gt;
       <item>
         <title>微信登录简单封装</title>
         <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#接入流程&quot; id=&quot;markdown-toc-接入流程&quot;&gt;接入流程&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#plist中环境的设置&quot; id=&quot;markdown-toc-plist中环境的设置&quot;&gt;plist中环境的设置&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#创建hyhttptoolswift&quot; id=&quot;markdown-toc-创建hyhttptoolswift&quot;&gt;创建HYHttpTool.swift&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#appdelegate中设置相关环境&quot; id=&quot;markdown-toc-appdelegate中设置相关环境&quot;&gt;Appdelegate中设置相关环境&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#相关资料&quot; id=&quot;markdown-toc-相关资料&quot;&gt;相关资料&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#接入流程&quot; id=&quot;markdown-toc-接入流程&quot;&gt;接入流程&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#podfile信息&quot; id=&quot;markdown-toc-podfile信息&quot;&gt;Podfile信息&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#plist中环境的设置&quot; id=&quot;markdown-toc-plist中环境的设置&quot;&gt;plist中环境的设置&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#创建hyhttptoolswift&quot; id=&quot;markdown-toc-创建hyhttptoolswift&quot;&gt;创建HYHttpTool.swift&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#appdelegate中设置相关环境&quot; id=&quot;markdown-toc-appdelegate中设置相关环境&quot;&gt;Appdelegate中设置相关环境&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;相关资料&quot;&gt;相关资料&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://open.weixin.qq.com/cgi-bin/showdocument?action=dir_list&amp;amp;t=resource/res_list&amp;amp;verify=1&amp;amp;id=1417694084&amp;amp;token=&amp;amp;lang=zh_CN&quot;&gt;iOS接入指南&lt;/a&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://open.weixin.qq.com/cgi-bin/showdocument?action=dir_list&amp;amp;t=resource/res_list&amp;amp;verify=1&amp;amp;id=open1419317851&amp;amp;token=&amp;amp;lang=zh_CN&quot;&gt;移动应用微信登录开发指南&lt;/a&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.cnblogs.com/AnchoriteFiliGod/diary/2017/12/21/8080913.html&quot;&gt;个人日记保存点&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h3 id=&quot;接入流程&quot;&gt;接入流程&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;h4 id=&quot;podfile信息&quot;&gt;Podfile信息&lt;/h4&gt;
+
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;target 'WechatLogTest' do
 end
 platform :ios, '8.0'
 use_frameworks!
 pod 'WechatOpenSDK'
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;相关资料：&lt;br /&gt;
-&lt;a href=&quot;https://open.weixin.qq.com/cgi-bin/showdocument?action=dir_list&amp;amp;t=resource/res_list&amp;amp;verify=1&amp;amp;id=1417694084&amp;amp;token=&amp;amp;lang=zh_CN&quot;&gt;iOS接入指南&lt;/a&gt;&lt;br /&gt;
-&lt;a href=&quot;https://open.weixin.qq.com/cgi-bin/showdocument?action=dir_list&amp;amp;t=resource/res_list&amp;amp;verify=1&amp;amp;id=open1419317851&amp;amp;token=&amp;amp;lang=zh_CN&quot;&gt;移动应用微信登录开发指南&lt;/a&gt;&lt;br /&gt;
-&lt;a href=&quot;http://www.cnblogs.com/AnchoriteFiliGod/diary/2017/12/21/8080913.html&quot;&gt;个人日记保存点&lt;/a&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;plist中环境的设置&quot;&gt;plist中环境的设置&lt;/h3&gt;
+&lt;h4 id=&quot;plist中环境的设置&quot;&gt;plist中环境的设置&lt;/h4&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;key&amp;gt;LSApplicationQueriesSchemes&amp;lt;/key&amp;gt;
 	&amp;lt;array&amp;gt;
@@ -253,7 +268,7 @@ pod 'WechatOpenSDK'
     &amp;lt;/dict&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;h3 id=&quot;创建hyhttptoolswift&quot;&gt;创建HYHttpTool.swift&lt;/h3&gt;
+&lt;h4 id=&quot;创建hyhttptoolswift&quot;&gt;创建HYHttpTool.swift&lt;/h4&gt;
 &lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
 &lt;span class=&quot;kd&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UIKit&lt;/span&gt;
 
@@ -478,7 +493,7 @@ pod 'WechatOpenSDK'
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;h3 id=&quot;appdelegate中设置相关环境&quot;&gt;Appdelegate中设置相关环境&lt;/h3&gt;
+&lt;h4 id=&quot;appdelegate中设置相关环境&quot;&gt;Appdelegate中设置相关环境&lt;/h4&gt;
 &lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;application&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;application&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UIApplication&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;didFinishLaunchingWithOptions&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;launchOptions&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;UIApplicationLaunchOptionsKey&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Any&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]?)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Bool&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
         &lt;span class=&quot;c1&quot;&gt;// Override point for customization after application launch.&lt;/span&gt;
 
@@ -508,26 +523,25 @@ pod 'WechatOpenSDK'
         <title>swift常用三方</title>
         <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
   &lt;li&gt;&lt;a href=&quot;#swift-常用三方&quot; id=&quot;markdown-toc-swift-常用三方&quot;&gt;swift 常用三方&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#使用pod导入所有用到的三方&quot; id=&quot;markdown-toc-使用pod导入所有用到的三方&quot;&gt;使用pod导入所有用到的三方&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#reachabilityswift&quot; id=&quot;markdown-toc-reachabilityswift&quot;&gt;ReachabilitySwift&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#alamofire&quot; id=&quot;markdown-toc-alamofire&quot;&gt;Alamofire&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#moya&quot; id=&quot;markdown-toc-moya&quot;&gt;Moya&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#dgelasticpulltorefresh&quot; id=&quot;markdown-toc-dgelasticpulltorefresh&quot;&gt;DGElasticPullToRefresh&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#snapkit&quot; id=&quot;markdown-toc-snapkit&quot;&gt;SnapKit&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#masonry&quot; id=&quot;markdown-toc-masonry&quot;&gt;Masonry&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#mbprogresshud&quot; id=&quot;markdown-toc-mbprogresshud&quot;&gt;MBProgressHUD&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#webviewjavascriptbridge&quot; id=&quot;markdown-toc-webviewjavascriptbridge&quot;&gt;WebViewJavascriptBridge&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#jpush&quot; id=&quot;markdown-toc-jpush&quot;&gt;JPush&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#wechatlogin&quot; id=&quot;markdown-toc-wechatlogin&quot;&gt;WechatLogin&lt;/a&gt;        &lt;ul&gt;
-          &lt;li&gt;&lt;a href=&quot;#创建hyhttptoolswift&quot; id=&quot;markdown-toc-创建hyhttptoolswift&quot;&gt;创建HYHttpTool.swift&lt;/a&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#使用pod导入所有用到的三方&quot; id=&quot;markdown-toc-使用pod导入所有用到的三方&quot;&gt;使用pod导入所有用到的三方&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#reachabilityswift&quot; id=&quot;markdown-toc-reachabilityswift&quot;&gt;ReachabilitySwift&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#alamofire&quot; id=&quot;markdown-toc-alamofire&quot;&gt;Alamofire&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#moya&quot; id=&quot;markdown-toc-moya&quot;&gt;Moya&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#dgelasticpulltorefresh&quot; id=&quot;markdown-toc-dgelasticpulltorefresh&quot;&gt;DGElasticPullToRefresh&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#snapkit&quot; id=&quot;markdown-toc-snapkit&quot;&gt;SnapKit&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#masonry&quot; id=&quot;markdown-toc-masonry&quot;&gt;Masonry&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#mbprogresshud&quot; id=&quot;markdown-toc-mbprogresshud&quot;&gt;MBProgressHUD&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#webviewjavascriptbridge&quot; id=&quot;markdown-toc-webviewjavascriptbridge&quot;&gt;WebViewJavascriptBridge&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#jpush&quot; id=&quot;markdown-toc-jpush&quot;&gt;JPush&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#wechatlogin&quot; id=&quot;markdown-toc-wechatlogin&quot;&gt;WechatLogin&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#创建hyhttptoolswift&quot; id=&quot;markdown-toc-创建hyhttptoolswift&quot;&gt;创建HYHttpTool.swift&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#appdelegate中设置相关环境&quot; id=&quot;markdown-toc-appdelegate中设置相关环境&quot;&gt;Appdelegate中设置相关环境&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h1 id=&quot;swift-常用三方&quot;&gt;swift 常用三方&lt;/h1&gt;
+&lt;h3 id=&quot;swift-常用三方&quot;&gt;swift 常用三方&lt;/h3&gt;
+&lt;hr /&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;#reachabilityswift&quot;&gt;ReachabilitySwift(网络判断)&lt;/a&gt;&lt;/li&gt;
@@ -542,8 +556,10 @@ pod 'WechatOpenSDK'
   &lt;li&gt;&lt;a href=&quot;#wechatlogin&quot;&gt;微信登录&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h1 id=&quot;使用pod导入所有用到的三方&quot;&gt;使用pod导入所有用到的三方&lt;/h1&gt;
-&lt;p&gt;用到的三方&lt;/p&gt;
+&lt;h3 id=&quot;使用pod导入所有用到的三方&quot;&gt;使用pod导入所有用到的三方&lt;/h3&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;用到的三方&lt;/strong&gt;&lt;/p&gt;
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;target '' do
 end
 platform :ios, '8.0'
@@ -564,9 +580,14 @@ pod 'JPush'
 pod 'WechatOpenSDK'
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;h3 id=&quot;reachabilityswift&quot;&gt;ReachabilitySwift&lt;/h3&gt;
-&lt;p&gt;https://github.com/ashleymills/Reachability.swift”)&lt;br /&gt;
-简介：进行网络判断的三方，可通过通知直接进行网络的通知，从而判断页面的状态等&lt;br /&gt;
-举例：&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;strong&gt;git地址：&lt;/strong&gt; &lt;a href=&quot;https://github.com/ashleymills/Reachability.swift&quot;&gt;https://github.com/ashleymills/Reachability.swift&lt;/a&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;简介：进行网络判断的三方，可通过通知直接进行网络的通知，从而判断页面的状态等&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;举例：&lt;/code&gt;&lt;/p&gt;
+
 &lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cm&quot;&gt;/* 实时监控网络 */&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;reachability&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Reachability&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Reachability&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 必须为全局参数，不然通知方法不调用&lt;/span&gt;
 
@@ -626,9 +647,14 @@ pod 'WechatOpenSDK'
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h3 id=&quot;alamofire&quot;&gt;Alamofire&lt;/h3&gt;
-&lt;p&gt;https://github.com/Alamofire/Alamofire &lt;br /&gt;
-简介：swift版的afnetworking，用于网络接口的申请&lt;br /&gt;
-举例：&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;strong&gt;git地址：&lt;/strong&gt; &lt;a href=&quot;https://github.com/Alamofire/Alamofire&quot;&gt;https://github.com/Alamofire/Alamofire&lt;/a&gt; &lt;br /&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;简介：swift版的afnetworking，用于网络接口的申请&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;举例：&lt;/code&gt;&lt;/p&gt;
+
 &lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cm&quot;&gt;/*  接口post请求
 *  url: 传过来的url
 *  param: 传过来的接口个性参数
@@ -663,14 +689,14 @@ pod 'WechatOpenSDK'
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;调用接口实例&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;调用接口实例&lt;/strong&gt;&lt;/p&gt;
 &lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;urlString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;http://www.gonghuizhudi.com/jiekou.php&quot;&lt;/span&gt;
 &lt;span class=&quot;kt&quot;&gt;HYHttpTool&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;post&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;urlString&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;param&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[:])&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;dic&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;NSDictionary&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;value&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as!&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;NSDictionary&lt;/span&gt;
     &lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dic&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;forKey&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;headers&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Any&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;用到的扩展&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;用到的扩展&lt;/strong&gt;&lt;/p&gt;
 &lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// 扩充String&lt;/span&gt;
 &lt;span class=&quot;kd&quot;&gt;extension&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
 
@@ -704,14 +730,24 @@ pod 'WechatOpenSDK'
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h3 id=&quot;moya&quot;&gt;Moya&lt;/h3&gt;
-&lt;p&gt;https://github.com/Moya/Moya &lt;br /&gt;
-简介：一个网络接口申请方法，基于Alamofire的高度封装 &lt;br /&gt;
-举例：&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;strong&gt;git地址：&lt;/strong&gt; &lt;a href=&quot;https://github.com/Moya/Moya&quot;&gt;https://github.com/Moya/Moya&lt;/a&gt; &lt;br /&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;简介：一个网络接口申请方法，基于Alamofire的高度封装&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;举例：&lt;/code&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;dgelasticpulltorefresh&quot;&gt;DGElasticPullToRefresh&lt;/h3&gt;
-&lt;p&gt;https://github.com/gontovnik/DGElasticPullToRefresh.git  &lt;br /&gt;
-简介：一个下拉刷新的三方，用于webview的页面的下拉刷新&lt;br /&gt;
-举例：&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;strong&gt;git地址：&lt;/strong&gt; &lt;a href=&quot;https://github.com/gontovnik/DGElasticPullToRefresh.git&quot;&gt;https://github.com/gontovnik/DGElasticPullToRefresh.git&lt;/a&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;简介：一个下拉刷新的三方，用于webview的页面的下拉刷新&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;举例：&lt;/code&gt;&lt;/p&gt;
+
 &lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;BaseWebView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UIWebView&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
 
     &lt;span class=&quot;k&quot;&gt;override&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;draw&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;rect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;CGRect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
@@ -741,9 +777,15 @@ pod 'WechatOpenSDK'
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h3 id=&quot;snapkit&quot;&gt;SnapKit&lt;/h3&gt;
-&lt;p&gt;https://github.com/SnapKit/SnapKit &lt;br /&gt;
-简介：可进行页面布局的适配，轻量级Autolayout封装，用于swift&lt;br /&gt;
-举例：&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;strong&gt;git地址：&lt;/strong&gt; &lt;a href=&quot;https://github.com/SnapKit/SnapKit&quot;&gt;https://github.com/SnapKit/SnapKit&lt;/a&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;简介：可进行页面布局的适配，轻量级Autolayout封装，用于swift&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;举例：&lt;/code&gt;&lt;/p&gt;
+
 &lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;SnapKit&lt;/span&gt;
 
 &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;MyViewController&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UIViewController&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
@@ -763,9 +805,15 @@ pod 'WechatOpenSDK'
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h3 id=&quot;masonry&quot;&gt;Masonry&lt;/h3&gt;
-&lt;p&gt;https://github.com/SnapKit/Masonry  &lt;br /&gt;
-简介：可进行页面布局的适配，轻量级Autolayout封装，用于OC&lt;br /&gt;
-举例：&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;strong&gt;git地址：&lt;/strong&gt; &lt;a href=&quot;https://github.com/SnapKit/Masonry&quot;&gt;https://github.com/SnapKit/Masonry&lt;/a&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;简介：可进行页面布局的适配，轻量级Autolayout封装，用于OC&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;举例：&lt;/code&gt;&lt;/p&gt;
+
 &lt;pre&gt;&lt;code class=&quot;language-OC&quot;&gt;UIEdgeInsets padding = UIEdgeInsetsMake(10, 10, 10, 10);
 
 [view1 mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -777,9 +825,15 @@ make.top.equalTo(superview.mas_top).with.offset(padding.top); //with is an optio
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;h3 id=&quot;mbprogresshud&quot;&gt;MBProgressHUD&lt;/h3&gt;
-&lt;p&gt;https://github.com/matej/MBProgressHUD  &lt;br /&gt;
-简介：OC中经典的用于页面加载的动画，进行swift简单的封装&lt;br /&gt;
-举例：&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;strong&gt;git地址：&lt;/strong&gt; &lt;a href=&quot;https://github.com/matej/MBProgressHUD&quot;&gt;https://github.com/matej/MBProgressHUD&lt;/a&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;简介：OC中经典的用于页面加载的动画，进行swift简单的封装&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;举例：&lt;/code&gt;&lt;/p&gt;
+
 &lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
 &lt;span class=&quot;kd&quot;&gt;extension&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;MBProgressHUD&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
 
@@ -865,9 +919,15 @@ make.top.equalTo(superview.mas_top).with.offset(padding.top); //with is an optio
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h3 id=&quot;webviewjavascriptbridge&quot;&gt;WebViewJavascriptBridge&lt;/h3&gt;
-&lt;p&gt;https://github.com/marcuswestin/WebViewJavascriptBridge.git  &lt;br /&gt;
-简介：用于js与原生之间的交互&lt;br /&gt;
-举例：&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;strong&gt;git地址：&lt;/strong&gt; &lt;a href=&quot;https://github.com/marcuswestin/WebViewJavascriptBridge.git&quot;&gt;https://github.com/marcuswestin/WebViewJavascriptBridge.git&lt;/a&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;简介：用于js与原生之间的交互&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;举例：&lt;/code&gt;&lt;/p&gt;
+
 &lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;WebViewJavascriptBridge&lt;/span&gt;
 
 &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;bridge&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;WebViewJavascriptBridge&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt;
@@ -887,6 +947,7 @@ make.top.equalTo(superview.mas_top).with.offset(padding.top); //with is an optio
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h3 id=&quot;jpush&quot;&gt;JPush&lt;/h3&gt;
+&lt;hr /&gt;
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://www.jiguang.cn/dev/#/app/list#dev&quot;&gt;极光应用管理&lt;/a&gt;&lt;br /&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://docs.jiguang.cn/jpush/resources/#ios-sdk&quot;&gt;极光SDK下载&lt;/a&gt;&lt;br /&gt;&lt;/li&gt;
@@ -894,8 +955,12 @@ make.top.equalTo(superview.mas_top).with.offset(padding.top); //with is an optio
   &lt;li&gt;&lt;a href=&quot;http://blog.csdn.net/James_1_2_1_1/article/details/73287239&quot;&gt;iOS开发-极光推送SDK使用笔记&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;简介：极光推送，用于远程消息推送&lt;br /&gt;
-举例：&lt;br /&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;简介：极光推送，用于远程消息推送&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;举例：&lt;/code&gt;&lt;/p&gt;
+
 &lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;JPushSetupWithApplication&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;application&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UIApplication&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;didFinishLaunchingWithOptions&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;launchOptions&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;UIApplicationLaunchOptionsKey&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Any&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]?)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
 
     &lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;设置极光推送&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
@@ -993,13 +1058,18 @@ make.top.equalTo(superview.mas_top).with.offset(padding.top); //with is an optio
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h3 id=&quot;wechatlogin&quot;&gt;WechatLogin&lt;/h3&gt;
-&lt;p&gt;相关资料：&lt;br /&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;strong&gt;相关资料：&lt;/strong&gt;&lt;br /&gt;
 &lt;a href=&quot;https://open.weixin.qq.com/cgi-bin/showdocument?action=dir_list&amp;amp;t=resource/res_list&amp;amp;verify=1&amp;amp;id=1417694084&amp;amp;token=&amp;amp;lang=zh_CN&quot;&gt;iOS接入指南&lt;/a&gt;&lt;br /&gt;
 &lt;a href=&quot;https://open.weixin.qq.com/cgi-bin/showdocument?action=dir_list&amp;amp;t=resource/res_list&amp;amp;verify=1&amp;amp;id=open1419317851&amp;amp;token=&amp;amp;lang=zh_CN&quot;&gt;移动应用微信登录开发指南&lt;/a&gt;&lt;br /&gt;
 &lt;a href=&quot;http://www.cnblogs.com/AnchoriteFiliGod/diary/2017/12/21/8080913.html&quot;&gt;个人日记保存点&lt;/a&gt;&lt;br /&gt;
-https://github.com/anchoriteFili/WechatLogTest &lt;br /&gt;
-简介：用于微信的登录的简单封装&lt;/p&gt;
-&lt;h4 id=&quot;创建hyhttptoolswift&quot;&gt;创建HYHttpTool.swift&lt;/h4&gt;
+&lt;a href=&quot;https://github.com/anchoriteFili/WechatLogTest&quot;&gt;https://github.com/anchoriteFili/WechatLogTest&lt;/a&gt; &lt;br /&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;简介：用于微信的登录的简单封装&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h5 id=&quot;创建hyhttptoolswift&quot;&gt;创建HYHttpTool.swift&lt;/h5&gt;
+
 &lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
 &lt;span class=&quot;kd&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UIKit&lt;/span&gt;
 
@@ -1224,7 +1294,7 @@ https://github.com/anchoriteFili/WechatLogTest &lt;br /&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;h3 id=&quot;appdelegate中设置相关环境&quot;&gt;Appdelegate中设置相关环境&lt;/h3&gt;
+&lt;h5 id=&quot;appdelegate中设置相关环境&quot;&gt;Appdelegate中设置相关环境&lt;/h5&gt;
 &lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;application&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;application&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UIApplication&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;didFinishLaunchingWithOptions&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;launchOptions&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;UIApplicationLaunchOptionsKey&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Any&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]?)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Bool&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
         &lt;span class=&quot;c1&quot;&gt;// Override point for customization after application launch.&lt;/span&gt;
 
@@ -1253,7 +1323,6 @@ https://github.com/anchoriteFili/WechatLogTest &lt;br /&gt;
       <item>
         <title>jekyll安装使用</title>
         <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#自学文档&quot; id=&quot;markdown-toc-自学文档&quot;&gt;自学文档&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#1-在mac上下载安装&quot; id=&quot;markdown-toc-1-在mac上下载安装&quot;&gt;1. 在mac上下载安装&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#2-在git上创建个人博客仓库&quot; id=&quot;markdown-toc-2-在git上创建个人博客仓库&quot;&gt;2. 在git上创建个人博客仓库&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#3-将博客仓库克隆下来将模板导创建的git博客仓库中&quot; id=&quot;markdown-toc-3-将博客仓库克隆下来将模板导创建的git博客仓库中&quot;&gt;3. 将博客仓库克隆下来，将模板导创建的git博客仓库中&lt;br /&gt;&lt;/a&gt;&lt;/li&gt;
@@ -1261,8 +1330,8 @@ https://github.com/anchoriteFili/WechatLogTest &lt;br /&gt;
   &lt;li&gt;&lt;a href=&quot;#5-然后就是无穷的配置环境和学习使用框架&quot; id=&quot;markdown-toc-5-然后就是无穷的配置环境和学习使用框架&quot;&gt;5. 然后就是无穷的配置环境和学习使用框架&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&quot;自学文档&quot;&gt;自学文档&lt;/h4&gt;
-&lt;p&gt;&lt;a href=&quot;https://www.jekyll.com.cn/docs/home/&quot;&gt;Jekyll文档链接&lt;/a&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;自学文档：&lt;/strong&gt;
+&lt;a href=&quot;https://www.jekyll.com.cn/docs/home/&quot;&gt;Jekyll文档链接&lt;/a&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;h4 id=&quot;1-在mac上下载安装&quot;&gt;1. 在mac上下载安装&lt;/h4&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://www.jianshu.com/p/07064eb79740&quot;&gt;Mac下Jekyll安装&lt;/a&gt;&lt;/p&gt;
@@ -1529,31 +1598,41 @@ AssetsLibrary.framework
         <title>一个项目多个target的创建</title>
         <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
   &lt;li&gt;&lt;a href=&quot;#引用链接&quot; id=&quot;markdown-toc-引用链接&quot;&gt;引用链接&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#场景一-一个项目配置多个环境&quot; id=&quot;markdown-toc-场景一-一个项目配置多个环境&quot;&gt;场景一： 一个项目配置多个环境&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#场景一-一个项目配置多个环境&quot; id=&quot;markdown-toc-场景一-一个项目配置多个环境&quot;&gt;场景一： 一个项目配置多个环境&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#1-在tagets中直接添加duplicate&quot; id=&quot;markdown-toc-1-在tagets中直接添加duplicate&quot;&gt;1&amp;gt; 在tagets中直接添加Duplicate&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#2-添加target并重新命名为runtimeoc&quot; id=&quot;markdown-toc-2-添加target并重新命名为runtimeoc&quot;&gt;2&amp;gt; 添加target并重新命名为runtimeOC&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#3-修改schemes中的名字&quot; id=&quot;markdown-toc-3-修改schemes中的名字&quot;&gt;3&amp;gt; 修改Schemes中的名字&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#4-将自动生成的plist重新命名---删除---重新加载进入标记&quot; id=&quot;markdown-toc-4-将自动生成的plist重新命名---删除---重新加载进入标记&quot;&gt;4&amp;gt; 将自动生成的plist重新命名 -&amp;gt; 删除 -&amp;gt; 重新加载进入标记&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#5-在项目中定义特定的宏作为区分oc用macrosswift用swift_flag&quot; id=&quot;markdown-toc-5-在项目中定义特定的宏作为区分oc用macrosswift用swift_flag&quot;&gt;5&amp;gt; 在项目中定义特定的宏作为区分（OC用macros，swift用swift_flag）&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#场景二-项目中直接创建一个整体项目target相当于另外一个项目&quot; id=&quot;markdown-toc-场景二-项目中直接创建一个整体项目target相当于另外一个项目&quot;&gt;场景二： 项目中直接创建一个整体项目target(相当于另外一个项目)&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h3 id=&quot;引用链接&quot;&gt;引用链接&lt;/h3&gt;
+&lt;hr /&gt;
+
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://www.cnblogs.com/yajunLi/p/6001132.html&quot;&gt;iOS同一项目多个Target的快速实现方法 - 两种使用场景详解&lt;/a&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.cnblogs.com/yajunLi/p/6001132.html&quot;&gt;iOS同一项目多个Target的快速实现方法 - 两种使用场景详解&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&quot;场景一-一个项目配置多个环境&quot;&gt;场景一： 一个项目配置多个环境&lt;/h2&gt;
+&lt;h3 id=&quot;场景一-一个项目配置多个环境&quot;&gt;场景一： 一个项目配置多个环境&lt;/h3&gt;
 &lt;hr /&gt;
-&lt;p&gt;1&amp;gt; 在tagets中直接添加Duplicate&lt;/p&gt;
+
+&lt;h5 id=&quot;1-在tagets中直接添加duplicate&quot;&gt;1&amp;gt; 在tagets中直接添加Duplicate&lt;/h5&gt;
 
 &lt;p&gt;&lt;img src=&quot;/styles/images/2017-12-22-SeveralTarget/1.png&quot; width=&quot;80%&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;2&amp;gt; 添加target并重新命名为runtimeOC&lt;/p&gt;
+&lt;h5 id=&quot;2-添加target并重新命名为runtimeoc&quot;&gt;2&amp;gt; 添加target并重新命名为runtimeOC&lt;/h5&gt;
 
 &lt;p&gt;&lt;img src=&quot;/styles/images/2017-12-22-SeveralTarget/2.png&quot; width=&quot;80%&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;3&amp;gt; 修改Schemes中的名字&lt;/p&gt;
+&lt;h5 id=&quot;3-修改schemes中的名字&quot;&gt;3&amp;gt; 修改Schemes中的名字&lt;/h5&gt;
 
 &lt;p&gt;&lt;img src=&quot;/styles/images/2017-12-22-SeveralTarget/3.png&quot; width=&quot;80%&quot; /&gt;
 &lt;img src=&quot;/styles/images/2017-12-22-SeveralTarget/4.png&quot; width=&quot;80%&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;4&amp;gt; 将自动生成的plist重新命名 -&amp;gt; 删除 -&amp;gt; 重新加载进入标记&lt;/p&gt;
+&lt;h5 id=&quot;4-将自动生成的plist重新命名---删除---重新加载进入标记&quot;&gt;4&amp;gt; 将自动生成的plist重新命名 -&amp;gt; 删除 -&amp;gt; 重新加载进入标记&lt;/h5&gt;
 
 &lt;p&gt;&lt;img src=&quot;/styles/images/2017-12-22-SeveralTarget/5.png&quot; width=&quot;80%&quot; /&gt;
 &lt;img src=&quot;/styles/images/2017-12-22-SeveralTarget/6.png&quot; width=&quot;80%&quot; /&gt;
@@ -1562,17 +1641,19 @@ AssetsLibrary.framework
 &lt;img src=&quot;/styles/images/2017-12-22-SeveralTarget/9.png&quot; width=&quot;80%&quot; /&gt;
 &lt;img src=&quot;/styles/images/2017-12-22-SeveralTarget/10.png&quot; width=&quot;80%&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;5&amp;gt; 在项目中定义特定的宏作为区分（OC用macros，swift用swift_flag）&lt;/p&gt;
+&lt;h5 id=&quot;5-在项目中定义特定的宏作为区分oc用macrosswift用swift_flag&quot;&gt;5&amp;gt; 在项目中定义特定的宏作为区分（OC用macros，swift用swift_flag）&lt;/h5&gt;
 
 &lt;p&gt;&lt;img src=&quot;/styles/images/2017-12-22-SeveralTarget/11.png&quot; width=&quot;80%&quot; /&gt;
 &lt;img src=&quot;/styles/images/2017-12-22-SeveralTarget/12.png&quot; width=&quot;80%&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;swift在swift_flag中添加宏，并且宏必须是字符串，每个宏都要用”-D”隔开，否则失效&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;swift在swift_flag中添加宏，并且宏必须是字符串，每个宏都要用”-D”隔开，否则失效&lt;/p&gt;
+&lt;/blockquote&gt;
 
 &lt;p&gt;&lt;img src=&quot;/styles/images/2017-12-22-SeveralTarget/13.png&quot; width=&quot;80%&quot; /&gt;
 &lt;img src=&quot;/styles/images/2017-12-22-SeveralTarget/14.png&quot; width=&quot;80%&quot; /&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;场景二-项目中直接创建一个整体项目target相当于另外一个项目&quot;&gt;场景二： 项目中直接创建一个整体项目target(相当于另外一个项目)&lt;/h2&gt;
+&lt;h3 id=&quot;场景二-项目中直接创建一个整体项目target相当于另外一个项目&quot;&gt;场景二： 项目中直接创建一个整体项目target(相当于另外一个项目)&lt;/h3&gt;
 &lt;hr /&gt;
 &lt;p&gt;&lt;img src=&quot;/styles/images/2017-12-22-SeveralTarget/15.png&quot; width=&quot;80%&quot; /&gt;
 &lt;img src=&quot;/styles/images/2017-12-22-SeveralTarget/16.png&quot; width=&quot;80%&quot; /&gt;&lt;/p&gt;
@@ -1807,29 +1888,29 @@ AssetsLibrary.framework
 
 &lt;h5 id=&quot;相关命令&quot;&gt;相关命令&lt;/h5&gt;
 &lt;hr /&gt;
-&lt;p&gt;你可以按如下命令来生成 sshkey:&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;你可以按如下命令来生成 sshkey:&lt;/code&gt;&lt;/p&gt;
 
 &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ssh-keygen &lt;span class=&quot;nt&quot;&gt;-t&lt;/span&gt; rsa &lt;span class=&quot;nt&quot;&gt;-C&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;xxxxx@xxxxx.com&quot;&lt;/span&gt;  
 &lt;span class=&quot;c&quot;&gt;# Generating public/private rsa key pair...&lt;/span&gt;
 &lt;span class=&quot;c&quot;&gt;# 三次回车即可生成 ssh key&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;查看你的 public key&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;查看你的 public key&lt;/code&gt;&lt;/p&gt;
 
 &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;cat&lt;/span&gt; ~/.ssh/id_rsa.pub
 &lt;span class=&quot;c&quot;&gt;# ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC6eNtGpNGwstc....&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;添加后，在终端（Terminal）中输入&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;添加后，在终端（Terminal）中输入&lt;/code&gt;&lt;/p&gt;
 
 &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ssh &lt;span class=&quot;nt&quot;&gt;-T&lt;/span&gt; git@gitee.com
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;若返回&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;若返回&lt;/code&gt;&lt;/p&gt;
 
 &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Welcome to Gitee.com, yourname!
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;表示公钥添加成功&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;表示公钥添加成功&lt;/code&gt;&lt;/p&gt;
 </description>
         <pubDate>Wed, 13 Dec 2017 14:24:16 +0800</pubDate>
         <link>http://localhost:4000/2017/12/13/%E8%BF%9C%E7%A8%8B%E5%BA%93%E5%85%AC%E9%92%A5%E7%A7%81%E9%92%A5%E7%9A%84%E5%88%9B%E5%BB%BA/</link>
@@ -1844,13 +1925,19 @@ AssetsLibrary.framework
     
       <item>
         <title>swift 使用xib创建view</title>
-        <description>
-&lt;p&gt;&lt;a href=&quot;http://blog.csdn.net/yeshennet/article/details/51577213&quot;&gt;swift用xib 自定义View&lt;/a&gt;&lt;br /&gt;
-1&amp;gt; 创建一个view以及同名的xib&lt;/p&gt;
+        <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#1-创建一个view以及同名的xib&quot; id=&quot;markdown-toc-1-创建一个view以及同名的xib&quot;&gt;1&amp;gt; 创建一个view以及同名的xib&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#2-在view中添加下边相关代码完成与xib的链接&quot; id=&quot;markdown-toc-2-在view中添加下边相关代码完成与xib的链接&quot;&gt;2&amp;gt; 在view中添加下边相关代码，完成与xib的链接&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#3-使用初始化方法创建view&quot; id=&quot;markdown-toc-3-使用初始化方法创建view&quot;&gt;3&amp;gt; 使用初始化方法创建view&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;参考链接：&lt;/strong&gt;&lt;a href=&quot;http://blog.csdn.net/yeshennet/article/details/51577213&quot;&gt;swift用xib 自定义View&lt;/a&gt;&lt;/p&gt;
+
+&lt;h5 id=&quot;1-创建一个view以及同名的xib&quot;&gt;1&amp;gt; 创建一个view以及同名的xib&lt;/h5&gt;
 
 &lt;p&gt;&lt;img src=&quot;/styles/images/resources/7BAE6377C5C1AA02132BC3CC0594F910.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;2&amp;gt; 在view中添加下边相关代码，完成与xib的链接&lt;/p&gt;
+&lt;h5 id=&quot;2-在view中添加下边相关代码完成与xib的链接&quot;&gt;2&amp;gt; 在view中添加下边相关代码，完成与xib的链接&lt;/h5&gt;
 
 &lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// 初始化方法&lt;/span&gt;
 &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;newInstance&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;NetStateView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?{&lt;/span&gt;
@@ -1870,7 +1957,7 @@ AssetsLibrary.framework
     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;3&amp;gt; 使用初始化方法创建view&lt;/p&gt;
+&lt;h5 id=&quot;3-使用初始化方法创建view&quot;&gt;3&amp;gt; 使用初始化方法创建view&lt;/h5&gt;
 
 &lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;lazy&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;netStateView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;NetStateView&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
         &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;NetStateView&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt;

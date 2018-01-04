@@ -143,7 +143,14 @@
               <ul id="markdown-toc">
   <li><a href="#composer安装" id="markdown-toc-composer安装">Composer安装</a></li>
   <li><a href="#composer使用" id="markdown-toc-composer使用">Composer使用</a></li>
-  <li><a href="#查找三方库方法" id="markdown-toc-查找三方库方法">查找三方库方法</a></li>
+  <li><a href="#查找三方库方法" id="markdown-toc-查找三方库方法">查找三方库方法</a>    <ul>
+      <li><a href="#1-终端模糊查询sdk" id="markdown-toc-1-终端模糊查询sdk">1&gt; 终端模糊查询sdk</a></li>
+      <li><a href="#2-查询sdk版本" id="markdown-toc-2-查询sdk版本">2&gt; 查询sdk版本</a></li>
+      <li><a href="#3-生成了composerjson文件" id="markdown-toc-3-生成了composerjson文件">3&gt; 生成了composer.json文件</a></li>
+      <li><a href="#4-运行-composer-install-命令下载sdk加载完毕" id="markdown-toc-4-运行-composer-install-命令下载sdk加载完毕">4&gt; 运行 <code class="highlighter-rouge">composer install</code> 命令下载sdk,加载完毕</a></li>
+      <li><a href="#5-引入头即可使用" id="markdown-toc-5-引入头即可使用">5&gt; 引入头即可使用</a></li>
+    </ul>
+  </li>
 </ul>
 
 <h4 id="composer安装">Composer安装</h4>
@@ -207,26 +214,31 @@ Search for a package:
 
 Do you confirm generation [yes]?
 </code></pre></div></div>
-<p>也可以直接手动创建composer.json文件直接里边写数据<br /><br /></p>
+<p><strong>也可以直接手动创建composer.json文件直接里边写数据</strong></p>
 
 <h4 id="查找三方库方法">查找三方库方法</h4>
 <hr />
-<p>1&gt; 终端模糊查询sdk
-<code class="highlighter-rouge">composer search leancloud/leancloud-sdk</code>
-<img src="/styles/images/resources/9789C56C64690B3AF84C1015E720B511.png" alt="3.png" /></p>
+<h5 id="1-终端模糊查询sdk">1&gt; 终端模糊查询sdk</h5>
 
-<p>2&gt; 查询sdk版本
-<code class="highlighter-rouge">composer show -all leancloud/leancloud-sdk</code>
-<img src="/styles/images/resources/2AB6B7E41E26EEFB765D9A464F1F0D84.png" alt="4.png" /></p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer search leancloud/leancloud-sdk
+</code></pre></div></div>
+<p><img src="/styles/images/resources/9789C56C64690B3AF84C1015E720B511.png" alt="3.png" /></p>
 
-<p>3&gt; 生成了composer.json文件
-<img src="/styles/images/resources/32D3E0F287F753B20E859D2740DBDA7D.png" alt="5.png" /></p>
+<h5 id="2-查询sdk版本">2&gt; 查询sdk版本</h5>
 
-<p>4&gt; 运行 <code class="highlighter-rouge">composer install</code> 命令下载sdk,加载完毕
-<img src="/styles/images/resources/98D9CB72BA149F552F2B5B5E649207B7.png" alt="6.png" />
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer show -all leancloud/leancloud-sdk
+</code></pre></div></div>
+<p><img src="/styles/images/resources/2AB6B7E41E26EEFB765D9A464F1F0D84.png" alt="4.png" /></p>
+
+<h5 id="3-生成了composerjson文件">3&gt; 生成了composer.json文件</h5>
+
+<p><img src="/styles/images/resources/32D3E0F287F753B20E859D2740DBDA7D.png" alt="5.png" /></p>
+
+<h5 id="4-运行-composer-install-命令下载sdk加载完毕">4&gt; 运行 <code class="highlighter-rouge">composer install</code> 命令下载sdk,加载完毕</h5>
+<p><img src="/styles/images/resources/98D9CB72BA149F552F2B5B5E649207B7.png" alt="6.png" />
 <img src="/styles/images/resources/5BCCC0219A70B8A21C2A56D5066D801F.png" alt="7.png" /></p>
 
-<p>5&gt; 引入头即可使用</p>
+<h5 id="5-引入头即可使用">5&gt; 引入头即可使用</h5>
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">namespace</span> <span class="nx">LeanCloud</span><span class="p">;</span>
 <span class="k">require</span> <span class="s2">"vendor/autoload.php"</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">LeanCloud\Client</span><span class="p">;</span> 

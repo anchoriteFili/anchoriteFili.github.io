@@ -148,6 +148,8 @@
           <li><a href="#2-获取所有胶卷名字" id="markdown-toc-2-获取所有胶卷名字">2&gt; 获取所有胶卷名字</a></li>
           <li><a href="#3-根据胶卷名字获取所有的相册的封面图" id="markdown-toc-3-根据胶卷名字获取所有的相册的封面图">3&gt; 根据胶卷名字，获取所有的相册的封面图</a></li>
           <li><a href="#4-获取每个相册的相片数量用于显示在相册列表" id="markdown-toc-4-获取每个相册的相片数量用于显示在相册列表">4&gt; 获取每个相册的相片数量，用于显示在相册列表</a></li>
+          <li><a href="#5-获取单个相册的所有的缩略图一次获取pagenumber张并且可以通过页面滚动动态加载这样的话就可以解决一次加载成百上千张造成的整个页面的卡顿甚至直接崩溃的问题" id="markdown-toc-5-获取单个相册的所有的缩略图一次获取pagenumber张并且可以通过页面滚动动态加载这样的话就可以解决一次加载成百上千张造成的整个页面的卡顿甚至直接崩溃的问题">5&gt; 获取单个相册的所有的缩略图，一次获取pageNumber张，并且可以通过页面滚动动态加载,这样的话就可以解决一次加载成百上千张造成的整个页面的卡顿甚至直接崩溃的问题</a></li>
+          <li><a href="#6-在定制相册中点击选中时去获取原图由于原图有时候会特别特别大所以取原图时对原图进行处理使其又相对清晰" id="markdown-toc-6-在定制相册中点击选中时去获取原图由于原图有时候会特别特别大所以取原图时对原图进行处理使其又相对清晰">6&gt; 在定制相册中点击选中时，去获取原图，由于原图有时候会特别特别大，所以取原图时对原图进行处理，使其又相对清晰</a></li>
         </ul>
       </li>
     </ul>
@@ -227,7 +229,7 @@
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p>5&gt; 获取单个相册的所有的缩略图，一次获取pageNumber张，并且可以通过页面滚动动态加载,这样的话就可以解决一次加载成百上千张造成的整个页面的卡顿甚至直接崩溃的问题</p>
+<h5 id="5-获取单个相册的所有的缩略图一次获取pagenumber张并且可以通过页面滚动动态加载这样的话就可以解决一次加载成百上千张造成的整个页面的卡顿甚至直接崩溃的问题">5&gt; 获取单个相册的所有的缩略图，一次获取pageNumber张，并且可以通过页面滚动动态加载,这样的话就可以解决一次加载成百上千张造成的整个页面的卡顿甚至直接崩溃的问题</h5>
 
 <div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#pragma mark 滚动代理相关
 </span><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">scrollViewDidScroll</span><span class="p">:(</span><span class="n">UIScrollView</span> <span class="o">*</span><span class="p">)</span><span class="nv">scrollView</span> <span class="p">{</span>
@@ -305,7 +307,7 @@
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p>获取缩略图方法：</p>
+<p><strong>获取缩略图方法：</strong></p>
 <blockquote>
   <p>可以传入页面数量和单个相册的相关数据，返回获取的所有图片数据，相册的总页数，相册总图片数，当前处在第几页。</p>
 </blockquote>
@@ -384,7 +386,7 @@
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p>6&gt; 在定制相册中点击选中时，去获取原图，由于原图有时候会特别特别大，所以取原图时对原图进行处理，使其又相对清晰</p>
+<h5 id="6-在定制相册中点击选中时去获取原图由于原图有时候会特别特别大所以取原图时对原图进行处理使其又相对清晰">6&gt; 在定制相册中点击选中时，去获取原图，由于原图有时候会特别特别大，所以取原图时对原图进行处理，使其又相对清晰</h5>
 
 <div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#pragma mark 获取指定某张图片的原图
 </span><span class="k">+</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">photoWithAssetCollection</span><span class="p">:(</span><span class="n">PHAssetCollection</span> <span class="o">*</span><span class="p">)</span><span class="nv">assetCollection</span> <span class="nf">withLocalIdentifier</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">localIdentifier</span> <span class="nf">andPage</span><span class="p">:(</span><span class="n">NSInteger</span><span class="p">)</span><span class="nv">page</span> <span class="nf">withBlcok</span><span class="p">:(</span><span class="kt">void</span><span class="p">(</span><span class="o">^</span><span class="p">)(</span><span class="n">UIImage</span> <span class="o">*</span><span class="n">bigImage</span><span class="p">))</span><span class="nv">bigImage</span><span class="p">;</span>
@@ -434,7 +436,7 @@
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div></div>
-<p>保存图片到相册</p>
+<p><strong>保存图片到相册</strong></p>
 
 <div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#pragma mark 保存图片
 </span><span class="k">+</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">saveImage</span><span class="p">:(</span><span class="n">UIImage</span> <span class="o">*</span><span class="p">)</span><span class="nv">image</span> <span class="nf">withLocalIdentifier</span><span class="p">:(</span><span class="kt">void</span><span class="p">(</span><span class="o">^</span><span class="p">)(</span><span class="n">NSString</span> <span class="o">*</span><span class="n">localIdentifier</span><span class="p">))</span><span class="nv">localIdentifier</span><span class="p">;</span>

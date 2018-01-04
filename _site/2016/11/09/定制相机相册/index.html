@@ -184,17 +184,25 @@
 <h2 id="三个逻辑数据">三个逻辑数据</h2>
 <hr />
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1. 选择证照页面中的modelArray：
-  其中装载的是从服务器得到的图片数据，以及从相册和相机中获取的图片上传服务器后返回的图片数据。
-
-2. 用于存储单个相册中所有图片数据的数组albumModelArray。　
-
-3. 定制相册页面中的modelAdditionArray:
-  其中装载了从定制相册中选中的图片的数据，并将从相册中获取的数据传递到定制相机中。
-
-4. 相机中用于存储从相册中获取的图片以及相机排到的图片modelTakePhotosArray：
-  进入页面的时候，先将相册中选中的图片赋值给modelTakePhotosArray，刷新collectionView显示相册中图片，拍照后将拍照数据存入其中，如果点击完成，可将modelTakePhotosArray中数据直接上传，如果点击去相册，则赋值给modelAdditionArray刷新定制相册页面，如果点击取消，则直接丢弃modelTakePhotosArray中数据，保持modelAdditionArray中数据不变返回定制相册页面。
-</code></pre></div></div>
+<blockquote>
+  <ol>
+    <li>
+      <p>选择证照页面中的modelArray：
+其中装载的是从服务器得到的图片数据，以及从相册和相机中获取的图片上传服务器后返回的图片数据。</p>
+    </li>
+    <li>
+      <p>用于存储单个相册中所有图片数据的数组albumModelArray。　</p>
+    </li>
+    <li>
+      <p>定制相册页面中的modelAdditionArray:
+其中装载了从定制相册中选中的图片的数据，并将从相册中获取的数据传递到定制相机中。</p>
+    </li>
+    <li>
+      <p>相机中用于存储从相册中获取的图片以及相机排到的图片modelTakePhotosArray：
+进入页面的时候，先将相册中选中的图片赋值给modelTakePhotosArray，刷新collectionView显示相册中图片，拍照后将拍照数据存入其中，如果点击完成，可将modelTakePhotosArray中数据直接上传，如果点击去相册，则赋值给modelAdditionArray刷新定制相册页面，如果点击取消，则直接丢弃modelTakePhotosArray中数据，保持modelAdditionArray中数据不变返回定制相册页面。</p>
+    </li>
+  </ol>
+</blockquote>
 
 <h2 id="主要分为三部分">主要分为三部分</h2>
 <hr />

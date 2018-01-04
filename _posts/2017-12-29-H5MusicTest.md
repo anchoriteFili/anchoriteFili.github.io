@@ -13,9 +13,11 @@ tag: html
 * content
 {:toc}
 
-#### app中环境配置 
-[ios WKWebView 和UIWebView 播放没有声音的方案](http://blog.csdn.net/yinyakun/article/details/53992474)<br>
-WKWebView设置
+### app中环境配置 
+---
+[ios WKWebView 和UIWebView 播放没有声音的方案](http://blog.csdn.net/yinyakun/article/details/53992474)
+
+**WKWebView设置**
 ```objc
 WKWebViewConfiguration *config = [[WKWebViewConfiguration alloc] init];  
     config.allowsInlineMediaPlayback = YES;  
@@ -27,7 +29,8 @@ WKWebViewConfiguration *config = [[WKWebViewConfiguration alloc] init];
 
 ```
 
-UIWebView设置
+**UIWebView设置**
+
 ```objc
 [self.webView setMediaPlaybackRequiresUserAction:NO];
 ````

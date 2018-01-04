@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>iOS10 新特性 - 公会驻地</title>
+
+	<link rel="shortcut icon" href="/styles/images/favicon.jpg">
+	<link rel="icon" href="/styles/images/favicon.jpg">
+
+	<link rel="stylesheet" href="/styles/css/index.css">
+	<link rel="stylesheet" href="/styles/css/fontawesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="/styles/css/syntax.css">
+	<link rel="canonical" href="/2016/09/20/iOS10-%E6%96%B0%E7%89%B9%E6%80%A7/">
+	<link rel="alternate" type="application/rss+xml" title="公会驻地" href="/feed.xml">
+	
+	<meta name="keywords" content="iOS10 新特性, 公会驻地, 学而不思则罔;思而不学则殆;生命不止;折腾不休">
+	<meta name="description" content="学而不思则罔;思而不学则殆;生命不止;折腾不休">
+
+	<script src="/styles/js/jquery.min.js"></script>
+	<!--[if lt IE 9]>
+    	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  	<![endif]-->
+  	<script>
+		var _hmt = _hmt || [];
+		(function() {
+		  var hm = document.createElement("script");
+		  hm.src = "//hm.baidu.com/hm.js?94be4b0f9fc5d94cc0d0415ea6761ae9";
+		  var s = document.getElementsByTagName("script")[0]; 
+		  s.parentNode.insertBefore(hm, s);
+		})();
+	</script>
+  	<style type="text/css">
+	  	.docs-content{
+	  		margin-bottom: 10px;
+	  	}
+  	</style>
+</head>
+
+  <body class="index">
+
+    <header class="navbar navbar-inverse navbar-fixed-top docs-nav" role="banner">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="/" class="navbar-brand">
+        <img src="/styles/images/logo.jpg">
+      </a>
+    </div>
+    <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+      <ul class="nav navbar-nav">    
+        <li>
+          <a href="/">Home</a>
+        </li>
+        <li>
+          <a href="/categories/">大类分解</a>
+        </li>
+        <li>
+          <a href="/tag">小类内聚</a>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+            <a><span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span></a>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">关于<b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a rel="nofollow" target="_blank" href="https://github.com/anchoriteFili/">Github</a></li>
+            <li><a rel="nofollow" target="_blank" href="https://anchoritefili.github.io">关于作者</a></li>
+            <li><a rel="nofollow" href="/books">我的书单</a></li>
+            <li><a rel="nofollow" href="/reference">推荐博客</a></li>
+<!--            <li><a href="/feed.xml">RSS订阅</a></li>-->
+            <li class="divider"></li>
+            <li><a rel="nofollow" target="_blank" href="http://www.gonghuizhudi.com">个人官网</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+    <div class="docs-header" id="content">
+  <div class="container">
+  	
+  		<!--
+		    <h1>iOS10 新特性</h1>
+		    <p>Post on Sep 20, 2016 by <a href="/about">anchoriteFili</a></p>
+		-->
+		    <h1>躬身以待方显气度，拧首抬杠略失品格。</h1>
+    
+  </div>
+</div>
+
+    
+      
+<div class="banner">
+  <div class="container">
+  	
+    	<a href="/categories/#环境配置-ref">环境配置</a>	/
+    	<a href="/tag/#object-c-ref">object-c</a>
+    
+  </div>
+</div>
+
+    
+
+    <div class="container docs-container">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="sidebar hidden-print" role="complementary">
+        <div id="navigation">
+  <h1>目录</h1>
+  <ul class="nav sidenav">
+  </ul>
+  <div style="height: 200px;width: 200px;">
+    <script type="text/javascript" src="//rf.revolvermaps.com/0/0/8.js?i=5ytn1ssq6za&amp;m=0&amp;c=ff0000&amp;cr1=ffffff&amp;f=arial&amp;l=33" async="async"> 
+    </script>
+  </div>
+</div>
+
+ 
+      </div>
+    </div>
+    <div class="col-md-9" role="main">
+      <div class="panel docs-content">
+        <div class="wrapper">
+            <header class="post-header">
+              <h1 class="post-title">iOS10 新特性</h1>
+              <!--
+                <p class="post-meta">Sep 20, 2016</p>
+              -->
+              <div class="meta">Posted on <span class="postdate">Sep 20, 2016</span> By <a target="_blank" href="http://localhost:4000">anchoriteFili</a></div>
+              <br />
+            </header>
+            <article class="post-content">
+              <ul id="markdown-toc">
+  <li><a href="#相关引用" id="markdown-toc-相关引用">相关引用</a>    <ul>
+      <li><a href="#1-系统判断方法可使用" id="markdown-toc-1-系统判断方法可使用">1. 系统判断方法可使用</a></li>
+      <li><a href="#2-隐私数据访问问题" id="markdown-toc-2-隐私数据访问问题">2. 隐私数据访问问题</a></li>
+      <li><a href="#3-uicolor的问题" id="markdown-toc-3-uicolor的问题">3. UIColor的问题</a></li>
+      <li><a href="#4-真彩色的显示" id="markdown-toc-4-真彩色的显示">4. 真彩色的显示</a></li>
+      <li><a href="#5ats的问题" id="markdown-toc-5ats的问题">5.ATS的问题</a></li>
+      <li><a href="#6uistatusbar的问题" id="markdown-toc-6uistatusbar的问题">6.UIStatusBar的问题:</a></li>
+      <li><a href="#7-uitextfield" id="markdown-toc-7-uitextfield">7. UITextField</a></li>
+      <li><a href="#8usernotifications用户通知" id="markdown-toc-8usernotifications用户通知">8.UserNotifications(用户通知)</a></li>
+      <li><a href="#9-uicollectionviewcell的的优化" id="markdown-toc-9-uicollectionviewcell的的优化">9. UICollectionViewCell的的优化</a>        <ul>
+          <li><a href="#ios-10-之前uicollectionviewcell的生命周期是这样的" id="markdown-toc-ios-10-之前uicollectionviewcell的生命周期是这样的">iOS 10 之前UICollectionViewCell的生命周期是这样的:</a></li>
+          <li><a href="#ios-10-uicollectionviewcell的生命周期是这样的" id="markdown-toc-ios-10-uicollectionviewcell的生命周期是这样的">iOS 10 UICollectionViewCell的生命周期是这样的:</a></li>
+          <li><a href="#ios-10-新增加的pre-fetching预加载" id="markdown-toc-ios-10-新增加的pre-fetching预加载">iOS 10 新增加的Pre-Fetching预加载</a></li>
+        </ul>
+      </li>
+      <li><a href="#10-uirefreshcontrol的使用" id="markdown-toc-10-uirefreshcontrol的使用">10. UIRefreshControl的使用</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="相关引用">相关引用</h3>
+<hr />
+
+<ul>
+  <li><a href="http://mp.weixin.qq.com/s?__biz=MjM5OTM0MzIwMQ==&amp;mid=2652547554&amp;idx=3&amp;sn=1ede1af394bdc5b5eff99e54e3905319&amp;chksm=bcd2ecec8ba565fa443a0a22f4c499235c34b33286b66ae6082c874703add0e1fbbe81e78e2b&amp;scene=0#rd" target="_blank">iOS开发｜适配iOS10以及Xcode8</a><br /></li>
+  <li><a href="http://www.jianshu.com/p/f8151d556930" target="_blank">iOS 10 的适配问题(来源)</a><br /></li>
+</ul>
+
+<h4 id="1-系统判断方法可使用">1. 系统判断方法可使用</h4>
+
+<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="err">#</span><span class="n">available</span><span class="p">(</span><span class="n">iOS</span> <span class="mi">10</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span> <span class="p">{</span> 
+         <span class="c1">// 代码块
+</span><span class="p">}</span> <span class="k">else</span> <span class="p">{</span> 
+         <span class="c1">// 代码块
+</span><span class="p">}</span>
+</code></pre></div></div>
+
+<h4 id="2-隐私数据访问问题">2. 隐私数据访问问题</h4>
+
+<p><code class="highlighter-rouge">info.plist</code>文件中需要加入权限相关</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- 相册 --&gt;</span> 
+<span class="nt">&lt;key&gt;</span>NSPhotoLibraryUsageDescription<span class="nt">&lt;/key&gt;</span> 
+<span class="nt">&lt;string&gt;</span>App需要您的同意,才能访问相册<span class="nt">&lt;/string&gt;</span> 
+<span class="c">&lt;!-- 相机 --&gt;</span> 
+<span class="nt">&lt;key&gt;</span>NSCameraUsageDescription<span class="nt">&lt;/key&gt;</span> 
+<span class="nt">&lt;string&gt;</span>App需要您的同意,才能访问相机<span class="nt">&lt;/string&gt;</span> 
+<span class="c">&lt;!-- 麦克风 --&gt;</span> 
+<span class="nt">&lt;key&gt;</span>NSMicrophoneUsageDescription<span class="nt">&lt;/key&gt;</span> 
+<span class="nt">&lt;string&gt;</span>App需要您的同意,才能访问麦克风<span class="nt">&lt;/string&gt;</span> 
+<span class="c">&lt;!-- 位置 --&gt;</span> 
+<span class="nt">&lt;key&gt;</span>NSLocationUsageDescription<span class="nt">&lt;/key&gt;</span> 
+<span class="nt">&lt;string&gt;</span>App需要您的同意,才能访问位置<span class="nt">&lt;/string&gt;</span> 
+<span class="c">&lt;!-- 在使用期间访问位置 --&gt;</span> 
+<span class="nt">&lt;key&gt;</span>NSLocationWhenInUseUsageDescription<span class="nt">&lt;/key&gt;</span> 
+<span class="nt">&lt;string&gt;</span>App需要您的同意,才能在使用期间访问位置<span class="nt">&lt;/string&gt;</span> 
+<span class="c">&lt;!-- 始终访问位置 --&gt;</span> 
+<span class="nt">&lt;key&gt;</span>NSLocationAlwaysUsageDescription<span class="nt">&lt;/key&gt;</span> 
+<span class="nt">&lt;string&gt;</span>App需要您的同意,才能始终访问位置<span class="nt">&lt;/string&gt;</span> 
+<span class="c">&lt;!-- 日历 --&gt;</span> 
+<span class="nt">&lt;key&gt;</span>NSCalendarsUsageDescription<span class="nt">&lt;/key&gt;</span> 
+<span class="nt">&lt;string&gt;</span>App需要您的同意,才能访问日历<span class="nt">&lt;/string&gt;</span> 
+<span class="c">&lt;!-- 提醒事项 --&gt;</span> 
+<span class="nt">&lt;key&gt;</span>NSRemindersUsageDescription<span class="nt">&lt;/key&gt;</span> 
+<span class="nt">&lt;string&gt;</span>App需要您的同意,才能访问提醒事项<span class="nt">&lt;/string&gt;</span> 
+<span class="c">&lt;!-- 运动与健身 --&gt;</span> 
+<span class="nt">&lt;key&gt;</span>NSMotionUsageDescription<span class="nt">&lt;/key&gt;</span> <span class="nt">&lt;string&gt;</span>App需要您的同意,才能访问运动与健身<span class="nt">&lt;/string&gt;</span> 
+<span class="c">&lt;!-- 健康更新 --&gt;</span> 
+<span class="nt">&lt;key&gt;</span>NSHealthUpdateUsageDescription<span class="nt">&lt;/key&gt;</span> 
+<span class="nt">&lt;string&gt;</span>App需要您的同意,才能访问健康更新 <span class="nt">&lt;/string&gt;</span> 
+<span class="c">&lt;!-- 健康分享 --&gt;</span> 
+<span class="nt">&lt;key&gt;</span>NSHealthShareUsageDescription<span class="nt">&lt;/key&gt;</span> 
+<span class="nt">&lt;string&gt;</span>App需要您的同意,才能访问健康分享<span class="nt">&lt;/string&gt;</span> 
+<span class="c">&lt;!-- 蓝牙 --&gt;</span> 
+<span class="nt">&lt;key&gt;</span>NSBluetoothPeripheralUsageDescription<span class="nt">&lt;/key&gt;</span> 
+<span class="nt">&lt;string&gt;</span>App需要您的同意,才能访问蓝牙<span class="nt">&lt;/string&gt;</span> 
+<span class="c">&lt;!-- 媒体资料库 --&gt;</span> 
+<span class="nt">&lt;key&gt;</span>NSAppleMusicUsageDescription<span class="nt">&lt;/key&gt;</span> 
+<span class="nt">&lt;string&gt;</span>App需要您的同意,才能访问媒体资料库<span class="nt">&lt;/string&gt;</span>
+如果不起作用,可以请求后台权限,类似于这样:
+
+<span class="nt">&lt;key&gt;</span>UIBackgroundModes<span class="nt">&lt;/key&gt;</span>
+<span class="nt">&lt;array&gt;</span> 
+<span class="c">&lt;!-- 在这里写上你在后台模式下要使用权限对应的key --&gt;</span> 
+<span class="nt">&lt;string&gt;</span>location<span class="nt">&lt;/string&gt;</span>
+...
+<span class="nt">&lt;/array&gt;</span>
+</code></pre></div></div>
+
+<p><strong>或者在xcode的target中进行设置</strong></p>
+<blockquote>
+  <p>target -&gt; Capabilities -&gt; Background Modes</p>
+</blockquote>
+
+<p><img src="/styles/images/resources/49DAD014A6D38B2D21B88BAD36D2F894.png" alt="122816-138eaae9bc6b7d42.png" /></p>
+
+<h4 id="3-uicolor的问题">3. UIColor的问题</h4>
+
+<blockquote>
+  <p>大多数core开头的图形框架和AVFoundation都提高了对扩展像素和宽色域色彩空间的支持.通过图形堆栈扩展这种方式比以往支持广色域的显示设备更加容易。现在对UIKit扩展可以在sRGB的色彩空间下工作，性能更好,也可以在更广泛的色域来搭配sRGB颜色.如果你的项目中是通过低级别的api自己实现图形处理的,建议使用sRGB,也就是说在项目中使用了RGB转化颜色的建议转换为使用sRGB,在UIColor类中新增了两个api</p>
+</blockquote>
+
+<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="n">UIColor</span> <span class="o">*</span><span class="p">)</span><span class="nf">initWithDisplayP3Red</span><span class="p">:(</span><span class="n">CGFloat</span><span class="p">)</span><span class="nv">displayP3Red</span> <span class="nf">green</span><span class="p">:(</span><span class="n">CGFloat</span><span class="p">)</span><span class="nv">green</span> <span class="nf">blue</span><span class="p">:(</span><span class="n">CGFloat</span><span class="p">)</span><span class="nv">blue</span> <span class="nf">alpha</span><span class="p">:(</span><span class="n">CGFloat</span><span class="p">)</span><span class="nv">alpha</span> <span class="n">NS_AVAILABLE_IOS</span><span class="p">(</span><span class="mi">10</span><span class="n">_0</span><span class="p">);</span>
+
+<span class="k">+</span> <span class="p">(</span><span class="n">UIColor</span> <span class="o">*</span><span class="p">)</span><span class="nf">colorWithDisplayP3Red</span><span class="p">:(</span><span class="n">CGFloat</span><span class="p">)</span><span class="nv">displayP3Red</span> <span class="nf">green</span><span class="p">:(</span><span class="n">CGFloat</span><span class="p">)</span><span class="nv">green</span> <span class="nf">blue</span><span class="p">:(</span><span class="n">CGFloat</span><span class="p">)</span><span class="nv">blue</span> <span class="nf">alpha</span><span class="p">:(</span><span class="n">CGFloat</span><span class="p">)</span><span class="nv">alpha</span> <span class="n">NS_AVAILABLE_IOS</span><span class="p">(</span><span class="mi">10</span><span class="n">_0</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h4 id="4-真彩色的显示">4. 真彩色的显示</h4>
+
+<blockquote>
+  <p>真彩色的显示会根据光感应器来自动的调节达到特定环境下显示与性能的平衡效果,如果需要这个功能的话,可以在info.plist里配置(在Source Code模式下):</p>
+</blockquote>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;key&gt;</span>UIWhitePointAdaptivityStyle<span class="nt">&lt;/key&gt;</span>
+
+<span class="c">&lt;!-- 五种取值 --&gt;</span> 
+<span class="nt">&lt;string&gt;</span>UIWhitePointAdaptivityStyleStandard<span class="nt">&lt;/string&gt;</span> // 标准模式
+<span class="nt">&lt;string&gt;</span>UIWhitePointAdaptivityStyleReading<span class="nt">&lt;/string&gt;</span> // 阅读模式
+<span class="nt">&lt;string&gt;</span>UIWhitePointAdaptivityStylePhoto<span class="nt">&lt;/string&gt;</span> // 图片模式
+<span class="nt">&lt;string&gt;</span>UIWhitePointAdaptivityStyleVideo<span class="nt">&lt;/string&gt;</span> // 视频模式
+<span class="nt">&lt;string&gt;</span>UIWhitePointAdaptivityStyleStandard<span class="nt">&lt;/string&gt;</span> // 游戏模式
+</code></pre></div></div>
+
+<h4 id="5ats的问题">5.ATS的问题</h4>
+
+<blockquote>
+  <p>1.在iOS 9的时候,默认非HTTS的网络是被禁止的,我们可以在info.plist文件中添加NSAppTransportSecurity字典,将NSAllowsArbitraryLoads设置为YES来禁用ATS;</p>
+
+  <p>2.从2017年1月1日起,,所有新提交的 app 默认不允许使用NSAllowsArbitraryLoads来绕过ATS的限制,默认情况下你的 app 可以访问加密足够强的(TLS V1.2以上)HTTPS内容;</p>
+
+  <p>3.可以选择使用NSExceptionDomains设置白名单的方式对特定的域名开放HTTP内容来通过审核,比如说你的应用集成了第三方的登录分享SDK,可以通过这种方式来做,下面以新浪SDK作为示范(Source Code 模式下):</p>
+</blockquote>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;key&gt;</span>NSAppTransportSecurity<span class="nt">&lt;/key&gt;</span>
+ <span class="nt">&lt;dict&gt;</span>
+  <span class="nt">&lt;key&gt;</span>NSExceptionDomains<span class="nt">&lt;/key&gt;</span>
+  <span class="nt">&lt;dict&gt;</span>
+   <span class="nt">&lt;key&gt;</span>sina.cn<span class="nt">&lt;/key&gt;</span>
+   <span class="nt">&lt;dict&gt;</span>
+    <span class="nt">&lt;key&gt;</span>NSThirdPartyExceptionMinimumTLSVersion<span class="nt">&lt;/key&gt;</span>
+    <span class="nt">&lt;string&gt;</span>TLSv1.0<span class="nt">&lt;/string&gt;</span>
+    <span class="nt">&lt;key&gt;</span>NSThirdPartyExceptionRequiresForwardSecrecy<span class="nt">&lt;/key&gt;</span>
+    <span class="nt">&lt;false/&gt;</span>
+    <span class="nt">&lt;key&gt;</span>NSIncludesSubdomains<span class="nt">&lt;/key&gt;</span>
+    <span class="nt">&lt;true/&gt;</span>
+   <span class="nt">&lt;/dict&gt;</span>
+   <span class="nt">&lt;key&gt;</span>weibo.cn<span class="nt">&lt;/key&gt;</span>
+   <span class="nt">&lt;dict&gt;</span>
+    <span class="nt">&lt;key&gt;</span>NSThirdPartyExceptionMinimumTLSVersion<span class="nt">&lt;/key&gt;</span>
+    <span class="nt">&lt;string&gt;</span>TLSv1.0<span class="nt">&lt;/string&gt;</span>
+    <span class="nt">&lt;key&gt;</span>NSThirdPartyExceptionRequiresForwardSecrecy<span class="nt">&lt;/key&gt;</span>
+    <span class="nt">&lt;false/&gt;</span>
+    <span class="nt">&lt;key&gt;</span>NSIncludesSubdomains<span class="nt">&lt;/key&gt;</span>
+    <span class="nt">&lt;true/&gt;</span>
+   <span class="nt">&lt;/dict&gt;</span>
+   <span class="nt">&lt;key&gt;</span>weibo. com<span class="nt">&lt;/key&gt;</span>
+   <span class="nt">&lt;dict&gt;</span>
+    <span class="nt">&lt;key&gt;</span>NSThirdPartyExceptionMinimumTLSVersion<span class="nt">&lt;/key&gt;</span>
+    <span class="nt">&lt;string&gt;</span>TLSv1.0<span class="nt">&lt;/string&gt;</span>
+    <span class="nt">&lt;key&gt;</span>NSThirdPartyExceptionRequiresForwardSecrecy<span class="nt">&lt;/key&gt;</span>
+    <span class="nt">&lt;false/&gt;</span>
+    <span class="nt">&lt;key&gt;</span>NSIncludesSubdomains<span class="nt">&lt;/key&gt;</span>
+    <span class="nt">&lt;true/&gt;</span>
+   <span class="nt">&lt;/dict&gt;</span>
+   <span class="nt">&lt;key&gt;</span>sinaimg.cn<span class="nt">&lt;/key&gt;</span>
+   <span class="nt">&lt;dict&gt;</span>
+    <span class="nt">&lt;key&gt;</span>NSThirdPartyExceptionMinimumTLSVersion<span class="nt">&lt;/key&gt;</span>
+    <span class="nt">&lt;string&gt;</span>TLSv1.0<span class="nt">&lt;/string&gt;</span>
+    <span class="nt">&lt;key&gt;</span>NSThirdPartyExceptionRequiresForwardSecrecy<span class="nt">&lt;/key&gt;</span>
+    <span class="nt">&lt;false/&gt;</span>
+    <span class="nt">&lt;key&gt;</span>NSIncludesSubdomains<span class="nt">&lt;/key&gt;</span>
+    <span class="nt">&lt;true/&gt;</span>
+   <span class="nt">&lt;/dict&gt;</span>
+   <span class="nt">&lt;key&gt;</span>sinajs.cn<span class="nt">&lt;/key&gt;</span>
+   <span class="nt">&lt;dict&gt;</span>
+    <span class="nt">&lt;key&gt;</span>NSThirdPartyExceptionMinimumTLSVersion<span class="nt">&lt;/key&gt;</span>
+    <span class="nt">&lt;string&gt;</span>TLSv1.0<span class="nt">&lt;/string&gt;</span>
+    <span class="nt">&lt;key&gt;</span>NSThirdPartyExceptionRequiresForwardSecrecy<span class="nt">&lt;/key&gt;</span>
+    <span class="nt">&lt;false/&gt;</span>
+    <span class="nt">&lt;key&gt;</span>NSIncludesSubdomains<span class="nt">&lt;/key&gt;</span>
+    <span class="nt">&lt;true/&gt;</span>
+   <span class="nt">&lt;/dict&gt;</span>
+   <span class="nt">&lt;key&gt;</span>sina.com.cn<span class="nt">&lt;/key&gt;</span>
+   <span class="nt">&lt;dict&gt;</span>
+    <span class="nt">&lt;key&gt;</span>NSThirdPartyExceptionMinimumTLSVersion<span class="nt">&lt;/key&gt;</span>
+    <span class="nt">&lt;string&gt;</span>TLSv1.0<span class="nt">&lt;/string&gt;</span>
+    <span class="nt">&lt;key&gt;</span>NSThirdPartyExceptionRequiresForwardSecrecy<span class="nt">&lt;/key&gt;</span>
+    <span class="nt">&lt;false/&gt;</span>
+    <span class="nt">&lt;key&gt;</span>NSIncludesSubdomains<span class="nt">&lt;/key&gt;</span>
+    <span class="nt">&lt;true/&gt;</span>
+   <span class="nt">&lt;/dict&gt;</span>
+  <span class="nt">&lt;/dict&gt;</span>
+ <span class="nt">&lt;/dict&gt;</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>4.在iOS 10 中info.plist文件新加入了NSAllowsArbitraryLoadsInWebContent键,允许任意web页面加载,同时苹果会用 ATS 来保护你的app;</p>
+
+  <p>5.安全传输不再支持SSLv3, 建议尽快停用SHA1和3DES算法;</p>
+</blockquote>
+
+<h4 id="6uistatusbar的问题">6.UIStatusBar的问题:</h4>
+
+<p>在iOS10中,如果还使用以前设置UIStatusBar类型或者控制隐藏还是显示的方法,会报警告,方法过期,如下图:</p>
+
+<p><img src="/styles/images/resources/FB250BFF4F3B5A9191564910B9817205.png" alt="122816-6cc72fac7695aefa.png" /></p>
+
+<p>iOS10设置UIStatusBar的样式或者状态</p>
+
+<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">@property</span><span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">readonly</span><span class="p">)</span> <span class="n">UIStatusBarStyle</span> <span class="n">preferredStatusBarStyle</span> <span class="n">NS_AVAILABLE_IOS</span><span class="p">(</span><span class="mi">7</span><span class="n">_0</span><span class="p">)</span> <span class="n">__TVOS_PROHIBITED</span><span class="p">;</span> <span class="c1">// Defaults to UIStatusBarStyleDefault
+</span>
+<span class="k">@property</span><span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">readonly</span><span class="p">)</span> <span class="n">BOOL</span> <span class="n">prefersStatusBarHidden</span> <span class="n">NS_AVAILABLE_IOS</span><span class="p">(</span><span class="mi">7</span><span class="n">_0</span><span class="p">)</span> <span class="n">__TVOS_PROHIBITED</span><span class="p">;</span> <span class="c1">// Defaults to NO
+</span>
+<span class="k">-</span> <span class="p">(</span><span class="n">UIStatusBarStyle</span><span class="p">)</span><span class="n">preferredStatusBarStyle</span> <span class="n">NS_AVAILABLE_IOS</span><span class="p">(</span><span class="mi">7</span><span class="n">_0</span><span class="p">)</span> <span class="n">__TVOS_PROHIBITED</span><span class="p">;</span> <span class="c1">// Defaults to UIStatusBarStyleDefault
+</span>
+<span class="k">-</span> <span class="p">(</span><span class="n">BOOL</span><span class="p">)</span><span class="n">prefersStatusBarHidden</span> <span class="n">NS_AVAILABLE_IOS</span><span class="p">(</span><span class="mi">7</span><span class="n">_0</span><span class="p">)</span> <span class="n">__TVOS_PROHIBITED</span><span class="p">;</span> <span class="c1">// Defaults to NO
+// Override to return the type of animation that should be used for status bar changes for this view controller. This currently only affects changes to prefersStatusBarHidden.
+</span>
+<span class="k">-</span> <span class="p">(</span><span class="n">UIStatusBarAnimation</span><span class="p">)</span><span class="n">preferredStatusBarUpdateAnimation</span> <span class="n">NS_AVAILABLE_IOS</span><span class="p">(</span><span class="mi">7</span><span class="n">_0</span><span class="p">)</span> <span class="n">__TVOS_PROHIBITED</span><span class="p">;</span> <span class="c1">// Defaults to UIStatusBarAnimationFade
+</span></code></pre></div></div>
+
+<h4 id="7-uitextfield">7. UITextField</h4>
+
+<blockquote>
+  <p>在iOS 10 中,UITextField新增了textContentType字段,是UITextContentType类型,它是一个枚举,作用是可以指定输入框的类型,以便系统可以分析出用户的语义.是电话类型就建议一些电话,是地址类型就建议一些地址.可以在#import &lt;UIKit/UITextInputTraits.h&gt;文件中,查看textContentType字段,有以下可以选择的类型:</p>
+</blockquote>
+
+<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">UIKIT_EXTERN</span> <span class="n">UITextContentType</span> <span class="k">const</span> <span class="n">UITextContentTypeName</span>                      <span class="n">NS_AVAILABLE_IOS</span><span class="p">(</span><span class="mi">10</span><span class="n">_0</span><span class="p">);</span>
+<span class="n">UIKIT_EXTERN</span> <span class="n">UITextContentType</span> <span class="k">const</span> <span class="n">UITextContentTypeNamePrefix</span>                <span class="n">NS_AVAILABLE_IOS</span><span class="p">(</span><span class="mi">10</span><span class="n">_0</span><span class="p">);</span>
+<span class="n">UIKIT_EXTERN</span> <span class="n">UITextContentType</span> <span class="k">const</span> <span class="n">UITextContentTypeGivenName</span>                 <span class="n">NS_AVAILABLE_IOS</span><span class="p">(</span><span class="mi">10</span><span class="n">_0</span><span class="p">);</span>
+<span class="n">UIKIT_EXTERN</span> <span class="n">UITextContentType</span> <span class="k">const</span> <span class="n">UITextContentTypeMiddleName</span>                <span class="n">NS_AVAILABLE_IOS</span><span class="p">(</span><span class="mi">10</span><span class="n">_0</span><span class="p">);</span>
+<span class="n">UIKIT_EXTERN</span> <span class="n">UITextContentType</span> <span class="k">const</span> <span class="n">UITextContentTypeFamilyName</span>                <span class="n">NS_AVAILABLE_IOS</span><span class="p">(</span><span class="mi">10</span><span class="n">_0</span><span class="p">);</span>
+<span class="n">UIKIT_EXTERN</span> <span class="n">UITextContentType</span> <span class="k">const</span> <span class="n">UITextContentTypeNameSuffix</span>                <span class="n">NS_AVAILABLE_IOS</span><span class="p">(</span><span class="mi">10</span><span class="n">_0</span><span class="p">);</span>
+<span class="n">UIKIT_EXTERN</span> <span class="n">UITextContentType</span> <span class="k">const</span> <span class="n">UITextContentTypeNickname</span>                  <span class="n">NS_AVAILABLE_IOS</span><span class="p">(</span><span class="mi">10</span><span class="n">_0</span><span class="p">);</span>
+<span class="n">UIKIT_EXTERN</span> <span class="n">UITextContentType</span> <span class="k">const</span> <span class="n">UITextContentTypeJobTitle</span>                  <span class="n">NS_AVAILABLE_IOS</span><span class="p">(</span><span class="mi">10</span><span class="n">_0</span><span class="p">);</span>
+<span class="n">UIKIT_EXTERN</span> <span class="n">UITextContentType</span> <span class="k">const</span> <span class="n">UITextContentTypeOrganizationName</span>          <span class="n">NS_AVAILABLE_IOS</span><span class="p">(</span><span class="mi">10</span><span class="n">_0</span><span class="p">);</span>
+<span class="n">UIKIT_EXTERN</span> <span class="n">UITextContentType</span> <span class="k">const</span> <span class="n">UITextContentTypeLocation</span>                  <span class="n">NS_AVAILABLE_IOS</span><span class="p">(</span><span class="mi">10</span><span class="n">_0</span><span class="p">);</span>
+<span class="n">UIKIT_EXTERN</span> <span class="n">UITextContentType</span> <span class="k">const</span> <span class="n">UITextContentTypeFullStreetAddress</span>         <span class="n">NS_AVAILABLE_IOS</span><span class="p">(</span><span class="mi">10</span><span class="n">_0</span><span class="p">);</span>
+<span class="n">UIKIT_EXTERN</span> <span class="n">UITextContentType</span> <span class="k">const</span> <span class="n">UITextContentTypeStreetAddressLine1</span>        <span class="n">NS_AVAILABLE_IOS</span><span class="p">(</span><span class="mi">10</span><span class="n">_0</span><span class="p">);</span>
+<span class="n">UIKIT_EXTERN</span> <span class="n">UITextContentType</span> <span class="k">const</span> <span class="n">UITextContentTypeStreetAddressLine2</span>        <span class="n">NS_AVAILABLE_IOS</span><span class="p">(</span><span class="mi">10</span><span class="n">_0</span><span class="p">);</span>
+<span class="n">UIKIT_EXTERN</span> <span class="n">UITextContentType</span> <span class="k">const</span> <span class="n">UITextContentTypeAddressCity</span>               <span class="n">NS_AVAILABLE_IOS</span><span class="p">(</span><span class="mi">10</span><span class="n">_0</span><span class="p">);</span>
+<span class="n">UIKIT_EXTERN</span> <span class="n">UITextContentType</span> <span class="k">const</span> <span class="n">UITextContentTypeAddressState</span>              <span class="n">NS_AVAILABLE_IOS</span><span class="p">(</span><span class="mi">10</span><span class="n">_0</span><span class="p">);</span>
+<span class="n">UIKIT_EXTERN</span> <span class="n">UITextContentType</span> <span class="k">const</span> <span class="n">UITextContentTypeAddressCityAndState</span>       <span class="n">NS_AVAILABLE_IOS</span><span class="p">(</span><span class="mi">10</span><span class="n">_0</span><span class="p">);</span>
+<span class="n">UIKIT_EXTERN</span> <span class="n">UITextContentType</span> <span class="k">const</span> <span class="n">UITextContentTypeSublocality</span>               <span class="n">NS_AVAILABLE_IOS</span><span class="p">(</span><span class="mi">10</span><span class="n">_0</span><span class="p">);</span>
+<span class="n">UIKIT_EXTERN</span> <span class="n">UITextContentType</span> <span class="k">const</span> <span class="n">UITextContentTypeCountryName</span>               <span class="n">NS_AVAILABLE_IOS</span><span class="p">(</span><span class="mi">10</span><span class="n">_0</span><span class="p">);</span>
+<span class="n">UIKIT_EXTERN</span> <span class="n">UITextContentType</span> <span class="k">const</span> <span class="n">UITextContentTypePostalCode</span>                <span class="n">NS_AVAILABLE_IOS</span><span class="p">(</span><span class="mi">10</span><span class="n">_0</span><span class="p">);</span>
+<span class="n">UIKIT_EXTERN</span> <span class="n">UITextContentType</span> <span class="k">const</span> <span class="n">UITextContentTypeTelephoneNumber</span>           <span class="n">NS_AVAILABLE_IOS</span><span class="p">(</span><span class="mi">10</span><span class="n">_0</span><span class="p">);</span>
+<span class="n">UIKIT_EXTERN</span> <span class="n">UITextContentType</span> <span class="k">const</span> <span class="n">UITextContentTypeEmailAddress</span>              <span class="n">NS_AVAILABLE_IOS</span><span class="p">(</span><span class="mi">10</span><span class="n">_0</span><span class="p">);</span>
+<span class="n">UIKIT_EXTERN</span> <span class="n">UITextContentType</span> <span class="k">const</span> <span class="n">UITextContentTypeURL</span>                       <span class="n">NS_AVAILABLE_IOS</span><span class="p">(</span><span class="mi">10</span><span class="n">_0</span><span class="p">);</span>
+<span class="n">UIKIT_EXTERN</span> <span class="n">UITextContentType</span> <span class="k">const</span> <span class="n">UITextContentTypeCreditCardNumber</span>          <span class="n">NS_AVAILABLE_IOS</span><span class="p">(</span><span class="mi">10</span><span class="n">_0</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h4 id="8usernotifications用户通知">8.UserNotifications(用户通知)</h4>
+
+<blockquote>
+  <p>iOS 10 中将通知相关的 API 都统一了,在此基础上很多用户定义的通知,并且可以捕捉到各个通知状态的回调.以前通知的概念是:大家想接受的提前做好准备,然后一下全两分发,没收到也不管了,也不关心发送者,现在的用户通知做成了类似于网络请求,先发一个request得到response的流程,还封装了error,可以在各个状态的方法中做一些额外的操作,并且能获得一些字段,比如发送者之类的.这个功能的头文件是:#import &lt;UserNotifications/UserNotifications.h&gt;
+主要有以下文件:</p>
+</blockquote>
+
+<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#import &lt;UserNotifications/NSString+UserNotifications.h&gt;
+#import &lt;UserNotifications/UNError.h&gt;
+#import &lt;UserNotifications/UNNotification.h&gt;
+#import &lt;UserNotifications/UNNotificationAction.h&gt;
+#import &lt;UserNotifications/UNNotificationAttachment.h&gt;
+#import &lt;UserNotifications/UNNotificationCategory.h&gt;
+#import &lt;UserNotifications/UNNotificationContent.h&gt;
+#import &lt;UserNotifications/UNNotificationRequest.h&gt;
+#import &lt;UserNotifications/UNNotificationResponse.h&gt;
+#import &lt;UserNotifications/UNNotificationSettings.h&gt;
+#import &lt;UserNotifications/UNNotificationSound.h&gt;
+#import &lt;UserNotifications/UNNotificationTrigger.h&gt;
+#import &lt;UserNotifications/UNUserNotificationCenter.h&gt;
+#import &lt;UserNotifications/UNNotificationServiceExtension.h&gt;
+</span></code></pre></div></div>
+
+<h4 id="9-uicollectionviewcell的的优化">9. UICollectionViewCell的的优化</h4>
+
+<blockquote>
+  <p>在iOS 10 之前,UICollectionView上面如果有大量cell,当用户活动很快的时候,整个UICollectionView的卡顿会很明显,为什么会造成这样的问题,这里涉及到了iOS 系统的重用机制,当cell准备加载进屏幕的时候,整个cell都已经加载完成,等待在屏幕外面了,也就是整整一行cell都已经加载完毕,这就是造成卡顿的主要原因,专业术语叫做:掉帧.
+要想让用户感觉不到卡顿,我们的app必须帧率达到60帧/秒,也就是说每帧16毫秒要刷新一次.</p>
+</blockquote>
+
+<h5 id="ios-10-之前uicollectionviewcell的生命周期是这样的">iOS 10 之前UICollectionViewCell的生命周期是这样的:</h5>
+
+<blockquote>
+  <p>1.用户滑动屏幕,屏幕外有一个cell准备加载进来,把cell从reusr队列拿出来,然后调用prepareForReuse方法,在这个方法里面,可以重置cell的状态,加载新的数据;</p>
+
+  <p>2.继续滑动,就会调用cellForItemAtIndexPath方法,在这个方法里面给cell赋值模型,然后返回给系统;</p>
+
+  <p>3.当cell马上进去屏幕的时候,就会调用willDisplayCell方法,在这个方法里面我们还可以修改cell,为进入屏幕做最后的准备工作;</p>
+
+  <p>4.执行完willDisplayCell方法后,cell就进去屏幕了.当cell完全离开屏幕以后,会调用didEndDisplayingCell方法.</p>
+</blockquote>
+
+<h5 id="ios-10-uicollectionviewcell的生命周期是这样的">iOS 10 UICollectionViewCell的生命周期是这样的:</h5>
+
+<blockquote>
+  <p>1.用户滑动屏幕,屏幕外有一个cell准备加载进来,把cell从reusr队列拿出来,然后调用prepareForReuse方法,在这里当cell还没有进去屏幕的时候,就已经提前调用这个方法了,对比之前的区别是之前是cell的上边缘马上进去屏幕的时候就会调用该方法,而iOS 10 提前到cell还在屏幕外面的时候就调用;</p>
+
+  <p>2.在cellForItemAtIndexPath中创建cell，填充数据，刷新状态等操作,相比于之前也提前了;</p>
+
+  <p>3.用户继续滑动的话,当cell马上就需要显示的时候我们再调用willDisplayCell方法,原则就是:何时需要显示,何时再去调用willDisplayCell方法;</p>
+
+  <p>4.当cell完全离开屏幕以后,会调用didEndDisplayingCell方法,跟之前一样,cell会进入重用队列.
+在iOS 10 之前,cell只能从重用队列里面取出,再走一遍生命周期,并调用cellForItemAtIndexPath创建或者生成一个cell.
+在iOS 10 中,系统会cell保存一段时间,也就是说当用户把cell滑出屏幕以后,如果又滑动回来,cell不用再走一遍生命周期了,只需要调用willDisplayCell方法就可以重新出现在屏幕中了.
+iOS 10 中,系统是一个一个加载cell的,二以前是一行一行加载的,这样就可以提升很多性能;</p>
+</blockquote>
+
+<h5 id="ios-10-新增加的pre-fetching预加载">iOS 10 新增加的Pre-Fetching预加载</h5>
+
+<blockquote>
+  <p>这个是为了降低UICollectionViewCell在加载的时候所花费的时间,在 iOS 10 中,除了数据源协议和代理协议外,新增加了一个UICollectionViewDataSourcePrefetching协议,这个协议里面定义了两个方法:</p>
+</blockquote>
+
+<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">collectionView</span><span class="p">:(</span><span class="n">UICollectionView</span> <span class="o">*</span><span class="p">)</span><span class="nv">collectionView</span> <span class="nf">prefetchItemsAtIndexPaths</span><span class="p">:(</span><span class="n">NSArray</span><span class="o">&lt;</span><span class="n">NSIndexPath</span> <span class="o">*&gt;</span> <span class="o">*</span><span class="p">)</span><span class="nv">indexPaths</span> <span class="n">NS_AVAILABLE_IOS</span><span class="p">(</span><span class="mi">10</span><span class="n">_0</span><span class="p">);</span>
+
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">collectionView</span><span class="p">:(</span><span class="n">UICollectionView</span> <span class="o">*</span><span class="p">)</span><span class="nv">collectionView</span> <span class="nf">cancelPrefetchingForItemsAtIndexPaths</span><span class="p">:(</span><span class="n">NSArray</span><span class="o">&lt;</span><span class="n">NSIndexPath</span> <span class="o">*&gt;</span> <span class="o">*</span><span class="p">)</span><span class="nv">indexPaths</span>  <span class="n">NS_AVAILABLE_IOS</span><span class="p">(</span><span class="mi">10</span><span class="n">_0</span><span class="p">);</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>在ColletionView prefetchItemsAt indexPaths这个方法是异步预加载数据的,当中的indexPaths数组是有序的,就是item接收数据的顺序;
+CollectionView cancelPrefetcingForItemsAt indexPaths这个方法是可选的,可以用来处理在滑动中取消或者降低提前加载数据的优先级.
+注意:这个协议并不能代替之前读取数据的方法,仅仅是辅助加载数据.
+Pre-Fetching预加载对UITableViewCell同样适用.</p>
+</blockquote>
+
+<h4 id="10-uirefreshcontrol的使用">10. UIRefreshControl的使用</h4>
+
+<blockquote>
+  <p>在iOS 10 中, UIRefreshControl可以直接在UICollectionView和UITableView中使用,并且脱离了UITableViewController.现在RefreshControl是UIScrollView的一个属性.
+使用方法:</p>
+</blockquote>
+
+<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">UIRefreshControl</span> <span class="o">*</span><span class="n">refreshControl</span> <span class="o">=</span> <span class="p">[[</span><span class="n">UIRefreshControl</span> <span class="nf">alloc</span><span class="p">]</span> <span class="nf">init</span><span class="p">];</span>
+    <span class="p">[</span><span class="n">refreshControl</span> <span class="nf">addTarget</span><span class="p">:</span><span class="n">self</span> <span class="nf">action</span><span class="p">:</span><span class="k">@selector</span><span class="p">(</span><span class="n">loadData</span><span class="p">)</span> <span class="n">forControlEvents</span><span class="o">:</span><span class="n">UIControlEventValueChanged</span><span class="p">];</span>
+    <span class="n">collectionView</span><span class="p">.</span><span class="n">refreshControl</span> <span class="o">=</span> <span class="n">refreshControl</span><span class="p">;</span>
+</code></pre></div></div>
+
+            </article>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+    <footer class="footer" role="contentinfo">
+	<div class="container">
+		<p class="copyright">Copyright &copy; 2014-2018 <a href="https://anchoritefili.github.io"><code>anchoriteFili</code></a>.</p>
+		<p>Powered by <a href="http://jekyllrb.com">Jekyll</a>, themed from <a href="http://lesscss.cn/">Less</a>, refactored by <a href="http://www.hifreud.com/">Freud Kang</a></p>
+	</div>
+</footer>
+
+<script src="/styles/js/jquery.min.js"></script>
+<script src="/styles/js/bootstrap.min.js"></script>
+<script src="/styles/js/holder.min.js"></script>
+<script src="/styles/js/lessismore.js"></script>
+<script src="/styles/js/application.js"></script>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  </body>
+</html>

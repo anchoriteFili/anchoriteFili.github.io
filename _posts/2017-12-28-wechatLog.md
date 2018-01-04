@@ -14,7 +14,16 @@ tag: swift
 {:toc}
 
 
+### 相关资料
+---
+* [iOS接入指南](https://open.weixin.qq.com/cgi-bin/showdocument?action=dir_list&t=resource/res_list&verify=1&id=1417694084&token=&lang=zh_CN)<br>
+* [移动应用微信登录开发指南](https://open.weixin.qq.com/cgi-bin/showdocument?action=dir_list&t=resource/res_list&verify=1&id=open1419317851&token=&lang=zh_CN)<br>
+* [个人日记保存点](http://www.cnblogs.com/AnchoriteFiliGod/diary/2017/12/21/8080913.html)
+
 ### 接入流程
+---
+#### Podfile信息
+
 ```
 target 'WechatLogTest' do
 end
@@ -22,12 +31,9 @@ platform :ios, '8.0'
 use_frameworks!
 pod 'WechatOpenSDK'
 ```
-相关资料：<br>
-[iOS接入指南](https://open.weixin.qq.com/cgi-bin/showdocument?action=dir_list&t=resource/res_list&verify=1&id=1417694084&token=&lang=zh_CN)<br>
-[移动应用微信登录开发指南](https://open.weixin.qq.com/cgi-bin/showdocument?action=dir_list&t=resource/res_list&verify=1&id=open1419317851&token=&lang=zh_CN)<br>
-[个人日记保存点](http://www.cnblogs.com/AnchoriteFiliGod/diary/2017/12/21/8080913.html)
 
-### plist中环境的设置
+#### plist中环境的设置
+
 
 ```
 <key>LSApplicationQueriesSchemes</key>
@@ -75,7 +81,7 @@ pod 'WechatOpenSDK'
 ```
 
 
-### 创建HYHttpTool.swift
+#### 创建HYHttpTool.swift
 ```swift
 
 import UIKit
@@ -301,7 +307,7 @@ class WXLogTool: NSObject, WXApiDelegate {
 }
 ```
 
-### Appdelegate中设置相关环境
+#### Appdelegate中设置相关环境
 ```swift
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.

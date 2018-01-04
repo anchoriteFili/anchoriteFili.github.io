@@ -144,9 +144,11 @@
   <li><a href="#常用判断方法" id="markdown-toc-常用判断方法">常用判断方法</a></li>
 </ul>
 
-<p><a href="https://www.jianshu.com/p/5bbde2480680">Objective-C 反射机制</a><br /></p>
+<p><strong>引用：</strong><a href="https://www.jianshu.com/p/5bbde2480680">Objective-C 反射机制</a><br /></p>
 
-<p>系统Foundation框架为我们提供了一些方法反射的API，我们可以通过这些API执行将字符串转为SEL等操作。由于OC语言的动态性，这些操作都是发生在运行时的。</p>
+<blockquote>
+  <p>系统Foundation框架为我们提供了一些方法反射的API，我们可以通过这些API执行将字符串转为SEL等操作。由于OC语言的动态性，这些操作都是发生在运行时的。</p>
+</blockquote>
 
 <div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// SEL和字符串转换
 </span><span class="n">FOUNDATION_EXPORT</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">NSStringFromSelector</span><span class="p">(</span><span class="n">SEL</span> <span class="n">aSelector</span><span class="p">);</span>
@@ -159,7 +161,9 @@
 <span class="n">FOUNDATION_EXPORT</span> <span class="n">Protocol</span> <span class="o">*</span> <span class="n">__nullable</span> <span class="n">NSProtocolFromString</span><span class="p">(</span><span class="n">NSString</span> <span class="o">*</span><span class="n">namestr</span><span class="p">)</span> <span class="n">NS_AVAILABLE</span><span class="p">(</span><span class="mi">10</span><span class="n">_5</span><span class="p">,</span> <span class="mi">2</span><span class="n">_0</span><span class="p">);</span>
 </code></pre></div></div>
 
-<p>通过这些方法，我们可以在运行时选择创建那个实例，并动态选择调用哪个方法。这些操作甚至可以由服务器传回来的参数来控制，我们可以将服务器传回来的类名和方法名，实例为我们的对象。</p>
+<blockquote>
+  <p>通过这些方法，我们可以在运行时选择创建那个实例，并动态选择调用哪个方法。这些操作甚至可以由服务器传回来的参数来控制，我们可以将服务器传回来的类名和方法名，实例为我们的对象。</p>
+</blockquote>
 
 <div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 假设从服务器获取JSON串，通过这个JSON串获取需要创建的类为ViewController，并且调用这个类的getDataList方法。
 </span><span class="n">Class</span> <span class="n">class</span> <span class="o">=</span> <span class="n">NSClassFromString</span><span class="p">(</span><span class="s">@"ViewController"</span><span class="p">);</span>
@@ -169,7 +173,9 @@
 </code></pre></div></div>
 
 <h4 id="常用判断方法">常用判断方法</h4>
-<p>在NSObject类中为我们提供了一些基础方法，用来做一些判断操作，这些方法都是发生在运行时动态判断的。</p>
+<blockquote>
+  <p>在NSObject类中为我们提供了一些基础方法，用来做一些判断操作，这些方法都是发生在运行时动态判断的。</p>
+</blockquote>
 
 <div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 当前对象是否这个类或其子类的实例
 </span><span class="k">-</span> <span class="p">(</span><span class="n">BOOL</span><span class="p">)</span><span class="nf">isKindOfClass</span><span class="p">:(</span><span class="n">Class</span><span class="p">)</span><span class="nv">aClass</span><span class="p">;</span>

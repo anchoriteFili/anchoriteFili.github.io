@@ -72,26 +72,33 @@ Search for a package:
 
 Do you confirm generation [yes]?
 ```
-也可以直接手动创建composer.json文件直接里边写数据<br><br>
+**也可以直接手动创建composer.json文件直接里边写数据**
 
 #### 查找三方库方法
 ---
-1> 终端模糊查询sdk
-```composer search leancloud/leancloud-sdk```
+##### 1> 终端模糊查询sdk
+
+```
+composer search leancloud/leancloud-sdk
+```
 ![3.png](/styles/images/resources/9789C56C64690B3AF84C1015E720B511.png)
 
-2> 查询sdk版本
-```composer show -all leancloud/leancloud-sdk```
+##### 2> 查询sdk版本
+
+```
+composer show -all leancloud/leancloud-sdk
+```
 ![4.png](/styles/images/resources/2AB6B7E41E26EEFB765D9A464F1F0D84.png)
 
-3> 生成了composer.json文件
+##### 3> 生成了composer.json文件
+
 ![5.png](/styles/images/resources/32D3E0F287F753B20E859D2740DBDA7D.png)
 
-4> 运行 ```composer install``` 命令下载sdk,加载完毕
+##### 4> 运行 `composer install` 命令下载sdk,加载完毕
 ![6.png](/styles/images/resources/98D9CB72BA149F552F2B5B5E649207B7.png)
 ![7.png](/styles/images/resources/5BCCC0219A70B8A21C2A56D5066D801F.png)
 
-5> 引入头即可使用
+##### 5> 引入头即可使用
 ```php
 namespace LeanCloud;
 require "vendor/autoload.php";
