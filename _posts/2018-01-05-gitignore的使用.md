@@ -7,7 +7,7 @@ date:   2018-01-05 15:46:34 +0800
 #大类配置
 categories: 知识
 #小类配置
-tag: Jekyll
+tag: git
 ---
 
 * content
