@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>iOS开发- 文件共享(利用iTunes导入文件, 并且显示已有文件) - 公会驻地</title>
+
+	<link rel="shortcut icon" href="/styles/images/favicon.jpg">
+	<link rel="icon" href="/styles/images/favicon.jpg">
+
+	<link rel="stylesheet" href="/styles/css/index.css">
+	<link rel="stylesheet" href="/styles/css/fontawesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="/styles/css/syntax.css">
+	<link rel="canonical" href="/2016/08/31/iOS%E5%BC%80%E5%8F%91-%E6%96%87%E4%BB%B6%E5%85%B1%E4%BA%AB/">
+	<link rel="alternate" type="application/rss+xml" title="公会驻地" href="/feed.xml">
+	
+	<meta name="keywords" content="iOS开发- 文件共享(利用iTunes导入文件, 并且显示已有文件), 公会驻地, 学而不思则罔;思而不学则殆;生命不止;折腾不休">
+	<meta name="description" content="学而不思则罔;思而不学则殆;生命不止;折腾不休">
+
+	<script src="/styles/js/jquery.min.js"></script>
+	<!--[if lt IE 9]>
+    	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  	<![endif]-->
+  	<script>
+		var _hmt = _hmt || [];
+		(function() {
+		  var hm = document.createElement("script");
+		  hm.src = "//hm.baidu.com/hm.js?94be4b0f9fc5d94cc0d0415ea6761ae9";
+		  var s = document.getElementsByTagName("script")[0]; 
+		  s.parentNode.insertBefore(hm, s);
+		})();
+	</script>
+  	<style type="text/css">
+	  	.docs-content{
+	  		margin-bottom: 10px;
+	  	}
+  	</style>
+</head>
+
+  <body class="index">
+
+    <header class="navbar navbar-inverse navbar-fixed-top docs-nav" role="banner">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="/" class="navbar-brand">
+        <img src="/styles/images/logo.jpg">
+      </a>
+    </div>
+    <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+      <ul class="nav navbar-nav">    
+        <li>
+          <a href="/">Home</a>
+        </li>
+        <li>
+          <a href="/categories/">大类分解</a>
+        </li>
+        <li>
+          <a href="/tag">小类内聚</a>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+            <a><span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span></a>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">关于<b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a rel="nofollow" target="_blank" href="https://github.com/anchoriteFili/">Github</a></li>
+            <li><a rel="nofollow" target="_blank" href="https://anchoritefili.github.io">关于作者</a></li>
+            <li><a rel="nofollow" href="/books">我的书单</a></li>
+            <li><a rel="nofollow" href="/reference">推荐博客</a></li>
+<!--            <li><a href="/feed.xml">RSS订阅</a></li>-->
+            <li class="divider"></li>
+            <li><a rel="nofollow" target="_blank" href="http://www.gonghuizhudi.com">个人官网</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+    <div class="docs-header" id="content">
+  <div class="container">
+  	
+  		<!--
+		    <h1>iOS开发- 文件共享(利用iTunes导入文件, 并且显示已有文件)</h1>
+		    <p>Post on Aug 31, 2016 by <a href="/about">anchoriteFili</a></p>
+		-->
+		    <h1>躬身以待方显气度，拧首抬杠略失品格。</h1>
+    
+  </div>
+</div>
+
+    
+      
+<div class="banner">
+  <div class="container">
+  	
+    	<a href="/categories/#知识-ref">知识</a>	/
+    	<a href="/tag/#object-c-ref">object-c</a>
+    
+  </div>
+</div>
+
+    
+
+    <div class="container docs-container">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="sidebar hidden-print" role="complementary">
+        <div id="navigation">
+  <h1>目录</h1>
+  <ul class="nav sidenav">
+  </ul>
+  <div style="height: 200px;width: 200px;">
+    <script type="text/javascript" src="//rf.revolvermaps.com/0/0/8.js?i=5ytn1ssq6za&amp;m=0&amp;c=ff0000&amp;cr1=ffffff&amp;f=arial&amp;l=33" async="async"> 
+    </script>
+  </div>
+</div>
+
+ 
+      </div>
+    </div>
+    <div class="col-md-9" role="main">
+      <div class="panel docs-content">
+        <div class="wrapper">
+            <header class="post-header">
+              <h1 class="post-title">iOS开发- 文件共享(利用iTunes导入文件, 并且显示已有文件)</h1>
+              <!--
+                <p class="post-meta">Aug 31, 2016</p>
+              -->
+              <div class="meta">Posted on <span class="postdate">Aug 31, 2016</span> By <a target="_blank" href="http://localhost:4000">anchoriteFili</a></div>
+              <br />
+            </header>
+            <article class="post-content">
+              <ul id="markdown-toc">
+  <li><a href="#相关链接" id="markdown-toc-相关链接">相关链接</a></li>
+  <li><a href="#创建过程" id="markdown-toc-创建过程">创建过程</a>    <ul>
+      <li><a href="#1-首先在plist文件中进行设置加入-uifilesharingenabled--使项目能够实现ituns共享功能" id="markdown-toc-1-首先在plist文件中进行设置加入-uifilesharingenabled--使项目能够实现ituns共享功能">1. 首先在plist文件中进行设置，加入 <code class="highlighter-rouge">UIFileSharingEnabled</code>  使项目能够实现ituns共享功能</a></li>
+      <li><a href="#2-引入quicklook框架-import-quicklookquicklookh" id="markdown-toc-2-引入quicklook框架-import-quicklookquicklookh">2. 引入QuickLook框架 <code class="highlighter-rouge">#import &lt;QuickLook/QuickLook.h&gt;</code></a></li>
+      <li><a href="#3-创建tableview用来承载从共享文件夹中获取的文件列表名" id="markdown-toc-3-创建tableview用来承载从共享文件夹中获取的文件列表名">3. 创建tableView，用来承载从共享文件夹中获取的文件列表名</a></li>
+      <li><a href="#4-导入各种代理方法" id="markdown-toc-4-导入各种代理方法">4. 导入各种代理方法</a></li>
+      <li><a href="#5-书写沙盒文件相关的处理方法" id="markdown-toc-5-书写沙盒文件相关的处理方法">5. 书写沙盒文件相关的处理方法</a></li>
+      <li><a href="#6-根据方法获取进行相关数据的添加" id="markdown-toc-6-根据方法获取进行相关数据的添加">6. 根据方法获取进行相关数据的添加</a>        <ul>
+          <li><a href="#1-获取列表信息" id="markdown-toc-1-获取列表信息">1&gt; 获取列表信息</a></li>
+          <li><a href="#2-在cellforrow里边设置各种数据即可显示列表" id="markdown-toc-2-在cellforrow里边设置各种数据即可显示列表">2&gt; 在cellForRow里边设置各种数据，即可显示列表</a></li>
+          <li><a href="#7-创建qlpreviewcontroller部分东西" id="markdown-toc-7-创建qlpreviewcontroller部分东西">7. 创建QLPreviewController部分东西</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#全部代码" id="markdown-toc-全部代码">全部代码</a></li>
+</ul>
+
+<h3 id="相关链接">相关链接</h3>
+<hr />
+
+<ul>
+  <li><a href="http://blog.csdn.net/lwq421336220/article/details/36439155" target="_blank">iOS开发- 文件共享(利用iTunes导入文件, 并且显示已有文件)</a><br /></li>
+  <li><a href="http://blog.csdn.net/xuqiang918/article/details/13001451" target="_blank">【iOS功能实现】之利用UIDocumentInteractionController打开和预览文档</a><br /></li>
+  <li><a href="http://blog.csdn.net/kmyhy/article/details/9064089" target="_blank">iOS Document Interaction 编程指南</a><br /></li>
+</ul>
+
+<h3 id="创建过程">创建过程</h3>
+<hr />
+
+<h4 id="1-首先在plist文件中进行设置加入-uifilesharingenabled--使项目能够实现ituns共享功能">1. 首先在plist文件中进行设置，加入 <code class="highlighter-rouge">UIFileSharingEnabled</code>  使项目能够实现ituns共享功能</h4>
+
+<p><img src="/styles/images/resources/95FDC948029A7BA807D3EBE5AB0074CB.png" alt="752372-20160902113843871-339875070.png" /></p>
+
+<h4 id="2-引入quicklook框架-import-quicklookquicklookh">2. 引入QuickLook框架 <code class="highlighter-rouge">#import &lt;QuickLook/QuickLook.h&gt;</code></h4>
+
+<p><strong>其中引入头<code class="highlighter-rouge">#improt &lt;string.h&gt;</code>为的使用 strlen(txt) 来计算char长度</strong></p>
+
+<h4 id="3-创建tableview用来承载从共享文件夹中获取的文件列表名">3. 创建tableView，用来承载从共享文件夹中获取的文件列表名</h4>
+
+<h4 id="4-导入各种代理方法">4. 导入各种代理方法</h4>
+
+<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="n">UITableViewDelegate</span><span class="p">,</span><span class="n">UITableViewDataSource</span><span class="p">,</span><span class="n">QLPreviewControllerDelegate</span><span class="p">,</span><span class="n">QLPreviewControllerDataSource</span><span class="p">,</span><span class="n">UIDocumentInteractionControllerDelegate</span><span class="o">&gt;</span>
+</code></pre></div></div>
+
+<h4 id="5-书写沙盒文件相关的处理方法">5. 书写沙盒文件相关的处理方法</h4>
+
+<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#pragma mark **************** 沙盒中文件相关处理 begin ****************
+#pragma mark 保存图片的本地方法
+</span><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">saveToDocumentsWithImage</span><span class="p">:(</span><span class="n">UIImage</span> <span class="o">*</span><span class="p">)</span><span class="nv">image</span> <span class="nf">andImageName</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">imageName</span> <span class="p">{</span>
+    <span class="n">NSData</span> <span class="o">*</span><span class="n">imageData</span> <span class="o">=</span> <span class="n">UIImageJPEGRepresentation</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">8</span><span class="p">);</span> <span class="c1">// 转换类型
+</span>    <span class="n">NSString</span> <span class="o">*</span><span class="n">documentPath</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSSearchPathForDirectoriesInDomains</span><span class="p">(</span><span class="n">NSDocumentDirectory</span><span class="p">,</span> <span class="n">NSUserDomainMask</span><span class="p">,</span> <span class="nb">YES</span><span class="p">)</span> <span class="nf">objectAtIndex</span><span class="p">:</span><span class="mi">0</span><span class="p">];</span> <span class="c1">// 获取沙盒路径
+</span>    <span class="n">NSString</span> <span class="o">*</span><span class="n">filePath</span> <span class="o">=</span> <span class="p">[</span><span class="n">documentPath</span> <span class="nf">stringByAppendingPathComponent</span><span class="p">:</span><span class="n">imageName</span><span class="p">];</span>
+    <span class="p">[</span><span class="n">imageData</span> <span class="nf">writeToFile</span><span class="p">:</span><span class="n">filePath</span> <span class="nf">atomically</span><span class="p">:</span><span class="nb">YES</span><span class="p">];</span> <span class="c1">// 将数据写书沙盒
+</span><span class="p">}</span>
+
+<span class="cp">#pragma mark 保存文字相关内容
+</span><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">saveToDocumentsWithTxT</span><span class="p">:(</span><span class="kt">char</span> <span class="o">*</span><span class="p">)</span><span class="nv">txt</span> <span class="nf">andTxtFileName</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">txtFileName</span> <span class="p">{</span>
+
+    <span class="n">NSData</span> <span class="o">*</span><span class="n">txtData</span> <span class="o">=</span> <span class="p">[[</span><span class="n">NSData</span> <span class="nf">alloc</span><span class="p">]</span> <span class="nf">initWithBytes</span><span class="p">:</span><span class="n">txt</span> <span class="nf">length</span><span class="p">:</span><span class="n">strlen</span><span class="p">(</span><span class="n">txt</span><span class="p">)];</span>
+    <span class="n">NSString</span> <span class="o">*</span><span class="n">documentPath</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSSearchPathForDirectoriesInDomains</span><span class="p">(</span><span class="n">NSDocumentDirectory</span><span class="p">,</span> <span class="n">NSUserDomainMask</span><span class="p">,</span> <span class="nb">YES</span><span class="p">)</span> <span class="nf">objectAtIndex</span><span class="p">:</span><span class="mi">0</span><span class="p">];</span> <span class="c1">// 获取沙盒路径
+</span>    <span class="n">NSString</span> <span class="o">*</span><span class="n">filePath</span> <span class="o">=</span> <span class="p">[</span><span class="n">documentPath</span> <span class="nf">stringByAppendingPathComponent</span><span class="p">:</span><span class="n">txtFileName</span><span class="p">];</span>
+    <span class="p">[</span><span class="n">txtData</span> <span class="nf">writeToFile</span><span class="p">:</span><span class="n">filePath</span> <span class="nf">atomically</span><span class="p">:</span><span class="nb">YES</span><span class="p">];</span>
+<span class="p">}</span>
+
+<span class="cp">#pragma mark 直接获取ituns文件夹中列表
+</span><span class="k">-</span> <span class="p">(</span><span class="n">NSArray</span> <span class="o">*</span><span class="p">)</span><span class="n">getFileListFromDocument</span> <span class="p">{</span>
+    
+    <span class="n">NSString</span> <span class="o">*</span><span class="n">documentPath</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSSearchPathForDirectoriesInDomains</span><span class="p">(</span><span class="n">NSDocumentDirectory</span><span class="p">,</span> <span class="n">NSUserDomainMask</span><span class="p">,</span> <span class="nb">YES</span><span class="p">)</span> <span class="nf">objectAtIndex</span><span class="p">:</span><span class="mi">0</span><span class="p">];</span> <span class="c1">// 获取沙盒路径
+</span>    <span class="n">NSError</span> <span class="o">*</span><span class="n">error</span> <span class="o">=</span> <span class="nb">nil</span><span class="p">;</span>
+    <span class="n">NSArray</span> <span class="o">*</span><span class="n">fileList</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSArray</span> <span class="nf">array</span><span class="p">];</span>
+    
+    <span class="n">fileList</span> <span class="o">=</span> <span class="p">[[</span><span class="n">NSFileManager</span> <span class="nf">defaultManager</span><span class="p">]</span> <span class="nf">contentsOfDirectoryAtPath</span><span class="p">:</span><span class="n">documentPath</span> <span class="nf">error</span><span class="p">:</span><span class="o">&amp;</span><span class="n">error</span><span class="p">];</span> <span class="c1">// 获取内容
+</span>
+    <span class="k">return</span> <span class="n">fileList</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cp">#pragma mark 获取沙盒中文件路径url
+</span><span class="o">-</span> <span class="p">(</span><span class="n">NSURL</span> <span class="o">*</span><span class="p">)</span><span class="n">getFileUrlOfDocumentsWithIndex</span><span class="o">:</span><span class="p">(</span><span class="n">NSInteger</span><span class="p">)</span><span class="n">index</span> <span class="p">{</span>
+    
+    <span class="n">NSString</span> <span class="o">*</span><span class="n">documentPath</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSSearchPathForDirectoriesInDomains</span><span class="p">(</span><span class="n">NSDocumentDirectory</span><span class="p">,</span> <span class="n">NSUserDomainMask</span><span class="p">,</span> <span class="nb">YES</span><span class="p">)</span> <span class="nf">objectAtIndex</span><span class="p">:</span><span class="mi">0</span><span class="p">];</span> <span class="c1">// 获取沙盒路径
+</span>    <span class="n">NSArray</span> <span class="o">*</span><span class="n">fileList</span> <span class="o">=</span> <span class="p">[</span><span class="n">self</span> <span class="nf">getFileListFromDocument</span><span class="p">];</span>
+    <span class="n">NSString</span> <span class="o">*</span><span class="n">path</span> <span class="o">=</span> <span class="p">[</span><span class="n">documentPath</span> <span class="nf">stringByAppendingPathComponent</span><span class="p">:[</span><span class="n">fileList</span> <span class="nf">objectAtIndex</span><span class="p">:</span><span class="n">index</span><span class="p">]];</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">NSURL</span> <span class="nf">fileURLWithPath</span><span class="p">:</span><span class="n">path</span><span class="p">];</span>
+<span class="p">}</span>
+<span class="cp">#pragma mark **************** 沙盒中文件相关处理 end ****************
+</span></code></pre></div></div>
+
+<h4 id="6-根据方法获取进行相关数据的添加">6. 根据方法获取进行相关数据的添加</h4>
+
+<h5 id="1-获取列表信息">1&gt; 获取列表信息</h5>
+
+<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">self</span><span class="p">.</span><span class="n">dirArray</span> <span class="o">=</span> <span class="p">[</span><span class="n">self</span> <span class="nf">getFileListFromDocument</span><span class="p">];</span> <span class="c1">// 获取沙盒文件列表名字
+</span><span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">readTableView</span> <span class="nf">reloadData</span><span class="p">];</span>
+</code></pre></div></div>
+
+<h5 id="2-在cellforrow里边设置各种数据即可显示列表">2&gt; 在cellForRow里边设置各种数据，即可显示列表</h5>
+
+<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#pragma mark cellForRow方法
+</span><span class="k">-</span> <span class="p">(</span><span class="n">UITableViewCell</span> <span class="o">*</span><span class="p">)</span><span class="nf">tableView</span><span class="p">:(</span><span class="n">UITableView</span> <span class="o">*</span><span class="p">)</span><span class="nv">tableView</span> <span class="nf">cellForRowAtIndexPath</span><span class="p">:(</span><span class="n">NSIndexPath</span> <span class="o">*</span><span class="p">)</span><span class="nv">indexPath</span>
+<span class="p">{</span>
+    <span class="k">static</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">cellIdentifier</span> <span class="o">=</span> <span class="s">@"cell"</span><span class="p">;</span>
+    <span class="n">UITableViewCell</span> <span class="o">*</span><span class="n">cell</span> <span class="o">=</span> <span class="p">[</span><span class="n">tableView</span> <span class="nf">dequeueReusableCellWithIdentifier</span><span class="p">:</span><span class="n">cellIdentifier</span><span class="p">];</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">cell</span> <span class="o">==</span> <span class="nb">nil</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">cell</span> <span class="o">=</span> <span class="p">[[</span><span class="n">UITableViewCell</span> <span class="nf">alloc</span><span class="p">]</span> <span class="nf">initWithStyle</span><span class="p">:</span><span class="n">UITableViewCellStyleDefault</span> <span class="nf">reuseIdentifier</span><span class="p">:</span><span class="n">cellIdentifier</span><span class="p">];</span>
+        <span class="n">cell</span><span class="p">.</span><span class="n">accessoryType</span> <span class="o">=</span> <span class="n">UITableViewCellAccessoryDisclosureIndicator</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+    <span class="n">cell</span><span class="p">.</span><span class="n">textLabel</span><span class="p">.</span><span class="n">text</span> <span class="o">=</span> <span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">dirArray</span> <span class="nf">objectAtIndex</span><span class="p">:</span><span class="n">indexPath</span><span class="p">.</span><span class="n">row</span><span class="p">];</span>
+    
+    <span class="n">NSURL</span> <span class="o">*</span><span class="n">fileURL</span> <span class="o">=</span> <span class="p">[</span><span class="n">self</span> <span class="nf">getFileUrlOfDocumentsWithIndex</span><span class="p">:</span><span class="n">indexPath</span><span class="p">.</span><span class="n">row</span><span class="p">];</span>
+    <span class="c1">// 根据fileURL创建DocumentController
+</span>    <span class="p">[</span><span class="n">self</span> <span class="nf">setupDocumentControllerWithURL</span><span class="p">:</span><span class="n">fileURL</span><span class="p">];</span>
+    <span class="c1">// 获取页面中的icons
+</span>    <span class="n">NSInteger</span> <span class="n">iconCount</span> <span class="o">=</span> <span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">documentInteractionController</span><span class="p">.</span><span class="n">icons</span> <span class="nf">count</span><span class="p">];</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">iconCount</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// 将icon作为cell上的图片
+</span>        <span class="n">cell</span><span class="p">.</span><span class="n">imageView</span><span class="p">.</span><span class="n">image</span> <span class="o">=</span> <span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">documentInteractionController</span><span class="p">.</span><span class="n">icons</span> <span class="nf">objectAtIndex</span><span class="p">:</span><span class="n">iconCount</span><span class="o">-</span><span class="mi">1</span><span class="p">];</span>
+    <span class="p">}</span>
+    
+    <span class="c1">//    设置选择时的状态
+</span>    <span class="n">cell</span><span class="p">.</span><span class="n">selectionStyle</span> <span class="o">=</span> <span class="n">UITableViewCellSelectionStyleDefault</span><span class="p">;</span>
+    <span class="c1">//    设置cell背景色为透明色
+</span>    <span class="n">cell</span><span class="p">.</span><span class="n">backgroundColor</span> <span class="o">=</span> <span class="p">[</span><span class="n">UIColor</span> <span class="nf">clearColor</span><span class="p">];</span>
+    
+    <span class="k">return</span> <span class="n">cell</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h5 id="7-创建qlpreviewcontroller部分东西">7. 创建QLPreviewController部分东西</h5>
+
+<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#pragma mark 添加点击cell的方法
+</span><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">tableView</span><span class="p">:(</span><span class="n">UITableView</span> <span class="o">*</span><span class="p">)</span><span class="nv">tableView</span> <span class="nf">didSelectRowAtIndexPath</span><span class="p">:(</span><span class="n">NSIndexPath</span> <span class="o">*</span><span class="p">)</span><span class="nv">indexPath</span> <span class="p">{</span>
+    
+    <span class="n">QLPreviewController</span> <span class="o">*</span><span class="n">previewController</span> <span class="o">=</span> <span class="p">[[</span><span class="n">QLPreviewController</span> <span class="nf">alloc</span><span class="p">]</span> <span class="nf">init</span><span class="p">];</span>
+    <span class="n">previewController</span><span class="p">.</span><span class="n">dataSource</span> <span class="o">=</span> <span class="n">self</span><span class="p">;</span>
+    <span class="n">previewController</span><span class="p">.</span><span class="n">delegate</span> <span class="o">=</span> <span class="n">self</span><span class="p">;</span>
+    
+    <span class="n">previewController</span><span class="p">.</span><span class="n">currentPreviewItemIndex</span> <span class="o">=</span> <span class="n">indexPath</span><span class="p">.</span><span class="n">row</span><span class="p">;</span>
+    <span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">navigationController</span> <span class="nf">pushViewController</span><span class="p">:</span><span class="n">previewController</span> <span class="nf">animated</span><span class="p">:</span><span class="nb">YES</span><span class="p">];</span>
+    
+    <span class="c1">//点击以后直接恢复正常状态
+</span>    <span class="p">[</span><span class="n">tableView</span> <span class="nf">deselectRowAtIndexPath</span><span class="p">:</span><span class="n">indexPath</span> <span class="nf">animated</span><span class="p">:</span><span class="nb">YES</span><span class="p">];</span>
+<span class="p">}</span>
+
+<span class="cp">#pragma mark **************** previewController方法/代理方法部分 begin ****************
+</span><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">setupDocumentControllerWithURL</span><span class="p">:(</span><span class="n">NSURL</span> <span class="o">*</span><span class="p">)</span><span class="nv">url</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">documentInteractionController</span> <span class="o">==</span> <span class="nb">nil</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">documentInteractionController</span> <span class="o">=</span> <span class="p">[</span><span class="n">UIDocumentInteractionController</span> <span class="nf">interactionControllerWithURL</span><span class="p">:</span><span class="n">url</span><span class="p">];</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">documentInteractionController</span><span class="p">.</span><span class="n">delegate</span> <span class="o">=</span> <span class="n">self</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">documentInteractionController</span><span class="p">.</span><span class="n">URL</span> <span class="o">=</span> <span class="n">url</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="cp">#pragma mark 设置previewController中item的个数
+</span><span class="k">-</span> <span class="p">(</span><span class="n">NSInteger</span><span class="p">)</span><span class="nf">numberOfPreviewItemsInPreviewController</span><span class="p">:(</span><span class="n">QLPreviewController</span> <span class="o">*</span><span class="p">)</span><span class="nv">controller</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cp">#pragma mark 从previewController页面返回时的代理方法
+</span><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">previewControllerDidDismiss</span><span class="p">:(</span><span class="n">QLPreviewController</span> <span class="o">*</span><span class="p">)</span><span class="nv">controller</span> <span class="p">{</span>
+    <span class="c1">// 可以处理返回的数据
+</span><span class="p">}</span>
+
+<span class="cp">#pragma mark 点击previewItem是点击获取内容相关信息
+</span><span class="k">-</span> <span class="p">(</span><span class="n">id</span><span class="p">)</span><span class="nf">previewController</span><span class="p">:(</span><span class="n">QLPreviewController</span> <span class="o">*</span><span class="p">)</span><span class="nv">controller</span> <span class="nf">previewItemAtIndex</span><span class="p">:(</span><span class="n">NSInteger</span><span class="p">)</span><span class="nv">index</span> <span class="p">{</span>
+    <span class="n">NSIndexPath</span> <span class="o">*</span><span class="n">selectIndexPath</span> <span class="o">=</span> <span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">readTableView</span> <span class="nf">indexPathForSelectedRow</span><span class="p">];</span>
+    <span class="n">NSURL</span> <span class="o">*</span><span class="n">fileURL</span> <span class="o">=</span> <span class="p">[</span><span class="n">self</span> <span class="nf">getFileUrlOfDocumentsWithIndex</span><span class="p">:</span><span class="n">selectIndexPath</span><span class="p">.</span><span class="n">row</span><span class="p">];</span>
+    <span class="k">return</span> <span class="n">fileURL</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cp">#pragma mark **************** previewController方法/代理方法部分 end ****************
+</span></code></pre></div></div>
+
+<h3 id="全部代码">全部代码</h3>
+<hr />
+
+<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//
+//  ViewController.m
+//  ituns共享文件练习
+//
+//  Created by 赵宏亚 on 16/8/31.
+//  Copyright © 2016年 赵宏亚. All rights reserved.
+//
+</span>
+<span class="cp">#import "ViewController.h"
+#import &lt;string.h&gt;
+#import &lt;QuickLook/QuickLook.h&gt;
+</span>
+<span class="k">@interface</span> <span class="nc">ViewController</span> <span class="p">()</span><span class="o">&lt;</span><span class="n">UITableViewDelegate</span><span class="p">,</span><span class="n">UITableViewDataSource</span><span class="p">,</span><span class="n">QLPreviewControllerDelegate</span><span class="p">,</span><span class="n">QLPreviewControllerDataSource</span><span class="p">,</span><span class="n">UIDocumentInteractionControllerDelegate</span><span class="o">&gt;</span>
+
+<span class="k">@property</span> <span class="p">(</span><span class="n">weak</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">)</span> <span class="n">IBOutlet</span> <span class="n">UITableView</span> <span class="o">*</span><span class="n">readTableView</span><span class="p">;</span> <span class="c1">//用于显示共享文件夹中文件
+</span><span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span><span class="n">strong</span><span class="p">)</span> <span class="n">UIDocumentInteractionController</span> <span class="o">*</span><span class="n">documentInteractionController</span><span class="p">;</span> <span class="c1">// 系统沙盒文件交互VC
+</span><span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span><span class="n">strong</span><span class="p">)</span> <span class="n">NSArray</span> <span class="o">*</span><span class="n">dirArray</span><span class="p">;</span> <span class="c1">//存储路径名称
+</span>
+
+<span class="k">@end</span>
+
+<span class="k">@implementation</span> <span class="nc">ViewController</span>
+
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">viewDidLoad</span> <span class="p">{</span>
+    <span class="p">[</span><span class="n">super</span> <span class="nf">viewDidLoad</span><span class="p">];</span>
+    <span class="c1">// Do any additional setup after loading the view, typically from a nib.
+</span>    
+    <span class="n">self</span><span class="p">.</span><span class="n">dirArray</span> <span class="o">=</span> <span class="p">[</span><span class="n">self</span> <span class="nf">getFileListFromDocument</span><span class="p">];</span> <span class="c1">// 获取沙盒文件列表名字
+</span>    <span class="n">NSLog</span><span class="p">(</span><span class="s">@"self.dirArray ===== %@"</span><span class="p">,</span><span class="n">self</span><span class="p">.</span><span class="n">dirArray</span><span class="p">);</span>
+    
+    <span class="n">self</span><span class="p">.</span><span class="n">readTableView</span><span class="p">.</span><span class="n">delegate</span> <span class="o">=</span> <span class="n">self</span><span class="p">;</span>
+    <span class="n">self</span><span class="p">.</span><span class="n">readTableView</span><span class="p">.</span><span class="n">dataSource</span> <span class="o">=</span> <span class="n">self</span><span class="p">;</span>
+    <span class="c1">//    设置tableView背景色为透明色
+</span>    <span class="n">self</span><span class="p">.</span><span class="n">readTableView</span><span class="p">.</span><span class="n">backgroundColor</span> <span class="o">=</span> <span class="p">[</span><span class="n">UIColor</span> <span class="nf">clearColor</span><span class="p">];</span>
+    <span class="c1">//    分割线样式
+</span>    <span class="c1">//     self.tabelView.separatorStyle = UITableViewCellSeparatorStyleNone;
+</span>    <span class="c1">//去掉空白cell
+</span>    <span class="n">self</span><span class="p">.</span><span class="n">readTableView</span><span class="p">.</span><span class="n">tableFooterView</span> <span class="o">=</span> <span class="p">[[</span><span class="n">UIView</span> <span class="nf">alloc</span><span class="p">]</span> <span class="nf">initWithFrame</span><span class="p">:</span><span class="n">CGRectZero</span><span class="p">];</span>
+    
+    <span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">readTableView</span> <span class="nf">reloadData</span><span class="p">];</span>
+<span class="p">}</span>
+
+
+<span class="cp">#pragma mark **************** tableView代理 begin ****************
+#pragma mark 设置每行的高度
+</span><span class="o">-</span> <span class="p">(</span><span class="n">CGFloat</span><span class="p">)</span><span class="n">tableView</span><span class="o">:</span><span class="p">(</span><span class="n">UITableView</span> <span class="o">*</span><span class="p">)</span><span class="n">tableView</span> <span class="n">heightForRowAtIndexPath</span><span class="o">:</span><span class="p">(</span><span class="n">NSIndexPath</span> <span class="o">*</span><span class="p">)</span><span class="n">indexPath</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="mi">60</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cp">#pragma mark 设置section的个数
+</span><span class="o">-</span> <span class="p">(</span><span class="n">NSInteger</span><span class="p">)</span><span class="n">numberOfSectionsInTableView</span><span class="o">:</span><span class="p">(</span><span class="n">UITableView</span> <span class="o">*</span><span class="p">)</span><span class="n">tableView</span><span class="p">{</span>
+    <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cp">#pragma mark 设置每个section的行数
+</span><span class="o">-</span> <span class="p">(</span><span class="n">NSInteger</span><span class="p">)</span><span class="n">tableView</span><span class="o">:</span><span class="p">(</span><span class="n">UITableView</span> <span class="o">*</span><span class="p">)</span><span class="n">tableView</span> <span class="n">numberOfRowsInSection</span><span class="o">:</span><span class="p">(</span><span class="n">NSInteger</span><span class="p">)</span><span class="n">section</span><span class="p">;</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">self</span><span class="p">.</span><span class="n">dirArray</span><span class="p">.</span><span class="n">count</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cp">#pragma mark cellForRow方法
+</span><span class="o">-</span> <span class="p">(</span><span class="n">UITableViewCell</span> <span class="o">*</span><span class="p">)</span><span class="n">tableView</span><span class="o">:</span><span class="p">(</span><span class="n">UITableView</span> <span class="o">*</span><span class="p">)</span><span class="n">tableView</span> <span class="n">cellForRowAtIndexPath</span><span class="o">:</span><span class="p">(</span><span class="n">NSIndexPath</span> <span class="o">*</span><span class="p">)</span><span class="n">indexPath</span>
+<span class="p">{</span>
+    <span class="k">static</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">cellIdentifier</span> <span class="o">=</span> <span class="s">@"cell"</span><span class="p">;</span>
+    <span class="n">UITableViewCell</span> <span class="o">*</span><span class="n">cell</span> <span class="o">=</span> <span class="p">[</span><span class="n">tableView</span> <span class="nf">dequeueReusableCellWithIdentifier</span><span class="p">:</span><span class="n">cellIdentifier</span><span class="p">];</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">cell</span> <span class="o">==</span> <span class="nb">nil</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">cell</span> <span class="o">=</span> <span class="p">[[</span><span class="n">UITableViewCell</span> <span class="nf">alloc</span><span class="p">]</span> <span class="nf">initWithStyle</span><span class="p">:</span><span class="n">UITableViewCellStyleDefault</span> <span class="nf">reuseIdentifier</span><span class="p">:</span><span class="n">cellIdentifier</span><span class="p">];</span>
+        <span class="n">cell</span><span class="p">.</span><span class="n">accessoryType</span> <span class="o">=</span> <span class="n">UITableViewCellAccessoryDisclosureIndicator</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+    <span class="n">cell</span><span class="p">.</span><span class="n">textLabel</span><span class="p">.</span><span class="n">text</span> <span class="o">=</span> <span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">dirArray</span> <span class="nf">objectAtIndex</span><span class="p">:</span><span class="n">indexPath</span><span class="p">.</span><span class="n">row</span><span class="p">];</span>
+    
+    <span class="n">NSURL</span> <span class="o">*</span><span class="n">fileURL</span> <span class="o">=</span> <span class="p">[</span><span class="n">self</span> <span class="nf">getFileUrlOfDocumentsWithIndex</span><span class="p">:</span><span class="n">indexPath</span><span class="p">.</span><span class="n">row</span><span class="p">];</span>
+    <span class="c1">// 根据fileURL创建DocumentController
+</span>    <span class="p">[</span><span class="n">self</span> <span class="nf">setupDocumentControllerWithURL</span><span class="p">:</span><span class="n">fileURL</span><span class="p">];</span>
+    <span class="c1">// 获取页面中的icons
+</span>    <span class="n">NSInteger</span> <span class="n">iconCount</span> <span class="o">=</span> <span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">documentInteractionController</span><span class="p">.</span><span class="n">icons</span> <span class="nf">count</span><span class="p">];</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">iconCount</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// 将icon作为cell上的图片
+</span>        <span class="n">cell</span><span class="p">.</span><span class="n">imageView</span><span class="p">.</span><span class="n">image</span> <span class="o">=</span> <span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">documentInteractionController</span><span class="p">.</span><span class="n">icons</span> <span class="nf">objectAtIndex</span><span class="p">:</span><span class="n">iconCount</span><span class="o">-</span><span class="mi">1</span><span class="p">];</span>
+    <span class="p">}</span>
+    
+    <span class="c1">//    设置选择时的状态
+</span>    <span class="n">cell</span><span class="p">.</span><span class="n">selectionStyle</span> <span class="o">=</span> <span class="n">UITableViewCellSelectionStyleDefault</span><span class="p">;</span>
+    <span class="c1">//    设置cell背景色为透明色
+</span>    <span class="n">cell</span><span class="p">.</span><span class="n">backgroundColor</span> <span class="o">=</span> <span class="p">[</span><span class="n">UIColor</span> <span class="nf">clearColor</span><span class="p">];</span>
+    
+    <span class="k">return</span> <span class="n">cell</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cp">#pragma mark 添加点击cell的方法
+</span><span class="o">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">tableView</span><span class="o">:</span><span class="p">(</span><span class="n">UITableView</span> <span class="o">*</span><span class="p">)</span><span class="n">tableView</span> <span class="n">didSelectRowAtIndexPath</span><span class="o">:</span><span class="p">(</span><span class="n">NSIndexPath</span> <span class="o">*</span><span class="p">)</span><span class="n">indexPath</span> <span class="p">{</span>
+    
+    <span class="n">QLPreviewController</span> <span class="o">*</span><span class="n">previewController</span> <span class="o">=</span> <span class="p">[[</span><span class="n">QLPreviewController</span> <span class="nf">alloc</span><span class="p">]</span> <span class="nf">init</span><span class="p">];</span>
+    <span class="n">previewController</span><span class="p">.</span><span class="n">dataSource</span> <span class="o">=</span> <span class="n">self</span><span class="p">;</span>
+    <span class="n">previewController</span><span class="p">.</span><span class="n">delegate</span> <span class="o">=</span> <span class="n">self</span><span class="p">;</span>
+    
+    <span class="n">previewController</span><span class="p">.</span><span class="n">currentPreviewItemIndex</span> <span class="o">=</span> <span class="n">indexPath</span><span class="p">.</span><span class="n">row</span><span class="p">;</span>
+    <span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">navigationController</span> <span class="nf">pushViewController</span><span class="p">:</span><span class="n">previewController</span> <span class="nf">animated</span><span class="p">:</span><span class="nb">YES</span><span class="p">];</span>
+    
+    <span class="c1">//点击以后直接恢复正常状态
+</span>    <span class="p">[</span><span class="n">tableView</span> <span class="nf">deselectRowAtIndexPath</span><span class="p">:</span><span class="n">indexPath</span> <span class="nf">animated</span><span class="p">:</span><span class="nb">YES</span><span class="p">];</span>
+<span class="p">}</span>
+
+<span class="cp">#pragma mark **************** tableView代理 end ****************
+</span>
+<span class="cp">#pragma mark **************** previewController方法/代理方法部分 begin ****************
+</span><span class="o">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">setupDocumentControllerWithURL</span><span class="o">:</span><span class="p">(</span><span class="n">NSURL</span> <span class="o">*</span><span class="p">)</span><span class="n">url</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">documentInteractionController</span> <span class="o">==</span> <span class="nb">nil</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">documentInteractionController</span> <span class="o">=</span> <span class="p">[</span><span class="n">UIDocumentInteractionController</span> <span class="nf">interactionControllerWithURL</span><span class="p">:</span><span class="n">url</span><span class="p">];</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">documentInteractionController</span><span class="p">.</span><span class="n">delegate</span> <span class="o">=</span> <span class="n">self</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">documentInteractionController</span><span class="p">.</span><span class="n">URL</span> <span class="o">=</span> <span class="n">url</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="cp">#pragma mark 设置previewController中item的个数
+</span><span class="o">-</span> <span class="p">(</span><span class="n">NSInteger</span><span class="p">)</span><span class="n">numberOfPreviewItemsInPreviewController</span><span class="o">:</span><span class="p">(</span><span class="n">QLPreviewController</span> <span class="o">*</span><span class="p">)</span><span class="n">controller</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cp">#pragma mark 从previewController页面返回时的代理方法
+</span><span class="o">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">previewControllerDidDismiss</span><span class="o">:</span><span class="p">(</span><span class="n">QLPreviewController</span> <span class="o">*</span><span class="p">)</span><span class="n">controller</span> <span class="p">{</span>
+    <span class="c1">// 可以处理返回的数据
+</span><span class="p">}</span>
+
+<span class="cp">#pragma mark 点击previewItem是点击获取内容相关信息
+</span><span class="o">-</span> <span class="p">(</span><span class="n">id</span><span class="p">)</span><span class="n">previewController</span><span class="o">:</span><span class="p">(</span><span class="n">QLPreviewController</span> <span class="o">*</span><span class="p">)</span><span class="n">controller</span> <span class="n">previewItemAtIndex</span><span class="o">:</span><span class="p">(</span><span class="n">NSInteger</span><span class="p">)</span><span class="n">index</span> <span class="p">{</span>
+    <span class="n">NSIndexPath</span> <span class="o">*</span><span class="n">selectIndexPath</span> <span class="o">=</span> <span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">readTableView</span> <span class="nf">indexPathForSelectedRow</span><span class="p">];</span>
+    <span class="n">NSURL</span> <span class="o">*</span><span class="n">fileURL</span> <span class="o">=</span> <span class="p">[</span><span class="n">self</span> <span class="nf">getFileUrlOfDocumentsWithIndex</span><span class="p">:</span><span class="n">selectIndexPath</span><span class="p">.</span><span class="n">row</span><span class="p">];</span>
+    <span class="k">return</span> <span class="n">fileURL</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cp">#pragma mark **************** previewController方法/代理方法部分 end ****************
+</span>
+<span class="cp">#pragma mark **************** 沙盒中文件相关处理 begin ****************
+#pragma mark 保存图片的本地方法
+</span><span class="o">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">saveToDocumentsWithImage</span><span class="o">:</span><span class="p">(</span><span class="n">UIImage</span> <span class="o">*</span><span class="p">)</span><span class="n">image</span> <span class="n">andImageName</span><span class="o">:</span><span class="p">(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="n">imageName</span> <span class="p">{</span>
+    <span class="n">NSData</span> <span class="o">*</span><span class="n">imageData</span> <span class="o">=</span> <span class="n">UIImageJPEGRepresentation</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">8</span><span class="p">);</span> <span class="c1">// 转换类型
+</span>    <span class="n">NSString</span> <span class="o">*</span><span class="n">documentPath</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSSearchPathForDirectoriesInDomains</span><span class="p">(</span><span class="n">NSDocumentDirectory</span><span class="p">,</span> <span class="n">NSUserDomainMask</span><span class="p">,</span> <span class="nb">YES</span><span class="p">)</span> <span class="nf">objectAtIndex</span><span class="p">:</span><span class="mi">0</span><span class="p">];</span> <span class="c1">// 获取沙盒路径
+</span>    <span class="n">NSString</span> <span class="o">*</span><span class="n">filePath</span> <span class="o">=</span> <span class="p">[</span><span class="n">documentPath</span> <span class="nf">stringByAppendingPathComponent</span><span class="p">:</span><span class="n">imageName</span><span class="p">];</span>
+    <span class="p">[</span><span class="n">imageData</span> <span class="nf">writeToFile</span><span class="p">:</span><span class="n">filePath</span> <span class="nf">atomically</span><span class="p">:</span><span class="nb">YES</span><span class="p">];</span> <span class="c1">// 将数据写书沙盒
+</span><span class="p">}</span>
+
+<span class="cp">#pragma mark 保存文字相关内容
+</span><span class="o">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">saveToDocumentsWithTxT</span><span class="o">:</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="p">)</span><span class="n">txt</span> <span class="n">andTxtFileName</span><span class="o">:</span><span class="p">(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="n">txtFileName</span> <span class="p">{</span>
+
+    <span class="n">NSData</span> <span class="o">*</span><span class="n">txtData</span> <span class="o">=</span> <span class="p">[[</span><span class="n">NSData</span> <span class="nf">alloc</span><span class="p">]</span> <span class="nf">initWithBytes</span><span class="p">:</span><span class="n">txt</span> <span class="nf">length</span><span class="p">:</span><span class="n">strlen</span><span class="p">(</span><span class="n">txt</span><span class="p">)];</span>
+    <span class="n">NSString</span> <span class="o">*</span><span class="n">documentPath</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSSearchPathForDirectoriesInDomains</span><span class="p">(</span><span class="n">NSDocumentDirectory</span><span class="p">,</span> <span class="n">NSUserDomainMask</span><span class="p">,</span> <span class="nb">YES</span><span class="p">)</span> <span class="nf">objectAtIndex</span><span class="p">:</span><span class="mi">0</span><span class="p">];</span> <span class="c1">// 获取沙盒路径
+</span>    <span class="n">NSString</span> <span class="o">*</span><span class="n">filePath</span> <span class="o">=</span> <span class="p">[</span><span class="n">documentPath</span> <span class="nf">stringByAppendingPathComponent</span><span class="p">:</span><span class="n">txtFileName</span><span class="p">];</span>
+    <span class="p">[</span><span class="n">txtData</span> <span class="nf">writeToFile</span><span class="p">:</span><span class="n">filePath</span> <span class="nf">atomically</span><span class="p">:</span><span class="nb">YES</span><span class="p">];</span>
+<span class="p">}</span>
+
+<span class="cp">#pragma mark 直接获取ituns文件夹中列表
+</span><span class="o">-</span> <span class="p">(</span><span class="n">NSArray</span> <span class="o">*</span><span class="p">)</span><span class="n">getFileListFromDocument</span> <span class="p">{</span>
+    
+    <span class="n">NSString</span> <span class="o">*</span><span class="n">documentPath</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSSearchPathForDirectoriesInDomains</span><span class="p">(</span><span class="n">NSDocumentDirectory</span><span class="p">,</span> <span class="n">NSUserDomainMask</span><span class="p">,</span> <span class="nb">YES</span><span class="p">)</span> <span class="nf">objectAtIndex</span><span class="p">:</span><span class="mi">0</span><span class="p">];</span> <span class="c1">// 获取沙盒路径
+</span>    <span class="n">NSError</span> <span class="o">*</span><span class="n">error</span> <span class="o">=</span> <span class="nb">nil</span><span class="p">;</span>
+    <span class="n">NSArray</span> <span class="o">*</span><span class="n">fileList</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSArray</span> <span class="nf">array</span><span class="p">];</span>
+    
+    <span class="n">fileList</span> <span class="o">=</span> <span class="p">[[</span><span class="n">NSFileManager</span> <span class="nf">defaultManager</span><span class="p">]</span> <span class="nf">contentsOfDirectoryAtPath</span><span class="p">:</span><span class="n">documentPath</span> <span class="nf">error</span><span class="p">:</span><span class="o">&amp;</span><span class="n">error</span><span class="p">];</span> <span class="c1">// 获取内容
+</span>
+    <span class="k">return</span> <span class="n">fileList</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cp">#pragma mark 获取沙盒中文件路径url
+</span><span class="o">-</span> <span class="p">(</span><span class="n">NSURL</span> <span class="o">*</span><span class="p">)</span><span class="n">getFileUrlOfDocumentsWithIndex</span><span class="o">:</span><span class="p">(</span><span class="n">NSInteger</span><span class="p">)</span><span class="n">index</span> <span class="p">{</span>
+    
+    <span class="n">NSString</span> <span class="o">*</span><span class="n">documentPath</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSSearchPathForDirectoriesInDomains</span><span class="p">(</span><span class="n">NSDocumentDirectory</span><span class="p">,</span> <span class="n">NSUserDomainMask</span><span class="p">,</span> <span class="nb">YES</span><span class="p">)</span> <span class="nf">objectAtIndex</span><span class="p">:</span><span class="mi">0</span><span class="p">];</span> <span class="c1">// 获取沙盒路径
+</span>    <span class="n">NSArray</span> <span class="o">*</span><span class="n">fileList</span> <span class="o">=</span> <span class="p">[</span><span class="n">self</span> <span class="nf">getFileListFromDocument</span><span class="p">];</span>
+    <span class="n">NSString</span> <span class="o">*</span><span class="n">path</span> <span class="o">=</span> <span class="p">[</span><span class="n">documentPath</span> <span class="nf">stringByAppendingPathComponent</span><span class="p">:[</span><span class="n">fileList</span> <span class="nf">objectAtIndex</span><span class="p">:</span><span class="n">index</span><span class="p">]];</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">NSURL</span> <span class="nf">fileURLWithPath</span><span class="p">:</span><span class="n">path</span><span class="p">];</span>
+<span class="p">}</span>
+<span class="cp">#pragma mark **************** 沙盒中文件相关处理 end ****************
+</span>
+<span class="o">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">didReceiveMemoryWarning</span> <span class="p">{</span>
+    <span class="p">[</span><span class="n">super</span> <span class="nf">didReceiveMemoryWarning</span><span class="p">];</span>
+    <span class="c1">// Dispose of any resources that can be recreated.
+</span><span class="p">}</span>
+
+<span class="k">@end</span>
+</code></pre></div></div>
+
+            </article>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+    <footer class="footer" role="contentinfo">
+	<div class="container">
+		<p class="copyright">Copyright &copy; 2014-2018 <a href="https://anchoritefili.github.io"><code>anchoriteFili</code></a>.</p>
+		<p>Powered by <a href="http://jekyllrb.com">Jekyll</a>, themed from <a href="http://lesscss.cn/">Less</a>, refactored by <a href="http://www.hifreud.com/">Freud Kang</a></p>
+	</div>
+</footer>
+
+<script src="/styles/js/jquery.min.js"></script>
+<script src="/styles/js/bootstrap.min.js"></script>
+<script src="/styles/js/holder.min.js"></script>
+<script src="/styles/js/lessismore.js"></script>
+<script src="/styles/js/application.js"></script>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  </body>
+</html>
