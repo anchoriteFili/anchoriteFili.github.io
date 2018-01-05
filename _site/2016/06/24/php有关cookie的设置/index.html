@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>php有关cookie的设置 - 公会驻地</title>
+
+	<link rel="shortcut icon" href="/styles/images/favicon.jpg">
+	<link rel="icon" href="/styles/images/favicon.jpg">
+
+	<link rel="stylesheet" href="/styles/css/index.css">
+	<link rel="stylesheet" href="/styles/css/fontawesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="/styles/css/syntax.css">
+	<link rel="canonical" href="/2016/06/24/php%E6%9C%89%E5%85%B3cookie%E7%9A%84%E8%AE%BE%E7%BD%AE/">
+	<link rel="alternate" type="application/rss+xml" title="公会驻地" href="/feed.xml">
+	
+	<meta name="keywords" content="php有关cookie的设置, 公会驻地, 学而不思则罔;思而不学则殆;生命不止;折腾不休">
+	<meta name="description" content="学而不思则罔;思而不学则殆;生命不止;折腾不休">
+
+	<script src="/styles/js/jquery.min.js"></script>
+	<!--[if lt IE 9]>
+    	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  	<![endif]-->
+  	<script>
+		var _hmt = _hmt || [];
+		(function() {
+		  var hm = document.createElement("script");
+		  hm.src = "//hm.baidu.com/hm.js?94be4b0f9fc5d94cc0d0415ea6761ae9";
+		  var s = document.getElementsByTagName("script")[0]; 
+		  s.parentNode.insertBefore(hm, s);
+		})();
+	</script>
+  	<style type="text/css">
+	  	.docs-content{
+	  		margin-bottom: 10px;
+	  	}
+  	</style>
+</head>
+
+  <body class="index">
+
+    <header class="navbar navbar-inverse navbar-fixed-top docs-nav" role="banner">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="/" class="navbar-brand">
+        <img src="/styles/images/logo.jpg">
+      </a>
+    </div>
+    <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+      <ul class="nav navbar-nav">    
+        <li>
+          <a href="/">Home</a>
+        </li>
+        <li>
+          <a href="/categories/">大类分解</a>
+        </li>
+        <li>
+          <a href="/tag">小类内聚</a>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+            <a><span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span></a>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">关于<b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a rel="nofollow" target="_blank" href="https://github.com/anchoriteFili/">Github</a></li>
+            <li><a rel="nofollow" target="_blank" href="https://anchoritefili.github.io">关于作者</a></li>
+            <li><a rel="nofollow" href="/books">我的书单</a></li>
+            <li><a rel="nofollow" href="/reference">推荐博客</a></li>
+<!--            <li><a href="/feed.xml">RSS订阅</a></li>-->
+            <li class="divider"></li>
+            <li><a rel="nofollow" target="_blank" href="http://www.gonghuizhudi.com">个人官网</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+    <div class="docs-header" id="content">
+  <div class="container">
+  	
+  		<!--
+		    <h1>php有关cookie的设置</h1>
+		    <p>Post on Jun 24, 2016 by <a href="/about">anchoriteFili</a></p>
+		-->
+		    <h1>躬身以待方显气度，拧首抬杠略失品格。</h1>
+    
+  </div>
+</div>
+
+    
+      
+<div class="banner">
+  <div class="container">
+  	
+    	<a href="/categories/#知识-ref">知识</a>	/
+    	<a href="/tag/#php-ref">php</a>
+    
+  </div>
+</div>
+
+    
+
+    <div class="container docs-container">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="sidebar hidden-print" role="complementary">
+        <div id="navigation">
+  <h1>目录</h1>
+  <ul class="nav sidenav">
+  </ul>
+  <div style="height: 200px;width: 200px;">
+    <script type="text/javascript" src="//rf.revolvermaps.com/0/0/8.js?i=5ytn1ssq6za&amp;m=0&amp;c=ff0000&amp;cr1=ffffff&amp;f=arial&amp;l=33" async="async"> 
+    </script>
+  </div>
+</div>
+
+ 
+      </div>
+    </div>
+    <div class="col-md-9" role="main">
+      <div class="panel docs-content">
+        <div class="wrapper">
+            <header class="post-header">
+              <h1 class="post-title">php有关cookie的设置</h1>
+              <!--
+                <p class="post-meta">Jun 24, 2016</p>
+              -->
+              <div class="meta">Posted on <span class="postdate">Jun 24, 2016</span> By <a target="_blank" href="http://localhost:4000">anchoriteFili</a></div>
+              <br />
+            </header>
+            <article class="post-content">
+              <ul id="markdown-toc">
+  <li><a href="#1-加密并设置cookie" id="markdown-toc-1-加密并设置cookie">1. 加密并设置cookie</a></li>
+  <li><a href="#2-获取cookie并解密" id="markdown-toc-2-获取cookie并解密">2. 获取cookie并解密</a></li>
+</ul>
+
+<h5 id="1-加密并设置cookie">1. 加密并设置cookie</h5>
+
+<p><strong>注意：使用setcookie时<?php?>必须紧贴顶部</strong></p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span> 
+<span class="c1">// 添加cookie部分
+// 定义变量，进行赋值
+</span><span class="nv">$zhanghao</span> <span class="o">=</span> <span class="nv">$mima</span> <span class="o">=</span> <span class="s1">''</span><span class="p">;</span>
+<span class="nv">$zhanghaoErr</span> <span class="o">=</span> <span class="nv">$mimaErr</span> <span class="o">=</span> <span class="s1">''</span><span class="p">;</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'REQUEST_METHOD'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'POST'</span><span class="p">)</span> <span class="p">{</span>
+    
+    <span class="k">if</span> <span class="p">(</span><span class="k">empty</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">'zhanghaophp'</span><span class="p">]))</span> <span class="p">{</span>
+        
+        <span class="nv">$zhanghaoErr</span> <span class="o">=</span> <span class="s1">'账号不能为空'</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">elseif</span> <span class="p">(</span><span class="k">empty</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">'mimaphp'</span><span class="p">]))</span> <span class="p">{</span>
+        
+        <span class="nv">$mimaErr</span> <span class="o">=</span> <span class="s1">'密码不能为空'</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">elseif</span> <span class="p">(</span><span class="o">!</span><span class="k">empty</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">'zhanghaophp'</span><span class="p">])</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="k">empty</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">'mimaphp'</span><span class="p">]))</span> <span class="p">{</span>
+        
+        <span class="nv">$zhanghao</span> <span class="o">=</span> <span class="nx">test_input</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">'zhanghaophp'</span><span class="p">]);</span>
+        <span class="nv">$mima</span> <span class="o">=</span> <span class="nx">test_input</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">'mimaphp'</span><span class="p">]);</span>
+        <span class="c1">// 进行两次加密
+</span>        <span class="c1">// base64加密
+</span>        <span class="nv">$cookie</span> <span class="o">=</span> <span class="s1">'username='</span> <span class="o">.</span> <span class="nv">$zhanghao</span> <span class="o">.</span> <span class="s1">',password='</span> <span class="o">.</span> <span class="nv">$mima</span><span class="p">;</span>
+    
+        <span class="nv">$str1</span> <span class="o">=</span> <span class="nb">base64_encode</span><span class="p">(</span><span class="nv">$cookie</span><span class="p">);</span>
+        <span class="c1">// echo '一次加密：' . $str1 . '&lt;br&gt;';
+</span>    
+        <span class="nv">$str2</span> <span class="o">=</span> <span class="s1">'ZHY'</span> <span class="o">.</span> <span class="nv">$str1</span><span class="p">;</span>
+        <span class="nv">$str3</span> <span class="o">=</span> <span class="nb">base64_encode</span><span class="p">(</span><span class="nv">$str2</span><span class="p">);</span>
+        <span class="c1">// echo '二次加密：' . $str3 . '&lt;br&gt;';
+</span>    
+        <span class="c1">// 创建cookie
+</span>        <span class="nv">$expire</span> <span class="o">=</span> <span class="nb">time</span><span class="p">()</span> <span class="o">+</span> <span class="mi">60</span><span class="o">*</span><span class="mi">60</span><span class="o">*</span><span class="mi">24</span><span class="o">*</span><span class="mi">30</span><span class="p">;</span>
+        <span class="nb">setcookie</span><span class="p">(</span><span class="s1">'gonghuizhudi'</span><span class="p">,</span> <span class="nv">$str3</span><span class="p">,</span>  <span class="nv">$expire</span><span class="p">);</span>
+        
+        <span class="c1">// echo '创建了cookie';
+</span>    <span class="p">}</span>
+    
+    <span class="c1">// echo '来到了cookie';
+</span><span class="p">}</span>
+
+<span class="k">function</span> <span class="nf">test_input</span><span class="p">(</span><span class="nv">$data</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nv">$data</span> <span class="o">=</span> <span class="nb">trim</span><span class="p">(</span><span class="nv">$data</span><span class="p">);</span>
+    <span class="nv">$data</span> <span class="o">=</span> <span class="nb">stripslashes</span><span class="p">(</span><span class="nv">$data</span><span class="p">);</span>
+    <span class="nv">$data</span> <span class="o">=</span> <span class="nb">htmlspecialchars</span><span class="p">(</span><span class="nv">$data</span><span class="p">);</span>
+    <span class="k">return</span> <span class="nv">$data</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+
+<h5 id="2-获取cookie并解密">2. 获取cookie并解密</h5>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span> 
+<span class="cm">/*
+ * 我要在这里进行一大堆的判断，就是这个样子
+ * */</span>
+
+<span class="c1">// 获取cookie
+</span><span class="k">if</span> <span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$_COOKIE</span><span class="p">[</span><span class="s1">'gonghuizhudi'</span><span class="p">]))</span> <span class="p">{</span>
+    
+    <span class="nv">$str1</span> <span class="o">=</span> <span class="nv">$_COOKIE</span><span class="p">[</span><span class="s1">'gonghuizhudi'</span><span class="p">];</span>
+    
+    <span class="nv">$str2</span> <span class="o">=</span> <span class="nb">base64_decode</span><span class="p">(</span><span class="nv">$str1</span><span class="p">);</span>
+    
+    <span class="nv">$str3</span> <span class="o">=</span> <span class="nb">substr</span><span class="p">(</span><span class="nv">$str2</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+    <span class="nv">$str4</span> <span class="o">=</span> <span class="nb">base64_decode</span><span class="p">(</span><span class="nv">$str3</span><span class="p">);</span>
+    <span class="c1">// echo '二次解密：' . $str4 . '&lt;br&gt;';
+</span>    
+    <span class="nv">$zhanghao</span> <span class="o">=</span> <span class="nb">substr</span><span class="p">(</span><span class="nv">$str4</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="nb">strpos</span><span class="p">(</span><span class="nv">$str4</span><span class="p">,</span> <span class="s1">','</span><span class="p">)</span> <span class="o">-</span> <span class="mi">9</span><span class="p">);</span>
+    <span class="c1">// echo '账号为：' . $zhanghao . '&lt;br&gt;';
+</span>    
+    <span class="nv">$mima</span> <span class="o">=</span> <span class="nb">substr</span><span class="p">(</span><span class="nv">$str4</span><span class="p">,</span> <span class="nb">strpos</span><span class="p">(</span><span class="nv">$str4</span><span class="p">,</span> <span class="s1">'='</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+    <span class="c1">// echo '密码为：' . $mima . '&lt;br&gt;';
+</span>    
+    <span class="k">echo</span> <span class="s1">'&lt;script&gt;'</span><span class="p">;</span>
+    <span class="k">echo</span> <span class="s1">'login('</span> <span class="o">.</span> <span class="nv">$zhanghao</span> <span class="o">.</span> <span class="s1">','</span> <span class="o">.</span> <span class="nv">$mima</span> <span class="o">.</span> <span class="s1">');'</span><span class="p">;</span>
+    <span class="k">echo</span> <span class="s1">'&lt;/script&gt;'</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="k">echo</span> <span class="s1">'&lt;script&gt;'</span><span class="p">;</span>
+    <span class="k">echo</span> <span class="s2">"location.href='https://www.baidu.com';"</span><span class="p">;</span>
+    <span class="k">echo</span> <span class="s1">'&lt;/script&gt;'</span><span class="p">;</span>
+    <span class="c1">// echo '普通用户';
+</span><span class="p">}</span>
+
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+
+            </article>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+    <footer class="footer" role="contentinfo">
+	<div class="container">
+		<p class="copyright">Copyright &copy; 2014-2018 <a href="https://anchoritefili.github.io"><code>anchoriteFili</code></a>.</p>
+		<p>Powered by <a href="http://jekyllrb.com">Jekyll</a>, themed from <a href="http://lesscss.cn/">Less</a>, refactored by <a href="http://www.hifreud.com/">Freud Kang</a></p>
+	</div>
+</footer>
+
+<script src="/styles/js/jquery.min.js"></script>
+<script src="/styles/js/bootstrap.min.js"></script>
+<script src="/styles/js/holder.min.js"></script>
+<script src="/styles/js/lessismore.js"></script>
+<script src="/styles/js/application.js"></script>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  </body>
+</html>
