@@ -2,15 +2,20 @@
 name: 公会驻地
 email: feiliyaailiya1@icloud.com
 author: anchoriteFili
-url: http://www.anchoritefili.com
-resume_site: https://anchoritefili.github.io
-github: https://github.com/anchoriteFili/
+url: http://www.anchoritefili.github.io/
+resume_site: http://www.gonghuizhudi.com/personalIntroduction.php
+github: https://github.com/anchoriteFili?tab=repositories
 baseurl: ""
 description: 学习，从不止步。
 meta_description: 学而不思则罔;思而不学则殆;生命不止;折腾不休
 motto: 躬身以待方显气度，拧首抬杠略失品格。
 banner: 学而不思则罔，思而不学则殆。
 img_url: /styles/images/resources/
+myNovel: http://www.gonghuizhudi.com/book.php
+myMusic: http://www.gonghuizhudi.com/music.html
+myImg: http://www.gonghuizhudi.com/gifImage.php
+myVideo: http://www.gonghuizhudi.com/movie.php
+
 
 #permalink: /:categories/:year/:month/:day/:title/
 permalink: /:year/:month/:day/:title/
