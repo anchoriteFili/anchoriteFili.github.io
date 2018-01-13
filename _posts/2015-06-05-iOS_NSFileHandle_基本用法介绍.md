@@ -13,7 +13,7 @@ tag: object-c
 * content
 {:toc}
 
-> NSFileHandle  此类主要是对文件内容进行读取和写入操作
+> NSFileHandle  此类主要是对文件内容进行读取和写入操作<br>
 > NSFileMange   此类主要是对文件进行的操作以及文件信息的获取
 
 **常用处理方法**
