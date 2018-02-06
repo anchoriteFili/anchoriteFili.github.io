@@ -20,9 +20,15 @@ tag: swift
 
 ### 相关资料
 ---
-* [iOS接入指南](https://open.weixin.qq.com/cgi-bin/showdocument?action=dir_list&t=resource/res_list&verify=1&id=1417694084&token=&lang=zh_CN)<br>
-* [移动应用微信登录开发指南](https://open.weixin.qq.com/cgi-bin/showdocument?action=dir_list&t=resource/res_list&verify=1&id=open1419317851&token=&lang=zh_CN)<br>
-* [个人日记保存点](http://www.cnblogs.com/AnchoriteFiliGod/diary/2017/12/21/8080913.html)
+* [iOS接入指南]()<br>
+* [移动应用微信登录开发指南]()<br>
+* [个人日记保存点]()
+* <a href="https://open.weixin.qq.com/cgi-bin/showdocument?action=dir_list&t=resource/res_list&verify=1&id=1417694084&token=&lang=zh_CN" target="_blank">iOS接入指南</a><br>
+* <a href="https://open.weixin.qq.com/cgi-bin/showdocument?action=dir_list&t=resource/res_list&verify=1&id=open1419317851&token=&lang=zh_CN" target="_blank">移动应用微信登录开发指南</a><br>
+* <a href="http://www.cnblogs.com/AnchoriteFiliGod/diary/2017/12/21/8080913.html" target="_blank">个人日记保存点</a><br>
+* <a href="https://open.weixin.qq.com/cgi-bin/applist?t=manage/list&lang=zh_CN&token=4bae0c59248659a4752267f518875bf838d02778" target="_blank">微信应用管理平台</a><br>
+* <a href="" target="_blank"> </a><br>
+
 
 ### 接入流程
 ---
